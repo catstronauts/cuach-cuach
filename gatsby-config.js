@@ -1,3 +1,5 @@
+const path = require('path');
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -48,5 +50,15 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@src": path.resolve(__dirname, 'src'),
+          "@components": path.resolve(__dirname, 'src/components'),
+        },
+        extensions: ["js", "jsx", "ts", "tsx"],
+      }
+    }
   ],
 };
