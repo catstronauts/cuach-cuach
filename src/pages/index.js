@@ -8,14 +8,15 @@ import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
 
 const RootIndex = (props) => {
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
+  // const siteTitle = get(props, 'data.site.siteMetadata.title');
   const posts = get(props, 'data.allContentfulBlogPost.edges');
   const [author = {}] = get(props, 'data.allContentfulPerson.edges');
   const { name, title, shortBio, heroImage } = author.node;
   return (
     <Layout location={props.location}>
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
+        <Helmet title="Cuach Cuach" />
+        {/* <Helmet title={siteTitle} /> */}
         <Hero img={heroImage.fluid} imgAlt={name}>
           <div className={styles.heroDetails}>
             <h3 className={styles.heroHeadline}>{name}</h3>
