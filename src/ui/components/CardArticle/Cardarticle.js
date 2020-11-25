@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
-import styles from './CardArticle.module.css';
+import styles from './CardArticle.module.scss';
 
 const CardArticle = ({ article }) => (
   <div className={styles.preview}>
