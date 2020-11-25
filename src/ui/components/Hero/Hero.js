@@ -3,18 +3,14 @@ import Img from 'gatsby-image';
 
 import styles from './Hero.module.css';
 
-const Hero =({ data }) => (
+const Hero =({ children, img, imgAlt, data }) => (
   <div className={styles.hero}>
     <Img
       className={styles.heroImage}
-      alt={data.name}
-      fluid={data.heroImage.fluid}
+      alt={imgAlt}
+      fluid={img}
     />
-    <div className={styles.heroDetails}>
-      <h3 className={styles.heroHeadline}>{data.name}</h3>
-      <p className={styles.heroTitle}>{data.title}</p>
-      <p>{data.shortBio.shortBio}</p>
-    </div>
+    {children}
   </div>
 );
 

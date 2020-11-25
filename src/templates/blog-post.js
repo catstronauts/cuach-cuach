@@ -2,26 +2,19 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import get from 'lodash/get';
-import Img from 'gatsby-image';
 import Layout from '@layouts';
-
-import styles from './blog-post.module.css';
+import Hero from '@components/Hero';
 
 const BlogPostTemplate = (props) => {
-  const post = get(props, 'data.contentfulBlogPost');
+  const post = get(props, 'data.contentfulBlogPost', {});
   const siteTitle = get(props, 'data.site.siteMetadata.title');
+  const { heroImage, title } = post;
 
   return (
     <Layout location={props.location}>
       <div style={{ background: '#fff' }}>
         <Helmet title={`${post.title} | ${siteTitle}`} />
-        <div className={styles.hero}>
-          <Img
-            className={styles.heroImage}
-            alt={post.title}
-            fluid={post.heroImage.fluid}
-          />
-        </div>
+        <Hero img={heroImage.fluid} imgAlt={title}/>
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>
           <p
