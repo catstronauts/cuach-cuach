@@ -1,3 +1,5 @@
+const path = require('path');
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -27,6 +29,7 @@ if (process.env.CONTENTFUL_HOST) {
 }
 
 const { spaceId, accessToken } = contentfulConfig;
+const isProduction = !!(process.env.NODE_ENV === 'production');
 
 if (!spaceId || !accessToken) {
   throw new Error(
@@ -45,8 +48,30 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          localIdentName: isProduction
+            ? "[hash:base64:5]" 
+            : "[path][name]__[local]--[hash:base64:5]",
+        },
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve: "gatsby-plugin-alias-imports",
+      options: {
+        alias: {
+          "@src": path.resolve(__dirname, "src"),
+          "@ui": path.resolve(__dirname, "src/ui"),
+          "@components": path.resolve(__dirname, "src/ui/components"),
+          "@layouts": path.resolve(__dirname, "src/ui/layouts"),
+        },
+        extensions: ["js", "jsx", "ts", "tsx"],
+      }
+    }
   ],
 };
