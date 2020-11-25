@@ -1,9 +1,9 @@
-import React from 'react'
-import Img from 'gatsby-image'
+import React from 'react';
+import Img from 'gatsby-image';
 
-import styles from './hero.module.css'
+import styles from './Hero.module.css';
 
-export default ({ data }) => (
+const Hero =({ data }) => (
   <div className={styles.hero}>
     <Img
       className={styles.heroImage}
@@ -16,4 +16,6 @@ export default ({ data }) => (
       <p>{data.shortBio.shortBio}</p>
     </div>
   </div>
-)
+);
+
+export default Hero;

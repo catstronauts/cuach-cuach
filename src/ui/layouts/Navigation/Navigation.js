@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styles from './navigation.module.css'
+import React from 'react';
+import { Link } from 'gatsby';
+import styles from './Navigation.module.css';
 
-export default () => (
+const Navigation = () => (
   <nav role="navigation">
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
@@ -13,4 +13,6 @@ export default () => (
       </li>
     </ul>
   </nav>
-)
+);
+
+export default Navigation;
