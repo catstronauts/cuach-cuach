@@ -1,4 +1,4 @@
-import CardArticle from './CardArticle_rename';
+import CardArticle from './CardArticle';
 
 export default CardArticle;
 export { CardArticle };
