@@ -55,7 +55,9 @@ module.exports = {
       options: {
         alias: {
           "@src": path.resolve(__dirname, 'src'),
-          "@components": path.resolve(__dirname, 'src/components'),
+          "@ui": path.resolve(__dirname, 'src/ui'),
+          "@components": path.resolve(__dirname, 'src/ui/components'),
+          "@layouts": path.resolve(__dirname, 'src/ui/layouts'),
         },
         extensions: ["js", "jsx", "ts", "tsx"],
       }
