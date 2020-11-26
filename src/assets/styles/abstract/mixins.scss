@@ -1,0 +1,144 @@
+
+/***********************/
+/* - 1. BreakPoints -- */
+/***********************/
+// Usage:
+//
+// .sidebar {
+//   width: 50%;
+//   float: left;
+//
+//   @include bp-sm {
+//     width: 100%;
+//     float: none;
+//   }
+// }
+
+@mixin bp-xs { @media (max-width: $bp_xs) { @content; }}
+@mixin bp-sm { @media (min-width: $bp_sm) { @content; }}
+@mixin bp-md { @media (min-width: $bp_md) { @content; }}
+@mixin bp-lg { @media (min-width: $bp_lg) { @content; }}
+
+/***********************/
+/* - 2. Placeholders - */
+/***********************/
+// Usage:
+//
+// input,
+// textarea {
+//   @include placeholder {
+//     color: grey;
+//   }
+// }
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') { @content; }
+  @include optional-at-root(':-moz-placeholder') { @content; }
+  @include optional-at-root('::-moz-placeholder') { @content; }
+  @include optional-at-root(':-ms-input-placeholder') { @content; }
+}
+
+/* ******************* */
+/* ---- 3. Others ---- */
+/* ******************* */
+@mixin transition (
+  $property: $transition-duration,
+  $duration: $transition-duration,
+  $timing: $transition-timing
+) {
+  transition: $property $duration $timing;
+}
+
+// https://stackoverflow.com/questions/17181849/placeholder-mixin-scss-css
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin fieldBox() {
+  width: 100%;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid $color-sec-lighter;
+  padding: 8px;
+
+  @include placeholder {
+    font-style: italic;
+    color: $color-secondary-text;
+    font-weight: 100;
+  }
+}
+
+@mixin bg-cover {
+  // min-height: calc(100% - 40px);
+  width: 100%;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  // background-attachment: fixed;
+}
+
+@mixin vertical-align {
+  display: flex;
+  flex-grow: 1;
+  align-self: center;
+}
+
+@mixin underlineText (
+  $color: $color-main,
+  $h: 4px
+) {
+  background-image: linear-gradient(0, $color 0, $color);
+  background-position: bottom;
+  background-size: (100% $h);
+	background-repeat: no-repeat;
+	box-decoration-break: clone;
+}
+
+
+@mixin textSelected (
+  $text: $color-main,
+  $bg: $grey
+) {
+  /* For Firefox */
+  ::-moz-selection {
+    color: $text;
+    background: $bg;
+  }
+  ::selection {
+    color: $text;
+    background: $bg;
+  }
+}
+
+@mixin scrollbar (
+  $main: $color-main,
+  $bg: $grey
+) {
+  ::-webkit-scrollbar {
+    width : 6px;
+    height: 6px;
+    opacity: .4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background : $main;
+    border     : 0 solid;
+    border-radius: 14px;
+  }
+  ::-webkit-scrollbar-track {
+    background: $main;
+    background: $bg;
+  }
+  // For Internet Explorer
+  body {
+    scrollbar-face-color : $main;
+    scrollbar-track-color: $main;
+  }
+  // When abbandon window
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: $main;
+  }
+}
