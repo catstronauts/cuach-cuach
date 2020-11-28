@@ -1,18 +1,30 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import styles from './Navigation.module.css';
+import { NavigationBar } from './NavigationBar';
+import { SideMenu } from './SideMenu';
+import styles from './Navigation.module.scss';
+
+const menuItems = [
+  {
+    to: "/",
+    caption: "Home",
+  },
+  {
+    to: "/blog/",
+    caption: "Blog",
+  },
+];
 
 const Navigation = () => (
-  <nav role="navigation">
-    <ul className={styles.navigation}>
-      <li className={styles.navigationItem}>
-        <Link to="/">Home</Link>
-      </li>
-      <li className={styles.navigationItem}>
-        <Link to="/blog/">Blog</Link>
-      </li>
-    </ul>
-  </nav>
+  <>
+    <NavigationBar
+      options={menuItems}
+      className={styles.navigationBar}
+    />
+    <SideMenu
+      options={menuItems}
+      className={styles.sideBar}
+    />
+  </>
 );
 
 export default Navigation;

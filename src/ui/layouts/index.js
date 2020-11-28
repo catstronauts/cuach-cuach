@@ -4,10 +4,12 @@ import Navigation from './Navigation';
 import './base.scss';
 
 const Template = ({ children }) => (
-  <Container>
+  <>
     <Navigation />
-    {children}
-  </Container>
+    <Container>
+      {children}
+    </Container>
+  </>
 );
 
 export default Template;
