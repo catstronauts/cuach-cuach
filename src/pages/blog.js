@@ -7,8 +7,8 @@ import Layout from '@layouts';
 import ArticlePreview from '@components/CardArticle';
 
 const BlogIndex = (props) => {
-    const siteTitle = get(props, 'data.site.siteMetadata.title');
-    const posts = get(props, 'data.allContentfulBlogPost.edges');
+  const siteTitle = get(props, 'data.site.siteMetadata.title');
+  const posts = get(props, 'data.allContentfulBlogPost.edges');
 
   return (
     <Layout location={props.location}>

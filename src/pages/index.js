@@ -35,7 +35,7 @@ const RootIndex = (props) => {
         </div>
       </div>
     </Layout>
-  )
+  );
 };
 
 export default RootIndex;
