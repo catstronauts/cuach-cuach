@@ -32,7 +32,7 @@ const BlogPostTemplate = (props) => {
         </div>
       </div>
     </Layout>
-  )
+  );
 };
 
 export default BlogPostTemplate;

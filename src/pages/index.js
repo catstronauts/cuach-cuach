@@ -12,6 +12,7 @@ const RootIndex = (props) => {
   const posts = get(props, 'data.allContentfulBlogPost.edges');
   const [author = {}] = get(props, 'data.allContentfulPerson.edges');
   const { name, title, shortBio, heroImage } = author.node;
+
   return (
     <Layout location={props.location}>
       <div style={{ background: '#fff' }}>
@@ -35,7 +36,7 @@ const RootIndex = (props) => {
         </div>
       </div>
     </Layout>
-  )
+  );
 };
 
 export default RootIndex;
