@@ -13,7 +13,7 @@ const MenuItem = ({children, caption, to}) => (
   </li>
 );
 
-const Navigation = ({ className }) => (
+const Navigation = ({ options, className }) => (
   <nav className={classnames(styles.nav, className)} role="navigation">
     <Container>
       <div className={styles.content}>
@@ -21,8 +21,13 @@ const Navigation = ({ className }) => (
           <img className={styles.img} src={logo} />
         </Link>
         <ul className={styles.navigation}>
-          <MenuItem to="/" caption="Home" />
-          <MenuItem to="/blog/" caption="Blog" />
+          {options.map((op = {}, index) => (
+            <MenuItem
+              key={index}
+              to={op.to}
+              caption={op.caption}
+            />
+          ))}
         </ul>
       </div>
     </Container>

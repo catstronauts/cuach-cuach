@@ -12,6 +12,10 @@ const menuItems = [
     to: "/blog/",
     caption: "Blog",
   },
+  {
+    to: "/",
+    caption: "About",
+  },
 ];
 
 const Navigation = () => (
