@@ -1,6 +1,6 @@
 const path = require('path');
 
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
@@ -33,47 +33,47 @@ const isProduction = !!(process.env.NODE_ENV === 'production');
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    "Contentful spaceId and the access token need to be provided."
+    'Contentful spaceId and the access token need to be provided.'
   );
 }
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful starter",
+    title: 'Gatsby Contentful starter',
   },
-  pathPrefix: "/gatsby-contentful-starter",
+  pathPrefix: '/gatsby-contentful-starter',
   plugins: [
-    "gatsby-transformer-remark",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
+    'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: 'gatsby-plugin-sass',
       options: {
         cssLoaderOptions: {
           localIdentName: isProduction
-            ? "[hash:base64:5]" 
-            : "[path][name]__[local]--[hash:base64:5]",
+            ? '[hash:base64:5]'
+            : '[path][name]__[local]--[hash:base64:5]',
         },
       },
     },
     {
-      resolve: "gatsby-source-contentful",
+      resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
     {
-      resolve: "gatsby-plugin-alias-imports",
+      resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
-          "@src": path.resolve(__dirname, "src"),
-          "@assets": path.resolve(__dirname, "src/assets"),
-          "@styles": path.resolve(__dirname, "src/assets/styles"),
-          "@ui": path.resolve(__dirname, "src/ui"),
-          "@components": path.resolve(__dirname, "src/ui/components"),
-          "@layouts": path.resolve(__dirname, "src/ui/layouts"),
+          '@src': path.resolve(__dirname, 'src'),
+          '@assets': path.resolve(__dirname, 'src/assets'),
+          '@styles': path.resolve(__dirname, 'src/assets/styles'),
+          '@ui': path.resolve(__dirname, 'src/ui'),
+          '@components': path.resolve(__dirname, 'src/ui/components'),
+          '@layouts': path.resolve(__dirname, 'src/ui/layouts'),
         },
-        extensions: ["js", "jsx", "ts", "tsx"],
-      }
-    }
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+      },
+    },
   ],
 };
