@@ -46,25 +46,25 @@ module.exports = {
       }
     ],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    // TODO: remove on adding types
+    "react/prop-types": "off",
+    // TODO: find how to include alias
+    "import/no-unresolved": "off"
   },
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/extensions": [".js", ".jsx"],
-    "import/resolver": [
-      "webpack",
-    ],
+    "import/resolver": "webpack",
     // "import/resolver": {
-    //   "alias": [
-    //     ["~components", "./src/components"]
-    //   ]
-    // }
-  },
+    //   webpack: { config: path.resolve('./webpack.config.resolve.js'), },
+    // },
     "env": {
       "browser": true,
       "es6": true,
       "jest/globals": true
-  }
+    },
+  },
 }
