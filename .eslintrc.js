@@ -2,12 +2,10 @@ module.exports = {
   "extends": [
     "standard",
     "plugin:react/recommended",
-    "plugin:flowtype/recommended",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
   "plugins": [
-    "flowtype",
     "react",
     "react-hooks",
     "import",
