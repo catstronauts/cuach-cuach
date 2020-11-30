@@ -16,6 +16,10 @@ const menuItems = [
     to: "/",
     caption: "About",
   },
+  {
+    to: "/",
+    caption: "Contáctanos",
+  },
 ];
 
 const Navigation = () => (
