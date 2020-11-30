@@ -59,7 +59,7 @@
   @include vertical-align;
 }
 
-.navigationMenu {
+.textContent {
   margin: auto;
 }
 
@@ -96,7 +96,13 @@
 
   &__isOpen {
     opacity: 0.8;
+    pointer-events: auto;
   }
+}
+
+.socialMedia {
+  border-top: 1px solid #fff;
+  font-size: 1em;
 }
 
 

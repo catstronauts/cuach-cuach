@@ -23,16 +23,21 @@ const Panel = ({ options, isOpen, onClose }) => (
       <div className={styles.menuIcon} onClick={onClose}>
         <img src={xIcon} alt='close icon' />
       </div>
-      <div className={styles.navigationMenu}>
-        <ul className={styles.navigation}>
-        {options.map((op = {}, index) => (
-          <MenuItem
-            key={index}
-            to={op.to}
-            caption={op.caption}
-          />
-        ))}
-      </ul>
+      <div className={styles.textContent}>
+        <div className={styles.navigationMenu}>
+          <ul className={styles.navigation}>
+          {options.map((op = {}, index) => (
+            <MenuItem
+              key={index}
+              to={op.to}
+              caption={op.caption}
+            />
+          ))}
+        </ul>
+        </div>
+        <div className={styles.socialMedia}>
+          <p>Social Media Icons</p>
+        </div>
       </div>
     </div>
   </div>

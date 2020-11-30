@@ -35,7 +35,10 @@ const SideMenu = ({ options, className }) => {
           </div>
         </div>
       </Container>
-      <Overlay isOpen={isOpen} />
+      <Overlay 
+        isOpen={isOpen}
+        onClose={toggleClick}
+      />
       <Panel
         isOpen={isOpen}
         options={options}
