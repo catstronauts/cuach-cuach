@@ -17,9 +17,10 @@
 }
 
 .img {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   padding: 10px 30px;
+  margin: auto 0;
 }
 
 .menuIcon {
@@ -39,24 +40,26 @@
   bottom: 0;
   width: $w;
   margin-left: calc(-1 * #{$w});
-  z-index: 10;
+  z-index: 50;
   transition: margin-left 0.5s ease;
   background: #e4e4e4;
   font-size: 1.6em;
-
-  @include vertical-align;
 
   &__isOpen {
     margin-left: 0;
   }
 }
 
-.isOpen {
-  
+.sideMenuContent {
+  // display: flow-root;
+  margin: auto;
+  position: relative;
+  height: 100%;
+
+  @include vertical-align;
 }
 
-.sideMenuContent {
-  display: flow-root;
+.navigationMenu {
   margin: auto;
 }
 
@@ -80,6 +83,20 @@
   text-align: center;
 }
 
+.overlay {
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0;
 
+  &__isOpen {
+    opacity: 0.8;
+  }
+}
 
 

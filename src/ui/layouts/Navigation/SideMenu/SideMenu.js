@@ -4,15 +4,10 @@ import classnames from 'classnames';
 import Container from '@layouts/Container';
 import icon from '@assets/images/icon.png';
 import burger from '@assets/images/burger_menu.png';
+import Overlay from './SideMenu.Overlay';
+import Panel from './SideMenu.Panel';
 import styles from './SideMenu.module.scss';
 
-const MenuItem = ({ children, caption, to }) => (
-  <li className={styles.navigationItem}>
-    <Link className={styles.link} to={to}>
-      {children || caption}
-    </Link>
-  </li>
-);
 
 const SideMenu = ({ options, className }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,26 +31,16 @@ const SideMenu = ({ options, className }) => {
             <img className={styles.img} src={icon} alt='Cuach Cuach logo' />
           </Link>
           <div className={styles.menuIcon} onClick={toggleClick}>
-            <img src={burger} alt='burger logo' />
+            <img src={burger} alt='burger icon' />
           </div>
         </div>
       </Container>
-      <div className={classnames(
-          styles.sideMenu,
-          isOpen && styles.sideMenu__isOpen,
-      )}>
-        <div className={styles.sideMenuContent}>
-          <ul className={styles.navigation}>
-            {options.map((op = {}, index) => (
-              <MenuItem
-                key={index}
-                to={op.to}
-                caption={op.caption}
-              />
-            ))}
-          </ul>
-        </div>
-      </div>
+      <Overlay isOpen={isOpen} />
+      <Panel
+        isOpen={isOpen}
+        options={options}
+        onClose={toggleClick}
+      />
     </nav>
   );
 };
