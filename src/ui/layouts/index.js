@@ -7,8 +7,11 @@ import './base.scss';
 const Template = ({ children }) => (
   <>
     <Navigation />
+    {children}
+
+    {/* TODO: see what to do with container */}
     <Container>
-      {children}
+      
     </Container>
     <Footer />
   </>
