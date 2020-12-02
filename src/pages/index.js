@@ -4,7 +4,8 @@ import { graphql } from 'gatsby';
 // import { Helmet } from 'react-helmet';
 import HeroSection from '@components/HeroSection';
 import Layout from '@layouts';
-// import img1 from '@'
+import img from '@assets/images/hero1.png';
+// import img1 from '@assets/images/hero1.png';
 // import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
 
@@ -12,9 +13,14 @@ const Home = (props) => {
 
   return (
     <Layout location={props.location}>
-      <HeroSection 
-        // img={}
-      />
+      {/* <div className={styles.outerHero}>
+        <div className={styles.circle}> */}
+          <HeroSection 
+            img={img}
+            img1={img}
+          />
+        {/* </div>
+      </div> */}
     </Layout>
   );
 };
