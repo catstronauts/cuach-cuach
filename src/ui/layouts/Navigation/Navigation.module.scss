@@ -1,0 +1,16 @@
+@import "@styles/abstract";
+
+.sideBar {
+  display: block;
+
+  @include bp-md {
+    display: none;
+  }
+}
+
+.navigationBar {
+  display: none;
+  @include bp-md {
+    display: block;
+  }
+}

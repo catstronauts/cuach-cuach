@@ -1,0 +1,136 @@
+@import "@styles/abstract";
+
+.nav {
+  flex-direction: row;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.content {
+  display: flex;
+  flex-direction: row; 
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25em;
+  justify-content: space-between;
+}
+
+.img {
+  height: 70px;
+  width: 70px;
+  padding: 10px 30px;
+  margin: auto 0;
+}
+
+.menuIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 70px;
+  width: 70px;
+  margin: 14px 0 0;
+  opacity: 0.8;
+
+  &:hover {
+    cursor:pointer;
+    opacity: 1;
+  }
+}
+
+// TODO: temporary until find definitive icons
+.xIcon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 25px;
+  width: 25px;
+  opacity: 0.8;
+
+  &:hover {
+    cursor:pointer;
+    opacity: 1;
+  }
+}
+// 
+
+
+
+.sideMenu {
+  $w: 300px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $w;
+  margin-left: calc(-1 * #{$w});
+  z-index: 50;
+  background: #e4e4e4;
+  font-size: 1.6em;
+  @include transition(margin-left);
+
+  &__isOpen {
+    margin-left: 0;
+  }
+}
+
+.sideMenuContent {
+  // display: flow-root;
+  margin: auto;
+  position: relative;
+  height: 100%;
+
+  @include vertical-align;
+}
+
+.textContent {
+  margin: auto;
+}
+
+.navigation {
+  padding: 0;
+}
+
+.navigationItem {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.link {
+  text-decoration: none;
+  line-height: 55px;
+  letter-spacing: 3px;
+  width: 100%;
+  text-align: center;
+
+  &__isActive {
+    color: #097e7e;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0;
+  @include transition(opacity);
+
+  &__isOpen {
+    opacity: 0.8;
+    pointer-events: auto;
+  }
+}
+
+.socialMedia {
+  border-top: 1px solid #fff;
+  font-size: 1em;
+}

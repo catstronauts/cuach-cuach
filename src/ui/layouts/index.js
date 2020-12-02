@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
-import { Container } from './Container';
-import { Navigation } from './Navigation';
+import Footer from '@layouts/Footer';
+import { Container } from '@layouts/Container';
+import { Navigation } from '@layouts/Navigation';
 import './base.scss';
 
 const Template = ({ children }) => {
@@ -13,10 +14,13 @@ const Template = ({ children }) => {
 
   console.log(socials);
   return (
-    <Container>
+    <>
       <Navigation />
-      {children}
-    </Container>
+      <Container>
+        {children}
+      </Container>
+      <Footer />
+    </>
   );
 };
 

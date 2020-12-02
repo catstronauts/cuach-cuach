@@ -46,6 +46,7 @@
   $duration: $transition-duration,
   $timing: $transition-timing
 ) {
+  will-change: $property;
   transition: $property $duration $timing;
 }
 
@@ -141,4 +142,10 @@
   ::-webkit-scrollbar-thumb:window-inactive {
     background: $main;
   }
+}
+
+@mixin vertical-align {
+  display: flex;
+  flex-grow: 1;
+  align-self: center;
 }
