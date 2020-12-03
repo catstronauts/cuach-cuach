@@ -22,10 +22,12 @@
   width: $size;
   height: $size;
   line-height: $size;
-  
+  text-align: center;
+
   border: solid 1px currentColor;
   border-radius: 50%;
   opacity: .6;
+
   cursor: pointer;
   @include transition(all);
 

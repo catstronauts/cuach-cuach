@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import xIcon from '@assets/images/xIcon.png';
+import { SocialLinks } from '@layouts/SocialLinks';
 import styles from './SideMenu.module.scss';
 
 const MenuItem = ({ children, caption, to }) => (
   <li className={styles.navigationItem}>
-    <Link 
+    <Link
       className={styles.link}
       to={to}
       activeClassName={styles.link__isActive}
@@ -32,17 +33,17 @@ const Panel = ({ options, isOpen, onClose }) => (
       <div className={styles.textContent}>
         <div className={styles.navigationMenu}>
           <ul className={styles.navigation}>
-          {options.map((op = {}, index) => (
-            <MenuItem
-              key={index}
-              to={op.to}
-              caption={op.caption}
-            />
-          ))}
-        </ul>
+            {options.map((op = {}, index) => (
+              <MenuItem
+                key={index}
+                to={op.to}
+                caption={op.caption}
+              />
+            ))}
+          </ul>
         </div>
         <div className={styles.socialMedia}>
-          <p>Social Media Icons</p>
+          <SocialLinks className={styles.socialIcons} />
         </div>
       </div>
     </div>
