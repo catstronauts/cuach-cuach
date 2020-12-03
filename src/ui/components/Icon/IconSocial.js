@@ -13,6 +13,7 @@ const iconNamesMap = {
 const IconSocial = ({
   name,
   className,
+  clickable,
 }) => {
   const iconName = iconNamesMap[name] || null;
 
@@ -20,6 +21,7 @@ const IconSocial = ({
     <Icon
       name={iconName}
       className={className}
+      clickable={clickable}
       type="fab"
     />
   ) : null;

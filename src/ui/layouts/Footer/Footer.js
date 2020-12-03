@@ -5,12 +5,12 @@ import { AppContext } from '@layouts';
 import { IconSocial } from '@components/Icon';
 import styles from './Footer.module.scss';
 
-const SocialLinks = ({ social = [] }) => social.length ? (
+const SocialLinks = ({ links = [] }) => links.length ? (
   <ul className={styles.socialLinks}>
-    {social.map((sm = {}, i) => (
+    {links.map((link = {}, i) => (
       <li key={i} className={styles.socialLinks_item}>
-        <a href={sm.url} className={styles.socialLinks_link} target="_black">
-          <IconSocial name={sm.type} />
+        <a href={link.url} target="_black">
+          <IconSocial name={link.type} clickable />
         </a>
       </li>
     ))}
@@ -27,7 +27,7 @@ const Footer = () => {
           <img className={styles.img} src={icon} alt='Cuach Cuach logo' />
           Cuach Cuach
         </span>
-        <SocialLinks social={socialLinks} />
+        <SocialLinks links={socialLinks} />
       </Container>
     </footer>
   );

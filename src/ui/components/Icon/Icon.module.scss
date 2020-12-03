@@ -1,3 +1,5 @@
+@import "@styles/abstract";
+
 .wrapper {
   display: inline-block;
   font-size: 16px;
@@ -10,5 +12,27 @@
 
   path {
     fill: currentColor;
+  }
+}
+
+.clickable {
+  $size: 30px;
+
+  display: inline-block;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  
+  border: solid 1px currentColor;
+  border-radius: 50%;
+  opacity: .6;
+  cursor: pointer;
+  @include transition(all);
+
+  &:hover {
+    color: $white;
+    background: $color-main;
+    border-color: $color-main;
+    opacity: .8;
   }
 }

@@ -11,10 +11,12 @@ library.add(fab, fas);
 const Icon = ({
   name = 'coffee',
   type = 'fas',
+  clickable = false,
   className,
 }) => (
   <div className={classnames(
     styles.wrapper,
+    clickable && styles.clickable,
     className
   )}>
     <FontAwesomeIcon
