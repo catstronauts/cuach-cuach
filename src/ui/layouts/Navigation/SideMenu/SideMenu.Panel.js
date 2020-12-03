@@ -20,7 +20,7 @@ const Panel = ({ options, isOpen, onClose }) => (
   <div
     className={classnames(
       styles.sideMenu,
-      isOpen && styles.sideMenu__isOpen,
+      isOpen && styles.sideMenu__isOpen
     )}
   >
     <div className={styles.sideMenuContent}>
