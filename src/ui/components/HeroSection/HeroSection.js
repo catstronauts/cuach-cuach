@@ -39,24 +39,26 @@ const HeroSection = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.circle} />
-      <Container>
-        <div className={styles.heroSection}>
-          <div className={styles.text}>
-            <h2 className={styles.title}>Lorem ipsum dolor <br/> <span className={styles.cuach}>Cuach Cuach</span></h2>
-            <p className={styles.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisl dui, aliquet sit amet semper id, rhoncus gravida arcu. Nam eu eros mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <a className={styles.link} href='/'>Leer más.</a>
+      <Container className={styles.container}>
+        <div className={styles.heroWrapper}>
+          <div className={styles.heroSection}>
+            <div className={styles.text}>
+              <h2 className={styles.title}>Lorem ipsum dolor <br/> <span className={styles.cuach}>Cuach Cuach</span></h2>
+              <p className={styles.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisl dui, aliquet sit amet semper id, rhoncus gravida arcu. Nam eu eros mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <a className={styles.link} href='/'>Leer más.</a>
+            </div>
+            <div className={styles.imgContainer}>
+              <Img img={img} />
+            </div>
           </div>
-          <div className={styles.imgContainer}>
-            <Img img={img} />
-            {/* <Img img=={thumb2} />
-            <Img img={thumb3} /> */}
+          <div className={styles.thumbWrapper}>
+            <ul className={styles.thumb}>
+              <ThumbListImg thumbImg={thumb1} onClick={handleClick} />
+              <ThumbListImg thumbImg={thumb2} onClick={handleClick} />
+              <ThumbListImg thumbImg={thumb3} onClick={handleClick} />
+            </ul>
           </div>
         </div>
-        <ul className={styles.thumb}>
-          <ThumbListImg thumbImg={thumb1} onClick={handleClick} />
-          <ThumbListImg thumbImg={thumb2} onClick={handleClick} />
-          <ThumbListImg thumbImg={thumb3} onClick={handleClick} />
-        </ul>
         <ul className={styles.socialMedia}>
           <Icon img={instagram} />
           <Icon img={instagram} />
