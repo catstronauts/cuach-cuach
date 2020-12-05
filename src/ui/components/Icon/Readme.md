@@ -1,0 +1,1 @@
+https://fontawesome.com/how-to-use/javascript-api/setup/configuration#autoaddcss
