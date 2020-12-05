@@ -14,7 +14,7 @@
 //   }
 // }
 
-@mixin bp-xs { @media (max-width: $bp_xs) { @content; }}
+@mixin bp-xs { @media (min-width: $bp_xs) { @content; }}
 @mixin bp-sm { @media (min-width: $bp_sm) { @content; }}
 @mixin bp-md { @media (min-width: $bp_md) { @content; }}
 @mixin bp-lg { @media (min-width: $bp_lg) { @content; }}
