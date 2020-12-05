@@ -5,6 +5,7 @@ import thumb2 from '@assets/images/hero2.png';
 import thumb3 from '@assets/images/hero3.png';
 import instagram from '@assets/images/instagram.png';
 import { Container } from '@layouts/Container';
+import { SocialLinks } from '@layouts/SocialLinks';
 import styles from './HeroSection.module.scss';
 
 const ThumbListImg = ({ thumbImg, onClick }) => (
