@@ -1,0 +1,66 @@
+@import "@styles/abstract";
+
+.carousel {
+  min-height: 360px;
+
+  &_item {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  
+    &_content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    &_imgWrapper{
+      width: 400px;
+      display: inline-table;
+    }
+    &_img {
+    }
+  }
+
+  &_text {
+    font-size: 18px;
+    max-width: 480px;
+  }
+  &_title {
+    margin: 0 0 16px;
+    font-size: 48px;
+    line-height: 1.2;
+    color: $color-main;
+  }
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &_item {
+    flex: 1 1 0px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 16px;
+
+    &_index,
+    &_title {
+      margin: 0;
+      font-size: 18px;
+      max-width: 180px;
+      padding: 0 8px 0 0;
+      margin: 0 8px 0 0;
+    }
+    &_index {
+      font-weight: bold;
+    }
+
+    &__active {
+      color: $color-main;
+      border-color: currentColor;
+    }
+  }
+}

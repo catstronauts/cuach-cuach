@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
 import Hero from '@components/Hero';
+import Values from '@ui/pages/home/Values';
 import Layout from '@layouts';
 import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
@@ -24,6 +25,7 @@ const RootIndex = (props) => {
             <p>{shortBio.shortBio}</p>
           </div>
         </Hero>
+        <Values />
         <div className="wrapper">
           <h2 className="section-headline">Recent articles</h2>
           <ul className="article-list">

@@ -30,11 +30,6 @@ export default Template;
 
 const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulSocialMedia {
       totalCount
       pageInfo {
