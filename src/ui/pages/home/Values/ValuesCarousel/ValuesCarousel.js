@@ -1,12 +1,35 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-// import Carousel from '@components/Carousel';
 import styles from './ValuesCarousel.module.scss';
 
 const renderIndex = (index) => {
   const i = index + 1;
-
   return i > 10 ? i : `0${i}`;
+};
+
+const Carousel = ({ data = [], active = 0 }) => {
+  const activeItem = data[active];
+
+  return (
+    <div className={styles.carousel}>
+      <div
+        className={styles.carousel_item}>
+        <div className={styles.carousel_item_content}>
+          <div className={styles.carousel_text}>
+            <h4 className={styles.carousel_title}>
+              {activeItem.title}
+            </h4>
+            <span className={styles.carousel_desc}>
+              {activeItem.desc}
+            </span>
+          </div>
+        </div>
+        <div className={styles.carousel_item_imgWrapper}>
+          <img src={activeItem.img} alt={activeItem.title} className={styles.img} />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const Options = ({ data = [], active, onClickOption }) => (
@@ -23,9 +46,9 @@ const Options = ({ data = [], active, onClickOption }) => (
         <div className={styles.options_item_index}>
           {renderIndex(i)}
         </div>
-        <h1 className={styles.options_item_title}>
+        <h4 className={styles.options_item_title}>
           {value.title}
-        </h1>
+        </h4>
       </li>
     ))}
   </ul>
@@ -37,17 +60,12 @@ const ValuesCarousel = ({ data = [] }) => {
     setActive(i);
   };
 
-  // console.log(data);
-
   return (
     <div className={styles.values}>
-      {/* <Carousel>
-        {data.map((value, i) => (
-          <Carousel.Item key={i}>
-            {value.title}
-          </Carousel.Item>
-        ))}
-      </Carousel> */}
+      <Carousel
+        data={data}
+        active={active}
+      />
       <Options
         data={data}
         active={active}

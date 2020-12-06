@@ -10,9 +10,12 @@
 .index,
 .title {
   margin: 0 0 12px;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: bold;
   color: $color-main;
+  @include bp-sm {
+    font-size: 32px;
+  }
 }
 
 .index {

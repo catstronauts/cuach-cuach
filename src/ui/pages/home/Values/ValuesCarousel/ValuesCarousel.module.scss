@@ -1,5 +1,33 @@
 @import "@styles/abstract";
 
+.carousel {
+  &_item {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  
+    &_content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    &_imgWrapper{
+      width: 480px;
+      display: inline-table;
+    }
+  }
+
+  &_text {
+    font-size: 18px;
+    max-width: 480px;
+  }
+  &_title {
+    margin: 0 0 16px;
+    font-size: 48px;
+    line-height: 1.2;
+    color: $color-main;
+  }
+}
 .options {
   display: flex;
   flex-wrap: wrap;

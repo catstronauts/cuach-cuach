@@ -8,9 +8,9 @@ const Slides = ({ data = [] }) => data.length
         {`0${(i + 1)}`}
       </div>
       <div className={styles.content}>
-        <h1 className={styles.title}>
+        <h4 className={styles.title}>
           {value.title}
-        </h1>
+        </h4>
         <p className={styles.desc}>
           {value.desc}
         </p>
