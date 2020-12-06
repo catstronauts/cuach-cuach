@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center
 }
@@ -130,4 +130,8 @@
   // clip-path: circle(600px at right 800px);
   clip-path: circle(782px at 100% 785px);
   z-index: 1;
+
+  &_var1 { background: $color-main; }
+  &_var2 { background: $pink; }
+  &_var3 { background: $pinkDark; }
 }
