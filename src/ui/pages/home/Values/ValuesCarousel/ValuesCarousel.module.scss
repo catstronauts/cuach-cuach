@@ -6,6 +6,7 @@
   padding: 0;
   list-style: none;
   justify-content: space-between;
+  cursor: pointer;
 
   &_item {
     flex: 1 1 0px;
@@ -18,7 +19,16 @@
       margin: 0;
       font-size: 18px;
       max-width: 180px;
-      padding: 0 16px 0 0;
+      padding: 0 8px 0 0;
+      margin: 0 8px 0 0;
+    }
+    &_index {
+      font-weight: bold;
+    }
+
+    &__active {
+      color: $color-main;
+      border-color: currentColor;
     }
   }
 }

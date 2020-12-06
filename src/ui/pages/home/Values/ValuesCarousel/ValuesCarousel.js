@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import classnames from 'classnames';
 // import Carousel from '@components/Carousel';
 import styles from './ValuesCarousel.module.scss';
 
@@ -8,10 +9,17 @@ const renderIndex = (index) => {
   return i > 10 ? i : `0${i}`;
 };
 
-const Options = ({ data = [] }) => (
+const Options = ({ data = [], active, onClickOption }) => (
   <ul className={styles.options}>
     {data.map((value, i) => (
-      <li key={i} className={styles.options_item}>
+      <li
+        key={i}
+        onClick={() => onClickOption(i)}
+        className={classnames(
+          styles.options_item,
+          (i === active) && styles.options_item__active
+        )}
+      >
         <div className={styles.options_item_index}>
           {renderIndex(i)}
         </div>
@@ -24,7 +32,12 @@ const Options = ({ data = [] }) => (
 );
 
 const ValuesCarousel = ({ data = [] }) => {
-  console.log(data);
+  const [active, setActive] = useState(0);
+  const handleChange = (i) => {
+    setActive(i);
+  };
+
+  // console.log(data);
 
   return (
     <div className={styles.values}>
@@ -35,7 +48,11 @@ const ValuesCarousel = ({ data = [] }) => {
           </Carousel.Item>
         ))}
       </Carousel> */}
-      <Options data={data} />
+      <Options
+        data={data}
+        active={active}
+        onClickOption={handleChange}
+      />
     </div>
   );
 };
