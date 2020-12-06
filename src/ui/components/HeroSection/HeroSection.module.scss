@@ -1,137 +1,16 @@
-@import '@styles/abstract';
+@import "@styles/abstract";
 
-.hero {
-  position: relative;
-  min-height: calc(100vh - 80px);
-  display: flex;
-  align-items: center
-}
-
-.container {
-  z-index: 2;
-} 
-.heroWrapper {
-  margin: auto;
-}
-
-.heroSection {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.text {
-  position: relative;
-  max-width: 600px;
-  box-sizing: border-box;
-  padding-right: 70px;
-}
-
-.title {
-  color: $color-main-text;
-  font-size: 4em;
-  line-height: 1.4em;
-  font-weight: 500;
-}
-
-.paragraph {
-  color: $color-main-text;
-}
-
-.cuach {
-  color: $color-main;
-  font-size: 1.2em;
-  font-weight: 900;
-}
-
-.link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 8px 20px;
-  background: $color-main;
-  color: $color-sec;
-  border-radius: 40px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-.imgContainer {
-  width: 600px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.img {
-  max-width: 500px;
-}
-
-.thumbWrapper {
+.heroMobile {
   display: block;
+
+  @include bp-md {
+    display: none;
+  }
 }
 
-.thumb {
-  // position: absolute;
-  // left: 50%;
-  // bottom: 20px;
-  // transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-}
-
-.liThumb {
-  list-style: none;
-  display: inline-block;
-  margin: 0 20px;
-  cursor: pointer;
-  // transition: $transition-duration;
-  transition: 0.5s;
-
-  &:hover {
-    transform: translateY(-15px);
-  } 
-}
-
-.thumbImg {
-  max-width: 60px;
-}
-
-.socialMedia {
-  position: absolute;
-  top: 50%;
-  right: 30px;
-  width: 50px;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.liIcon {
-  list-style: none;
-}
-
-.aIcon {
-  display: inline-block;
-  margin: 5px 0;
-  transform: scale(0.6)
-}
-
-.circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: $color-main;
-  // clip-path: circle(600px at right 800px);
-  clip-path: circle(782px at 100% 785px);
-  z-index: 1;
-
-  &_var1 { background: $color-main; }
-  &_var2 { background: $pink; }
-  &_var3 { background: $pinkDark; }
+.heroDesktop {
+  display: none;
+  @include bp-md {
+    display: block;
+  }
 }

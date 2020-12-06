@@ -1,0 +1,29 @@
+@import '@styles/abstract';
+
+.mobile {
+  min-height: calc(100vh - 80px);
+}
+
+.img {
+
+  min-height: 200px;
+  @include bg-cover;
+}
+
+.cuach {
+  color: $color-main;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+.link {
+  display: inline-block;
+  // margin-top: 20px;
+  padding: 8px 20px;
+  background: $color-main;
+  color: $color-sec;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
