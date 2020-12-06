@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import styles from './Slides.module.scss';
 
 const Slides = ({ data = [] }) => data.length
@@ -16,7 +17,11 @@ const Slides = ({ data = [] }) => data.length
         </p>
       </div>
       <div className={styles.imgWrapper}>
-        <img src={value.img} alt={value.title} className={styles.img} />
+        <Img
+          alt={value.title}
+          className={styles.img}
+          fluid={value.imgFluid}
+        />
       </div>
     </article>
   ))) : null;

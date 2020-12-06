@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import Img from 'gatsby-image';
 import styles from './ValuesCarousel.module.scss';
 
 const renderIndex = (index) => {
@@ -25,7 +26,11 @@ const Carousel = ({ data = [], active = 0 }) => {
           </div>
         </div>
         <div className={styles.carousel_item_imgWrapper}>
-          <img src={activeItem.img} alt={activeItem.title} className={styles.img} />
+          <Img
+            alt={activeItem.title}
+            className={styles.carousel_item_img}
+            fluid={activeItem.imgFluid}
+          />
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 @import "@styles/abstract";
 
 .carousel {
+  min-height: 360px;
+
   &_item {
     display: flex;
     flex-direction: row;
@@ -12,8 +14,10 @@
       flex-grow: 1;
     }
     &_imgWrapper{
-      width: 480px;
+      width: 400px;
       display: inline-table;
+    }
+    &_img {
     }
   }
 
