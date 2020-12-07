@@ -3,14 +3,14 @@
 .heroMobile {
   display: block;
 
-  @include bp-md {
+  @include bp-lg {
     display: none;
   }
 }
 
 .heroDesktop {
   display: none;
-  @include bp-md {
-    display: block;
+  @include bp-lg {
+    display: flex;
   }
 }

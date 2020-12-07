@@ -48,7 +48,7 @@ const Img =({ img }) => (
   />
 );
 
-const HeroDesktop = () => {
+const HeroDesktop = ({ className }) => {
   const [img, setImg] = useState(thumb1);
   const [circleSt, setCircleSt] = useState();
 
@@ -58,7 +58,7 @@ const HeroDesktop = () => {
   }
 
   return (
-    <div className={styles.hero}>
+    <div className={`${styles.hero} ${className}`}>
       <div className={`${styles.circle} ${circleSt}`} />
       <Container className={styles.container}>
         <div className={styles.heroWrapper}>
