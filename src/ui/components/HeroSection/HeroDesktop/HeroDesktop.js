@@ -6,6 +6,7 @@ import thumb3 from '@assets/images/hero3.png';
 import instagram from '@assets/images/instagram.png';
 import { Container } from '@layouts/Container';
 // import { SocialLinks } from '@layouts/SocialLinks';
+import Button from '@components/Button';
 import styles from './HeroDesktop.module.scss';
 
 const data = [
@@ -66,7 +67,9 @@ const HeroDesktop = ({ className }) => {
             <div className={styles.text}>
               <h2 className={styles.title}>Lorem ipsum dolor <br/> <span className={styles.cuach}>Cuach Cuach</span></h2>
               <p className={styles.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisl dui, aliquet sit amet semper id, rhoncus gravida arcu. Nam eu eros mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-              <a className={styles.link} href='/'>Leer más.</a>
+              <a href='/'>
+                <Button caption='Leer más' />
+              </a>
             </div>
             <div className={styles.imgContainer}>
               <Img img={img} />

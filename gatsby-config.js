@@ -49,6 +49,13 @@ module.exports = {
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sass',
       options: {
         cssLoaderOptions: {
@@ -70,6 +77,7 @@ module.exports = {
           '@assets': path.resolve(__dirname, 'src/assets'),
           '@styles': path.resolve(__dirname, 'src/assets/styles'),
           '@ui': path.resolve(__dirname, 'src/ui'),
+          '@hooks': path.resolve(__dirname, 'src/hooks'),
           '@components': path.resolve(__dirname, 'src/ui/components'),
           '@layouts': path.resolve(__dirname, 'src/ui/layouts'),
         },

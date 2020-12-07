@@ -16,9 +16,9 @@ $text-black: #31383f;
 /* --- Colors --- */
 /* -------------- */
 $color-main: $blue;
-$color-main-text: $text-black;
-$color-main-dark: darken($color-main, 20%);
-$color-main-darker: darken($color-main, 40%);
+$color-main-text: $text-white;
+$color-main-dark: darken($color-main, 7%);
+$color-main-darker: darken($color-main, 15%);
 
 $color-sec: $yellow;
 $color-sec-text: $text-black;
@@ -33,7 +33,7 @@ $color-status-error: $red;
 /* -------------- */
 /* --- Others --- */
 /* -------------- */
-$border-radius: 2px;
+$border-radius: 4px;
 $border-style: solid;
 $border-width: 1px;
 $border-color: $color-main;
@@ -56,6 +56,7 @@ $font-family-title: 'Aleo', serif;
 /* ********************* */
 /* -- 2. Breakpoints --- */
 /* ********************* */
+$bp_xxs:480px !default;
 $bp_xs: 767px !default;
 $bp_sm: $bp_xs + 1 !default;
 $bp_md: 992px !default;
