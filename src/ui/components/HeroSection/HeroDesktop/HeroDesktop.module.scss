@@ -113,7 +113,8 @@
   height: 100%;
   background: $color-main;
   // clip-path: circle(600px at right 800px);
-  clip-path: circle(950px at 100% 860px);
+  // clip-path: circle(950px at 100% 860px);
+  clip-path: polygon(105% 0%, 15% 100%, 100% 100%);
   z-index: 1;
 
   &_var1 { background: $color-main; }
