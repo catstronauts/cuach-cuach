@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
 import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
+import ProductTile from '@components/ProductTile';
 import Layout from '@layouts';
 import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
@@ -25,6 +26,8 @@ const RootIndex = (props) => {
             <p>{shortBio.shortBio}</p>
           </div>
         </Hero>
+
+        <ProductTile />
         <Values />
         <div className="wrapper">
           <h2 className="section-headline">Recent articles</h2>

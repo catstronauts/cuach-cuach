@@ -1,0 +1,15 @@
+@import "@styles/abstract";
+
+.product {
+  max-width: 100%;
+  min-height: 300px;
+  background: red;
+
+  @include bp-sm {
+  max-width: 33.3%;
+  }
+
+  @include bp-md {
+  max-width: 25%;  
+  }
+}
