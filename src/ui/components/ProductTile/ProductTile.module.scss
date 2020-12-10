@@ -1,15 +1,42 @@
 @import "@styles/abstract";
 
 .product {
-  max-width: 100%;
-  min-height: 300px;
-  background: red;
-
-  @include bp-sm {
-  max-width: 33.3%;
-  }
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  padding: 20px 0;
+  margin: auto;
+  cursor: pointer;
 
   @include bp-md {
-  max-width: 25%;  
+    max-width: 30%;
+    margin: 0;
+  }
+}
+
+.imgWrapper {
+  padding-top: 100%;
+
+  @include bg-cover;
+}
+
+.tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 30px;
+  padding: 23px 30px;
+  background: white;
+  opacity: 0.8;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: transform $transition-duration $transition-timing;
+  letter-spacing: .05em;
+
+  &:hover {
+    transform: translateY(-15px);
   }
 }

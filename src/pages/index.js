@@ -8,6 +8,8 @@ import ProductTile from '@components/ProductTile';
 import Layout from '@layouts';
 import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
+import cat1 from '@assets/images/category.jpg';
+import cat2 from '@assets/images/category2.jpg';
 
 const RootIndex = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -27,7 +29,22 @@ const RootIndex = (props) => {
           </div>
         </Hero>
 
-        <ProductTile />
+        <div className={styles.categorySection}>
+          <ProductTile
+            tag='textil'
+            img={cat1}
+          />
+          <ProductTile
+            tag='pintura'
+            img={cat2}
+          />
+
+          <ProductTile
+            tag='muebles'
+            img={cat1}
+          />
+        </div>
+
         <Values />
         <div className="wrapper">
           <h2 className="section-headline">Recent articles</h2>

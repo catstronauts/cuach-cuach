@@ -1,3 +1,5 @@
+@import "@styles/abstract";
+
 .heroDetails {
   position: absolute;
   background: rgba(0, 0, 0, 0.7);
@@ -23,4 +25,16 @@
   margin: 0;
   font-size: 1.125em;
   font-weight: bold;
+}
+
+.categorySection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 30px;
+
+  @include bp-md {
+    flex-direction: row;    
+  }
 }
