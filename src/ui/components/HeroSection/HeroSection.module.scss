@@ -1,0 +1,16 @@
+@import "@styles/abstract";
+
+.heroMobile {
+  display: block;
+
+  @include bp-lg {
+    display: none;
+  }
+}
+
+.heroDesktop {
+  display: none;
+  @include bp-lg {
+    display: flex;
+  }
+}
