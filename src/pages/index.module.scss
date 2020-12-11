@@ -1,3 +1,5 @@
+@import '@styles/abstract';
+
 // .heroDetails {
 //   position: absolute;
 //   background: rgba(0, 0, 0, 0.7);
@@ -29,6 +31,17 @@
   position: relative;
 }
 
+.categorySection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 0;
+
+  @include bp-md {
+    flex-direction: row;    
+  }
+}
 // .circle {
 //   position: absolute;
 //   top: 0;
