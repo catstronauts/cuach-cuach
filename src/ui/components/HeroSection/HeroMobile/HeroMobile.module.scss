@@ -25,6 +25,13 @@
   line-height: 40px;
   margin: 0;
 
+  strong {
+    display: block;
+    color: $color-main;
+    font-size: 1.5em;
+    font-weight: 900;
+  }
+
   @include bp-md {
     font-size: 1.9em;
   }
@@ -35,10 +42,4 @@
   @include bp-md {
     font-size: 1.2em;
   }
-}
-
-.cuach {
-  color: $color-main;
-  font-size: 1.5em;
-  font-weight: 900;
 }

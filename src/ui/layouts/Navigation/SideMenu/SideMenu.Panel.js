@@ -42,9 +42,7 @@ const Panel = ({ options, isOpen, onClose }) => (
             ))}
           </ul>
         </div>
-        <div className={styles.socialMedia}>
-          <SocialLinks className={styles.socialIcons} />
-        </div>
+        <SocialLinks className={styles.socialMedia} />
       </div>
     </div>
   </div>

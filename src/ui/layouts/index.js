@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
 import Footer from '@layouts/Footer';
 import { Navigation } from '@layouts/Navigation';
-import './base.scss';
 
 export const AppContext = createContext({});
 
@@ -17,7 +16,7 @@ const Template = ({ children }) => {
   return (
     <AppContext.Provider value={appState}>
       <Navigation />
-        {children}
+      {children}
       <Footer />
     </AppContext.Provider>
   );

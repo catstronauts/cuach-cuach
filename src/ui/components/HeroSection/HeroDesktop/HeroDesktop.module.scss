@@ -30,20 +30,21 @@
 }
 
 .title {
-  color: $color-main-text;
+  color: $text-main;
   font-size: 4em;
   line-height: 1.4em;
   font-weight: 500;
+
+  strong {
+    display: block;
+    color: $color-main;
+    font-size: 1.2em;
+    font-weight: 900;
+  }
 }
 
 .paragraph {
-  color: $color-main-text;
-}
-
-.cuach {
-  color: $color-main;
-  font-size: 1.2em;
-  font-weight: 900;
+  color: $text-main;
 }
 
 .imgContainer {
@@ -93,16 +94,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
 
-.liIcon {
-  list-style: none;
-}
-
-.aIcon {
-  display: inline-block;
-  margin: 5px 0;
-  transform: scale(0.6)
+  &_item {
+    margin: 0 0 16px;
+  }
 }
 
 .circle {
@@ -111,13 +106,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: $color-main;
+  // Circle
   // clip-path: circle(600px at right 800px);
   // clip-path: circle(950px at 100% 860px);
+  // Rectangle
   clip-path: polygon(105% 0%, 15% 100%, 100% 100%);
   z-index: 1;
 
-  &_var1 { background: $color-main; }
+  &, // default scenario
+  &_var1 { background: $color-main-light; }
   &_var2 { background: $pink; }
   &_var3 { background: $pinkDark; }
 }
