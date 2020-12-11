@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 // import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
 import CategoryTile from '@components/CategoryTile';
-import HeroSection from '@components/HeroSection';
+import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
 import Section from '@layouts/Section';
 import img from '@assets/images/hero1.png';
