@@ -7,7 +7,6 @@ import Values from '@ui/pages/home/Values';
 import CategoryTile from '@components/CategoryTile';
 import HeroSection from '@components/HeroSection';
 import Layout from '@layouts';
-import Container from '@layouts/Container';
 import Section from '@layouts/Section';
 import img from '@assets/images/hero1.png';
 import ArticlePreview from '@components/CardArticle';
@@ -28,7 +27,7 @@ const Home = (props) => {
         img={img}
         img1={img}
       />
-      <div style={{ background: '#fff' }}>
+      <div>
         <Helmet title={siteTitle} />
     
         {/* Category section */}
@@ -50,18 +49,15 @@ const Home = (props) => {
         </Section>
 
         <Values />
-        <div className="wrapper">
-          <Container>
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts.map(({ node }) => (
-                <li key={node.slug}>
-                  <ArticlePreview article={node} />
-                </li>
-              ))}
-            </ul>
-          </Container>
-        </div>
+
+        <Section title="Recent articles">
+          <ArticlePreview.List>
+            {posts.map(({ node }) => (
+              <ArticlePreview key={node.slug} article={node} />
+            ))}
+          </ArticlePreview.List>
+        </Section>
+
       </div>
     </Layout>
   );
