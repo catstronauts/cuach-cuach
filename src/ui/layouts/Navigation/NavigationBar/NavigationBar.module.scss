@@ -33,12 +33,11 @@
   text-decoration: none;
 
   &:hover {
-    border-bottom: 2px solid black;
-    // background: yellow;
+    border-bottom: 2px solid $color-main-text;
   }
 
   &__isActive {
-    color: #097e7e;
+    color: $color-main;
   }
 }
 
@@ -52,7 +51,7 @@
 .img {
   height: 70px;
   width: 70px;
-  padding: 10px 30px;
+  padding-right: 30px;
   margin: auto 0;
 }
 

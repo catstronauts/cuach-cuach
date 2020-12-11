@@ -2,32 +2,33 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
-import Hero from '@components/Hero';
+// import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
 import ProductTile from '@components/ProductTile';
 import Layout from '@layouts';
+import Container from '@layouts/Container';
+import img from '@assets/images/hero1.png';
 import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
 import cat1 from '@assets/images/category.jpg';
 import cat2 from '@assets/images/category2.jpg';
+import HeroSection from '@components/HeroSection';
+// import styles from './index.module.scss';
 
-const RootIndex = (props) => {
+const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
   const posts = get(props, 'data.allContentfulBlogPost.edges');
-  const [author = {}] = get(props, 'data.allContentfulPerson.edges');
-  const { name, title, shortBio, heroImage } = author.node;
+  // const [author = {}] = get(props, 'data.allContentfulPerson.edges');
+  // const { name, title, shortBio, heroImage } = author.node;
 
   return (
     <Layout location={props.location}>
+      <HeroSection
+        img={img}
+        img1={img}
+      />
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <Hero img={heroImage.fluid} imgAlt={name}>
-          <div className={styles.heroDetails}>
-            <h3 className={styles.heroHeadline}>{name}</h3>
-            <p className={styles.heroTitle}>{title}</p>
-            <p>{shortBio.shortBio}</p>
-          </div>
-        </Hero>
 
         <div className={styles.categorySection}>
           <ProductTile
@@ -47,21 +48,23 @@ const RootIndex = (props) => {
 
         <Values />
         <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => (
-              <li key={node.slug}>
-                <ArticlePreview article={node} />
-              </li>
-            ))}
-          </ul>
+          <Container>
+            <h2 className="section-headline">Recent articles</h2>
+            <ul className="article-list">
+              {posts.map(({ node }) => (
+                <li key={node.slug}>
+                  <ArticlePreview article={node} />
+                </li>
+              ))}
+            </ul>
+          </Container>
         </div>
       </div>
     </Layout>
   );
 };
 
-export default RootIndex;
+export default Home;
 
 export const pageQuery = graphql`
   query HomeQuery {

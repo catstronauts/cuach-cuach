@@ -2,7 +2,6 @@ import React, { createContext } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
 import Footer from '@layouts/Footer';
-import { Container } from '@layouts/Container';
 import { Navigation } from '@layouts/Navigation';
 import './base.scss';
 
@@ -18,9 +17,7 @@ const Template = ({ children }) => {
   return (
     <AppContext.Provider value={appState}>
       <Navigation />
-      <Container>
         {children}
-      </Container>
       <Footer />
     </AppContext.Provider>
   );
