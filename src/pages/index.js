@@ -31,7 +31,7 @@ const Home = (props) => {
         <Helmet title={siteTitle} />
     
         {/* Category section */}
-        <Section title='Categorias de nuestros productos'>
+        <Section title='Nuestras líneas de trabajo'>
           <div className={styles.categorySection}>
             <CategoryTile
               tag='textil'
