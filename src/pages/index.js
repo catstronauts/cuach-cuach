@@ -14,6 +14,8 @@ import styles from './index.module.scss';
 import cat1 from '@assets/images/category.jpg';
 import cat2 from '@assets/images/category2.jpg';
 import cat3 from '@assets/images/category.jpg';
+import aboutImg from '@assets/images/taller.jpg';
+import About from '../ui/pages/home/About';
 
 const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -47,6 +49,16 @@ const Home = (props) => {
             />
           </div>
         </Section>
+
+        {/* About Section */}
+        {/* <Section title='Acerca del taller Cuach Cuach'> */}
+          <About
+            img={aboutImg}
+            title='Taller Cuach Cuach'
+            text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura e invitar también a quienes eligen nuestro trabajo a ser concientes y respetuosos con nuestro entorno.'
+            href='www.facebook.com'
+          />
+        {/* </Section> */}
 
         <Values />
 

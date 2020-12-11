@@ -1,0 +1,59 @@
+@import '@styles/abstract';
+
+.about {
+  position: relative;
+  margin: auto;
+  max-width: 1440px;
+
+  @include bp-lg {
+    height: 543px;
+    margin-bottom: 96px;
+  }
+}
+
+.imgWrapper {
+
+  @include bp-lg {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.img {
+  max-height: 543px;
+  width: auto;
+}
+
+.background {
+  background:  $pink;
+  position: absolute;
+  top: 25%;
+  right: 12.5%;
+  bottom: -32px;
+  left: 0;
+}
+
+.text {
+
+  @include bp-lg {
+    position: absolute;
+    top: 50%;
+    right: 45%;
+    width: 450px;
+    padding: 56px 64px 56px 88px;
+    background-color: #fff;
+    transform: translateY(-50%);
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 2.3em;
+}
+
+.paragraph {
+  margin: 0;
+  font-size: 18px;
+  padding: 15px 0;
+}
