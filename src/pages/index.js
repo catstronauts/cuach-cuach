@@ -4,12 +4,17 @@ import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
 // import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
+import CategoryTile from '@components/CategoryTile';
+import HeroSection from '@components/HeroSection';
 import Layout from '@layouts';
 import Container from '@layouts/Container';
+import Section from '@layouts/Section';
 import img from '@assets/images/hero1.png';
 import ArticlePreview from '@components/CardArticle';
-import HeroSection from '@components/HeroSection';
-// import styles from './index.module.scss';
+import styles from './index.module.scss';
+import cat1 from '@assets/images/category.jpg';
+import cat2 from '@assets/images/category2.jpg';
+import cat3 from '@assets/images/category.jpg';
 
 const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -25,13 +30,25 @@ const Home = (props) => {
       />
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        {/* <Hero img={heroImage.fluid} imgAlt={name}>
-          <div className={styles.heroDetails}>
-            <h3 className={styles.heroHeadline}>{name}</h3>
-            <p className={styles.heroTitle}>{title}</p>
-            <p>{shortBio.shortBio}</p>
+    
+        {/* Category section */}
+        <Section title='Categorias de nuestros productos'>
+          <div className={styles.categorySection}>
+            <CategoryTile
+              tag='textil'
+              img={cat1}
+            />
+            <CategoryTile
+              tag='pintura'
+              img={cat2}
+            />
+            <CategoryTile
+              tag='muebles'
+              img={cat3}
+            />
           </div>
-        </Hero> */}
+        </Section>
+
         <Values />
         <div className="wrapper">
           <Container>
