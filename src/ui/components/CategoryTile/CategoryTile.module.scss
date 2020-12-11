@@ -18,6 +18,10 @@
   padding-top: 100%;
 
   @include bg-cover;
+
+  &:hover .tag {
+    transform: translateY(-15px);
+  }
 }
 
 .tag {
@@ -33,10 +37,10 @@
   text-align: center;
   font-size: 1.1em;
   font-weight: 600;
-  @include transition(transform);
+  @include transition(all);
   letter-spacing: .05em;
 
   &:hover {
-    transform: translateY(-15px);
+    opacity: 0.9;
   }
 }
