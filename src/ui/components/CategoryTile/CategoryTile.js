@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from './ProductTile.module.scss';
+import styles from './CategoryTile.module.scss';
 
-const ProductTile = ({ tag, img }) => (
-  <div className={styles.product}>
+const CategoryTile = ({ tag, img }) => (
+  <div className={styles.category}>
     <div className={styles.imgWrapper} style={{ backgroundImage:`url(${img})` }}>
       <div className={styles.tag}>
         {tag}
@@ -12,4 +12,4 @@ const ProductTile = ({ tag, img }) => (
   </div>
 );
 
-export default ProductTile;
+export default CategoryTile;

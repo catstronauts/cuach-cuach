@@ -4,7 +4,8 @@ import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
 // import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
-import ProductTile from '@components/ProductTile';
+import CategoryTile from '@components/CategoryTile';
+import HeroSection from '@components/HeroSection';
 import Layout from '@layouts';
 import Container from '@layouts/Container';
 import img from '@assets/images/hero1.png';
@@ -12,8 +13,7 @@ import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
 import cat1 from '@assets/images/category.jpg';
 import cat2 from '@assets/images/category2.jpg';
-import HeroSection from '@components/HeroSection';
-// import styles from './index.module.scss';
+import cat3 from '@assets/images/category.jpg';
 
 const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -29,22 +29,22 @@ const Home = (props) => {
       />
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-
-        <div className={styles.categorySection}>
-          <ProductTile
+    
+        {/* Category section */}
+        <Container className={styles.categorySection}>
+          <CategoryTile
             tag='textil'
             img={cat1}
           />
-          <ProductTile
+          <CategoryTile
             tag='pintura'
             img={cat2}
           />
-
-          <ProductTile
+          <CategoryTile
             tag='muebles'
-            img={cat1}
+            img={cat3}
           />
-        </div>
+        </Container>
 
         <Values />
         <div className="wrapper">
