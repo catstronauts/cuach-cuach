@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
 import thumb1 from '@assets/images/hero1.png';
 import thumb2 from '@assets/images/hero2.png';
 import thumb3 from '@assets/images/hero3.png';
@@ -11,17 +12,17 @@ const dataIcons = [
   {
     img: thumb1,
     imgThumb: thumb1,
-    style: styles.circle_var1,
+    style: styles.hero_var1,
   },
   {
     img: thumb2,
     imgThumb: thumb2,
-    style: styles.circle_var2,
+    style: styles.hero_var2,
   },
   {
     img: thumb3,
     imgThumb: thumb3,
-    style: styles.circle_var3,
+    style: styles.hero_var3,
   },
 ];
 
@@ -33,16 +34,19 @@ const ThumbListImg = ({ thumbImg, onClick }) => (
 
 const HeroDesktop = ({ data, className }) => {
   const [img, setImg] = useState(thumb1);
-  const [circleSt, setCircleSt] = useState();
+  const [variant, setVariant] = useState();
 
-  const handleClick = (thumbImg, st) => {
-    setImg(thumbImg);
-    setCircleSt(st);
+  const handleClick = (i) => {
+    const selected = dataIcons[i];
+
+    setImg(selected.img);
+    setVariant(selected.style);
   };
 
   return (
-    <div className={`${styles.hero} ${className}`}>
-      <div className={`${styles.circle} ${circleSt}`} />
+    <div className={classnames(styles.hero, variant, className)}>
+      <div className={styles.shape_1} />
+      <div className={styles.shape_2} />
       <Container className={styles.container}>
         <div className={styles.heroWrapper}>
           <div className={styles.heroSection}>
@@ -63,7 +67,7 @@ const HeroDesktop = ({ data, className }) => {
                 <ThumbListImg
                   key={i}
                   thumbImg={d.imgThumb}
-                  onClick={() => handleClick(d.img, d.style)}
+                  onClick={() => handleClick(i)}
                 />
               ))}
             </ul>
