@@ -8,6 +8,7 @@ import CategoryTile from '@components/CategoryTile';
 import HeroSection from '@components/HeroSection';
 import Layout from '@layouts';
 import Container from '@layouts/Container';
+import Section from '@layouts/Section';
 import img from '@assets/images/hero1.png';
 import ArticlePreview from '@components/CardArticle';
 import styles from './index.module.scss';
@@ -31,20 +32,22 @@ const Home = (props) => {
         <Helmet title={siteTitle} />
     
         {/* Category section */}
-        <Container className={styles.categorySection}>
-          <CategoryTile
-            tag='textil'
-            img={cat1}
-          />
-          <CategoryTile
-            tag='pintura'
-            img={cat2}
-          />
-          <CategoryTile
-            tag='muebles'
-            img={cat3}
-          />
-        </Container>
+        <Section title='Categorias de nuestros productos'>
+          <div className={styles.categorySection}>
+            <CategoryTile
+              tag='textil'
+              img={cat1}
+            />
+            <CategoryTile
+              tag='pintura'
+              img={cat2}
+            />
+            <CategoryTile
+              tag='muebles'
+              img={cat3}
+            />
+          </div>
+        </Section>
 
         <Values />
         <div className="wrapper">
