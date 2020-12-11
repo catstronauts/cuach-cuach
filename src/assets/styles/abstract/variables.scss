@@ -11,6 +11,7 @@ $pinkDark: #d9415d;
 
 $text-white: $white;
 $text-black: #31383f;
+$text-main: $text-black;
 
 /* -------------- */
 /* --- Colors --- */
@@ -19,11 +20,14 @@ $color-main: $blue;
 $color-main-text: $text-white;
 $color-main-dark: darken($color-main, 7%);
 $color-main-darker: darken($color-main, 15%);
+$color-main-light: lighten($color-main, 10%);
+$color-main-lighter: lighten($color-main, 20%);
 
 $color-sec: $yellow;
 $color-sec-text: $text-black;
 $color-sec-dark: darken($color-sec, 20%);
 $color-sec-darker: darken($color-sec, 40%);
+$color-sec-light: lighten($color-sec, 15%);
 $color-sec-lighter: lighten($color-sec, 30%);
 
 $color-status-success: $green;
