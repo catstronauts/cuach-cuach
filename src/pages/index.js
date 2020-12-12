@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 // import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
 import CategoryTile from '@components/CategoryTile';
-import HeroSection from '@components/HeroSection';
+import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
 import Section from '@layouts/Section';
 import img from '@assets/images/hero1.png';
@@ -14,6 +14,8 @@ import styles from './index.module.scss';
 import cat1 from '@assets/images/category.jpg';
 import cat2 from '@assets/images/category2.jpg';
 import cat3 from '@assets/images/category.jpg';
+import aboutImg from '@assets/images/cuachcuach.jpg';
+import About from '../ui/pages/home/About';
 
 const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -31,7 +33,7 @@ const Home = (props) => {
         <Helmet title={siteTitle} />
     
         {/* Category section */}
-        <Section title='Categorias de nuestros productos'>
+        <Section title='Nuestras líneas de trabajo'>
           <div className={styles.categorySection}>
             <CategoryTile
               tag='textil'
@@ -47,6 +49,16 @@ const Home = (props) => {
             />
           </div>
         </Section>
+
+        {/* About Section */}
+        {/* <Section title='Acerca del taller Cuach Cuach'> */}
+          <About
+            img={aboutImg}
+            title='Taller Cuach Cuach'
+            text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
+            href='www.facebook.com'
+          />
+        {/* </Section> */}
 
         <Values />
 
