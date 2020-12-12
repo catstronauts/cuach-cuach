@@ -5,11 +5,13 @@ import { Helmet } from 'react-helmet';
 // import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
 import Categories from '@ui/pages/home/Categories';
-import HeroSection from '@components/HeroSection';
+import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
 import Section from '@layouts/Section';
 import img from '@assets/images/hero1.png';
 import ArticlePreview from '@components/CardArticle';
+import aboutImg from '@assets/images/cuachcuach.jpg';
+import { About } from '@ui/pages/home/About';
 
 const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -26,7 +28,17 @@ const Home = (props) => {
       <div>
         <Helmet title={siteTitle} />
 
+        {/* Category section */}
         <Categories />
+
+        {/* About Section */}
+        <About
+          img={aboutImg}
+          title='Taller Cuach Cuach'
+          text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
+          href='www.facebook.com'
+        />
+
         <Values />
 
         <Section title="Recent articles">
