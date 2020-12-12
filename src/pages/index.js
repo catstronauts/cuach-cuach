@@ -8,7 +8,6 @@ import Categories from '@ui/pages/home/Categories';
 import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
 import Section from '@layouts/Section';
-import img from '@assets/images/hero1.png';
 import ArticlePreview from '@components/CardArticle';
 import aboutImg from '@assets/images/cuachcuach.jpg';
 import { About } from '@ui/pages/home/About';
@@ -21,35 +20,30 @@ const Home = (props) => {
 
   return (
     <Layout location={props.location}>
-      <HeroSection
-        img={img}
-        img1={img}
+      <Helmet title={siteTitle} />
+
+      <HeroSection />
+      {/* Category section */}
+      <Categories />
+
+      {/* About Section */}
+      <About
+        img={aboutImg}
+        title='Taller Cuach Cuach'
+        text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
+        href='www.facebook.com'
       />
-      <div>
-        <Helmet title={siteTitle} />
 
-        {/* Category section */}
-        <Categories />
+      <Values />
 
-        {/* About Section */}
-        <About
-          img={aboutImg}
-          title='Taller Cuach Cuach'
-          text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
-          href='www.facebook.com'
-        />
+      <Section title="Recent articles">
+        <ArticlePreview.List>
+          {posts.map(({ node }) => (
+            <ArticlePreview key={node.slug} article={node} />
+          ))}
+        </ArticlePreview.List>
+      </Section>
 
-        <Values />
-
-        <Section title="Recent articles">
-          <ArticlePreview.List>
-            {posts.map(({ node }) => (
-              <ArticlePreview key={node.slug} article={node} />
-            ))}
-          </ArticlePreview.List>
-        </Section>
-
-      </div>
     </Layout>
   );
 };
