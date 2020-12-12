@@ -4,18 +4,13 @@ import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
 // import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
-import CategoryTile from '@components/CategoryTile';
+import Categories from '@ui/pages/home/Categories';
 import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
 import Section from '@layouts/Section';
-import img from '@assets/images/hero1.png';
 import ArticlePreview from '@components/CardArticle';
-import styles from './index.module.scss';
-import cat1 from '@assets/images/category.jpg';
-import cat2 from '@assets/images/category2.jpg';
-import cat3 from '@assets/images/category.jpg';
 import aboutImg from '@assets/images/cuachcuach.jpg';
-import About from '../ui/pages/home/About';
+import { About } from '@ui/pages/home/About';
 
 const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -25,52 +20,30 @@ const Home = (props) => {
 
   return (
     <Layout location={props.location}>
-      <HeroSection
-        img={img}
-        img1={img}
+      <Helmet title={siteTitle} />
+
+      <HeroSection />
+      {/* Category section */}
+      <Categories />
+
+      {/* About Section */}
+      <About
+        img={aboutImg}
+        title='Taller Cuach Cuach'
+        text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
+        href='www.facebook.com'
       />
-      <div>
-        <Helmet title={siteTitle} />
-    
-        {/* Category section */}
-        <Section title='Nuestras líneas de trabajo'>
-          <div className={styles.categorySection}>
-            <CategoryTile
-              tag='textil'
-              img={cat1}
-            />
-            <CategoryTile
-              tag='pintura'
-              img={cat2}
-            />
-            <CategoryTile
-              tag='muebles'
-              img={cat3}
-            />
-          </div>
-        </Section>
 
-        {/* About Section */}
-        {/* <Section title='Acerca del taller Cuach Cuach'> */}
-          <About
-            img={aboutImg}
-            title='Taller Cuach Cuach'
-            text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
-            href='www.facebook.com'
-          />
-        {/* </Section> */}
+      <Values />
 
-        <Values />
+      <Section title="Recent articles">
+        <ArticlePreview.List>
+          {posts.map(({ node }) => (
+            <ArticlePreview key={node.slug} article={node} />
+          ))}
+        </ArticlePreview.List>
+      </Section>
 
-        <Section title="Recent articles">
-          <ArticlePreview.List>
-            {posts.map(({ node }) => (
-              <ArticlePreview key={node.slug} article={node} />
-            ))}
-          </ArticlePreview.List>
-        </Section>
-
-      </div>
     </Layout>
   );
 };

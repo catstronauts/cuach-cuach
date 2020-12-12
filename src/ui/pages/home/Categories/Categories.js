@@ -1,14 +1,12 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import useWindowSize from '@hooks/useWindowSize';
 import useGetImg from '@hooks/useGetImg';
 import { Section } from '@layouts/Section';
+import CategoryTile from '@components/CategoryTile';
 import { data as dataValues } from './data';
-import { Slides } from './ValuesSlides';
-import { Carousel } from './ValuesCarousel';
+import styles from './Categories.module.scss';
 
 const ValuesSection = (props) => {
-  const { isDesktop } = useWindowSize();
   const staticQuery = useStaticQuery(query);
   const { getImgFluidByFileName } = useGetImg(staticQuery);
 
@@ -18,11 +16,16 @@ const ValuesSection = (props) => {
   }));
 
   return (
-    <Section title="Values">
-      {isDesktop
-        ? <Carousel data={allData} />
-        : <Slides data={allData} />
-      }
+    <Section title='Categorias de nuestros productossss'>
+      <div className={styles.categorySection}>
+        {allData.map(d => (
+          <CategoryTile
+            key={d.id}
+            tag={d.title}
+            img={d.imgFluid}
+          />
+        ))}
+      </div>
     </Section>
   );
 };
@@ -31,7 +34,7 @@ export default ValuesSection;
 
 const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "images"}, relativeDirectory: {eq: "values"}}){
+    allFile(filter: {sourceInstanceName: {eq: "images"}, relativeDirectory: {eq: "categories"}}){
       edges {
         node {
           id
@@ -39,11 +42,7 @@ const query = graphql`
           childImageSharp {
             fluid {
               base64
-              aspectRatio
-              sizes
               tracedSVG
-              src
-              srcSet
               srcWebp
               srcSetWebp
             }

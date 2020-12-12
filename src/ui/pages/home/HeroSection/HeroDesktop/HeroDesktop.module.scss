@@ -1,10 +1,29 @@
 @import '@styles/abstract';
 
+
+@mixin heroPalet (
+  $c-main: $color-main-lighter,
+  $c-sec: $color-main-light,
+  $bg: lighten($c-main, 30%)
+) {
+  background: $bg;
+
+  .title strong { color: $c-sec; }
+  .btn { background: $c-sec; }
+  .shape_1 { background: $c-main; }
+  .shape_2 { background: $c-sec; }
+}
+
 .hero {
   position: relative;
   min-height: calc(100vh - 74px);
   display: flex;
-  align-items: center
+  align-items: center;
+
+  &, // default scenario
+  &_var1 { @include heroPalet(); }
+  &_var2 { @include heroPalet($pink, $pink-dark, lighten($pink, 7%)); }
+  &_var3 { @include heroPalet($green, $green-dark); }
 }
 
 .container {
@@ -30,7 +49,6 @@
 }
 
 .title {
-  color: $text-main;
   font-size: 4em;
   line-height: 1.4em;
   font-weight: 500;
@@ -41,10 +59,6 @@
     font-size: 1.2em;
     font-weight: 900;
   }
-}
-
-.paragraph {
-  color: $text-main;
 }
 
 .imgContainer {
@@ -94,13 +108,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: $white;
 
   &_item {
     margin: 0 0 16px;
   }
 }
 
-.circle {
+.shape_1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -109,12 +124,24 @@
   // Circle
   // clip-path: circle(600px at right 800px);
   // clip-path: circle(950px at 100% 860px);
-  // Rectangle
+  // Triangle
   clip-path: polygon(105% 0%, 15% 100%, 100% 100%);
   z-index: 1;
 
-  &, // default scenario
-  &_var1 { background: $color-main-light; }
-  &_var2 { background: $pink; }
-  &_var3 { background: $pinkDark; }
+  @include transition(background);
+}
+.shape_2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // Circle
+  // clip-path: circle(600px at right 800px);
+  // clip-path: circle(950px at 100% 860px);
+  // Triangle
+  clip-path: polygon(100% 30%, 15% 100%, 100% 100%);
+  z-index: 1;
+
+  @include transition(background);
 }

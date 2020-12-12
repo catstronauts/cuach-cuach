@@ -4,7 +4,7 @@ import styles from './Slides.module.scss';
 
 const Slides = ({ data = [] }) => data.length
   ? (data.map((value, i) => (
-    <article className={styles.wrapper} key={i}>
+    <article className={styles.wrapper} key={value.id}>
       <div className={styles.index}>
         {`0${(i + 1)}`}
       </div>
