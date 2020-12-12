@@ -41,8 +41,11 @@ const query = graphql`
               base64
               aspectRatio
               sizes
+              tracedSVG
               src
               srcSet
+              srcWebp
+              srcSetWebp
             }
           }
         }

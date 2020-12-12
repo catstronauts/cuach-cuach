@@ -42,10 +42,9 @@ const query = graphql`
           childImageSharp {
             fluid {
               base64
-              aspectRatio
-              sizes
-              src
-              srcSet
+              tracedSVG
+              srcWebp
+              srcSetWebp
             }
           }
         }
