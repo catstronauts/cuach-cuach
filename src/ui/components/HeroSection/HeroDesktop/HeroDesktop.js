@@ -54,7 +54,7 @@ const HeroDesktop = ({ data, className }) => {
               <h2 className={styles.title}>{data.title}</h2>
               <p className={styles.paragraph}>{data.subtitle}</p>
               <a href={data.btnTo}>
-                <Button caption={data.btnTxt} />
+                <Button caption={data.btnTxt} className={styles.btn}/>
               </a>
             </div>
             <div className={styles.imgContainer}>

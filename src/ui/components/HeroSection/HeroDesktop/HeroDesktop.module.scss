@@ -2,9 +2,14 @@
 
 
 @mixin heroPalet (
-  $c-main: $color-main-light,
-  $c-sec: $color-main-lighter
+  $c-main: $color-main-lighter,
+  $c-sec: $color-main-light,
+  $bg: lighten($c-main, 30%)
 ) {
+  background: $bg;
+
+  .title strong { color: $c-sec; }
+  .btn { background: $c-sec; }
   .shape_1 { background: $c-main; }
   .shape_2 { background: $c-sec; }
 }
@@ -17,8 +22,8 @@
 
   &, // default scenario
   &_var1 { @include heroPalet(); }
-  &_var2 { @include heroPalet($pink, purple); }
-  &_var3 { @include heroPalet($pinkDark, orange); }
+  &_var2 { @include heroPalet($pink, $pink-dark, lighten($pink, 7%)); }
+  &_var3 { @include heroPalet($green, $green-dark); }
 }
 
 .container {
@@ -44,7 +49,6 @@
 }
 
 .title {
-  color: $text-main;
   font-size: 4em;
   line-height: 1.4em;
   font-weight: 500;
@@ -55,10 +59,6 @@
     font-size: 1.2em;
     font-weight: 900;
   }
-}
-
-.paragraph {
-  color: $text-main;
 }
 
 .imgContainer {
