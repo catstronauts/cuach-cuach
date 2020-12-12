@@ -1,0 +1,13 @@
+@import '@styles/abstract';
+
+.categorySection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 0;
+
+  @include bp-md {
+    flex-direction: row;    
+  }
+}

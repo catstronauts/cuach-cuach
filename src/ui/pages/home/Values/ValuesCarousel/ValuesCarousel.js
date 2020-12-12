@@ -41,7 +41,7 @@ const Options = ({ data = [], active, onClickOption }) => (
   <ul className={styles.options}>
     {data.map((value, i) => (
       <li
-        key={i}
+        key={value.id}
         onClick={() => onClickOption(i)}
         className={classnames(
           styles.options_item,

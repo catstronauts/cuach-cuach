@@ -5,7 +5,9 @@ import List from './CardArticle.List';
 
 import styles from './CardArticle.module.scss';
 
-const CardArticle = ({ article }) => (
+const CardArticle = ({ article }) => {
+  console.log(article.heroImage.fluid)
+  return (
   <li>
     <div className={styles.preview}>
       <Img alt="" fluid={article.heroImage.fluid} />
@@ -21,6 +23,7 @@ const CardArticle = ({ article }) => (
     </div>
   </li>
 );
+      };
 
 CardArticle.List = List;
 
