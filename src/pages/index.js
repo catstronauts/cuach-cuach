@@ -55,7 +55,7 @@ const Home = (props) => {
           <About
             img={aboutImg}
             title='Taller Cuach Cuach'
-            text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura e invitar también a quienes eligen nuestro trabajo a ser concientes y respetuosos con nuestro entorno.'
+            text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
             href='www.facebook.com'
           />
         {/* </Section> */}
