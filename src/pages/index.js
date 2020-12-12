@@ -14,7 +14,7 @@ import styles from './index.module.scss';
 import cat1 from '@assets/images/category.jpg';
 import cat2 from '@assets/images/category2.jpg';
 import cat3 from '@assets/images/category.jpg';
-import aboutImg from '@assets/images/taller.jpg';
+import aboutImg from '@assets/images/cuachcuach.jpg';
 import About from '../ui/pages/home/About';
 
 const Home = (props) => {
