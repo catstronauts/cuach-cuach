@@ -1,0 +1,58 @@
+@import '@styles/abstract';
+
+$img-width: 250px;
+
+.title {
+  @include sectionTitle;
+}
+
+.subtitle {
+  @include sectionSubtitle;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.card {
+  padding: 0 30px;
+}
+
+.cardImgWrapper {
+  width: $img-width;
+  height: $img-width;
+  margin: auto;
+  padding: 35px 0;
+}
+
+.cardImg {
+  width: 100%;
+  height: $img-width;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cardText {
+  max-width: 300px;
+}
+
+.name {
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.job {
+  font-size: 18px;
+  padding: 5px 0 3px 0;
+}
+
+
+.description {
+  font-size: 16px;
+  color: $grey-dark;
+}
