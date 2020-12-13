@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import Values from '@ui/pages/home/Values';
 import Categories from '@ui/pages/home/Categories';
 import HeroSection from '@ui/pages/home/HeroSection';
+import Us from '@ui/pages/home/Us';
 import Layout from '@layouts';
 import Section from '@layouts/Section';
 import ArticlePreview from '@components/CardArticle';
@@ -33,6 +34,17 @@ const Home = (props) => {
         text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
         href='www.facebook.com'
       />
+
+      {/* Us Section */}
+      
+      <Section title='Quienes somos'>
+        <Us
+          title='Nosotros'
+          subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        >
+      
+        </Us>
+      </Section>
 
       <Values />
 

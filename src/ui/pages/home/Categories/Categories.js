@@ -16,7 +16,7 @@ const ValuesSection = (props) => {
   }));
 
   return (
-    <Section title='Categorias de nuestros productossss'>
+    <Section title='Nuestras líneas de trabajo'>
       <div className={styles.categorySection}>
         {allData.map(d => (
           <CategoryTile
