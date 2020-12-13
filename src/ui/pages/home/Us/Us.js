@@ -12,9 +12,15 @@ const UsCard = ({ img, name, job, description}) => (
       <img className={styles.cardImg} src={img} />
     </div>
     <div className={styles.cardText}>
-      <div className={styles.name}>{name}</div>
-      <div className={styles.job}>{job}</div>
-      <div className={styles.description}>{description}</div>
+      <div className={styles.name}>
+        <h4>{name}</h4>
+      </div>
+      <div className={styles.job}>
+        <h4>{job}</h4>
+      </div>
+      <div className={styles.description}>
+        <p>{description}</p>
+      </div>
     </div>
   </div>
 );

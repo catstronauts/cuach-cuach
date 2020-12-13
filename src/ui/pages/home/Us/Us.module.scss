@@ -11,14 +11,14 @@ $img-width: 250px;
 }
 
 .card {
-  padding: 30px 20px 0 20px;
+  padding: 0 30px;
 }
 
 .cardImgWrapper {
   width: $img-width;
   height: $img-width;
   margin: auto;
-  background: $pink;
+  padding: 35px 0;
 }
 
 .cardImg {
