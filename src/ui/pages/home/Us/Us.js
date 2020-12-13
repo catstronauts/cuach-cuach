@@ -33,19 +33,19 @@ const Us = ({ title, subtitle }) => (
       <UsCard
         name= 'Pame'
         job='Yo soy Cuach Cuach'
-        description= 'We’re united with our community to create a world where anyone can belong anywhere.'
+        description= 'We’re united with our community to create a world where anyone can belonge.'
         img= {pame}
       />
       <UsCard
         name= 'Lea'
         job='Yo soy Cuach Cuach'
-        description= 'We’re united with our community to create a world where anyone can belong anywhere.'
+        description= 'We’re united with our community to create a world where anyone can belong.'
         img= {lea}
       />
       <UsCard
         name= 'Chelenko'
         job='Modelo y bebé'
-        description= 'We’re united with our community to create a world where anyone can belong anywhere.'
+        description= 'We’re united with our community to create a world where anyone can belong.'
         img= {chelenko}
       />
     </div>
