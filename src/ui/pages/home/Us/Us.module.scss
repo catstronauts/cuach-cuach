@@ -2,12 +2,21 @@
 
 $img-width: 250px;
 
+.title {
+  @include sectionTitle;
+}
+
+.subtitle {
+  @include sectionSubtitle;
+}
+
 .cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  padding-top: 20px;
 }
 
 .card {
@@ -32,3 +41,18 @@ $img-width: 250px;
   max-width: 300px;
 }
 
+.name {
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.job {
+  font-size: 18px;
+  padding: 5px 0 3px 0;
+}
+
+
+.description {
+  font-size: 16px;
+  color: $grey-dark;
+}
