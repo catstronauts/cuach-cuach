@@ -145,3 +145,15 @@
     background: $main;
   }
 }
+
+@mixin sectionTitle {
+  margin: 0 0 16px;
+  font-size: 48px;
+  line-height: 1.2;
+  color: $color-main;
+}
+
+@mixin sectionSubtitle {
+  font-size: 18px;
+}
+

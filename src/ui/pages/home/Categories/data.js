@@ -1,15 +1,15 @@
 
 export const data = [
   {
-    title: 'Textil',
+    title: 'manufactura',
     imgName: 'category_01.jpg',
   },
   {
-    title: 'Pintura',
+    title: 'arte',
     imgName: 'category_02.jpg',
   },
   {
-    title: 'Muebles',
+    title: 'arquitectura',
     imgName: 'category_03.jpg',
   },
 ];
