@@ -37,12 +37,11 @@ const Home = (props) => {
 
       {/* Us Section */}
       
-      <Section title='Quienes somos'>
+      <Section title='Quién está detrás de Cuach Cuach'>
         <Us
           title='Nosotros'
           subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         >
-      
         </Us>
       </Section>
 
