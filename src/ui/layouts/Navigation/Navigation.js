@@ -13,7 +13,7 @@ const menuItems = [
     caption: 'Blog',
   },
   {
-    to: '/',
+    to: '/about',
     caption: 'About',
   },
   {
