@@ -1,15 +1,13 @@
 import React from 'react';
-// import Img from 'gatsby-image';
+import Img from 'gatsby-image';
 import styles from './Us.module.scss';
-// import { data as dataValues } from './data';
-import pame from '@assets/images/pame.jpg';
-import lea from '@assets/images/lea.jpg';
-import chelenko from '@assets/images/chelenko.jpg';
 
-const UsCard = ({ img, name, job, description}) => (
+const UsCard = ({ name, job, description, imgFluid }) => (
   <div className={styles.card}>
     <div className={styles.cardImgWrapper}>
-      <img className={styles.cardImg} src={img} />
+      {imgFluid &&
+        <Img className={styles.cardImg} alt={name} fluid={imgFluid} />
+      }
     </div>
     <div className={styles.cardText}>
       <div className={styles.name}>
@@ -25,31 +23,22 @@ const UsCard = ({ img, name, job, description}) => (
   </div>
 );
 
-const Us = ({ title, subtitle }) => (
+const Us = ({ title, subtitle, authors = [] }) => (
   <div className={styles.us}>
     <h2 className={styles.title}>{title}</h2>
     <p className={styles.subtitle}>{subtitle}</p>
     <div className={styles.cards}>
-      <UsCard
-        name= 'Pame'
-        job='Yo soy Cuach Cuach'
-        description= 'We’re united with our community to create a world where anyone can belonge.'
-        img= {pame}
-      />
-      <UsCard
-        name= 'Lea'
-        job='Yo soy Cuach Cuach'
-        description= 'We’re united with our community to create a world where anyone can belong.'
-        img= {lea}
-      />
-      <UsCard
-        name= 'Chelenko'
-        job='Modelo y bebé'
-        description= 'We’re united with our community to create a world where anyone can belong.'
-        img= {chelenko}
-      />
+      {authors.map((author = {}) => (
+        <UsCard
+          key={author.id}
+          name={author.name}
+          job={author.title}
+          description={author.shortBio}
+          imgFluid={author.imgFluid}
+        />
+      ))}
     </div>
   </div>
 );
- 
+
 export default Us;

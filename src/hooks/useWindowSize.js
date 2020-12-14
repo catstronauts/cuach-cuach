@@ -13,10 +13,17 @@ export const MQ = {
   DESK: 1100,
 };
 
-const getSize = () => ({
-  x: window.innerWidth,
-  y: window.innerHeight,
-});
+// Return {} for window when unsing gatsbyBuild
+const getWindow = () => (typeof window === 'undefined') ? {} : window;
+
+const getSize = () => {
+  const w = getWindow();
+
+  return ({
+    x: w.innerWidth,
+    y: w.innerHeight,
+  });
+};
 
 /**
  * Gets the window size and listens for resizes
@@ -32,7 +39,7 @@ const useWindowSize = () => {
     setSize(getSize());
   };
 
-  useEventListener('resize', handleResize, window);
+  useEventListener('resize', handleResize, getWindow());
 
   return {
     size,

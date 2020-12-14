@@ -4,8 +4,7 @@ import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
-import Us from '@ui/pages/home/Us';
-// import ArticlePreview from '@components/CardArticle';
+import ArticlePreview from '@components/CardArticle';
 import styles from './blog.module.scss';
 
 const BlogIndex = (props) => {
@@ -17,23 +16,13 @@ const BlogIndex = (props) => {
       <Helmet title={siteTitle} />
       <div className={styles.hero}>Blog</div>
 
-      {/* Us Section */}
-      <Section title='Quién está detrás de Cuach Cuach'>
-        <Us
-          title='Nosotros'
-          subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-        >
-        </Us>
-      </Section>
-
-
-      {/* <Section title="Recent articles">
+      <Section title="Recent articles">
         <ArticlePreview.List>
           {posts.map(({ node }) => (
             <ArticlePreview key={node.slug} article={node} />
           ))}
         </ArticlePreview.List>
-      </Section> */}
+      </Section>
     </Layout>
   );
 };
