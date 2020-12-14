@@ -28,7 +28,7 @@ const dataIcons = [
 
 const ThumbListImg = ({ thumbImg, onClick }) => (
   <li className={styles.liThumb} onClick={onClick}>
-    <img className={styles.thumbImg} src={thumbImg} />
+    <img className={styles.thumbImg} src={thumbImg} role="presentation" />
   </li>
 );
 
@@ -58,7 +58,7 @@ const HeroDesktop = ({ data, className }) => {
               </a>
             </div>
             <div className={styles.imgContainer}>
-              <img className={styles.img} src={img} />
+              <img className={styles.img} src={img} role="presentation" />
             </div>
           </div>
           <div className={styles.thumbWrapper}>
