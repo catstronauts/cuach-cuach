@@ -13,7 +13,7 @@ const BlogIndex = ({ data = {} }) => {
   const authors = siteAuthors.map((auth = {}) => ({
     ...auth?.node,
     shortBio: auth?.node?.shortBio?.shortBio || '',
-    imgFluid: auth?.node?.heroImage?.fluid || {},
+    imgFluid: auth?.node?.image?.fluid || {},
   }));
 
   return (
@@ -47,7 +47,7 @@ export const pageQuery = graphql`
             shortBio
           }
           title
-          heroImage: image {
+          image {
             fluid(
               maxWidth: 350
               maxHeight: 350

@@ -40,11 +40,8 @@ const query = graphql`
           id
           base
           childImageSharp {
-            fluid {
-              base64
-              tracedSVG
-              srcWebp
-              srcSetWebp
+            fluid(quality: 60, maxWidth: 350) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
