@@ -14,7 +14,7 @@
 //   }
 // }
 
-@mixin bp-xs { @media (max-width: $bp_xs) { @content; }}
+@mixin bp-xs { @media (min-width: $bp_xs) { @content; }}
 @mixin bp-sm { @media (min-width: $bp_sm) { @content; }}
 @mixin bp-md { @media (min-width: $bp_md) { @content; }}
 @mixin bp-lg { @media (min-width: $bp_lg) { @content; }}
@@ -46,7 +46,9 @@
   $duration: $transition-duration,
   $timing: $transition-timing
 ) {
-  will-change: $property;
+  @if $property != all {
+    will-change: $property;
+  }
   transition: $property $duration $timing;
 }
 
@@ -144,8 +146,15 @@
   }
 }
 
-@mixin vertical-align {
-  display: flex;
-  flex-grow: 1;
-  align-self: center;
+@mixin sectionTitle {
+  margin: 0 0 16px;
+  font-size: 48px;
+  line-height: 1.2;
+  color: $color-main;
+  font-weight: bold;
 }
+
+@mixin sectionSubtitle {
+  font-size: 18px;
+}
+

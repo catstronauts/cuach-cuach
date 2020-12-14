@@ -2,9 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
-import styles from './blog.module.css';
 import Layout from '@layouts';
+import { Section } from '@layouts/Section';
 import ArticlePreview from '@components/CardArticle';
+import styles from './blog.module.scss';
 
 const BlogIndex = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
@@ -12,20 +13,16 @@ const BlogIndex = (props) => {
 
   return (
     <Layout location={props.location}>
-      <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
-        <div className={styles.hero}>Blog</div>
-        <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => (
-              <li key={node.slug}>
-                <ArticlePreview article={node} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <Helmet title={siteTitle} />
+      <div className={styles.hero}>Blog</div>
+
+      <Section title="Recent articles">
+        <ArticlePreview.List>
+          {posts.map(({ node }) => (
+            <ArticlePreview key={node.slug} article={node} />
+          ))}
+        </ArticlePreview.List>
+      </Section>
     </Layout>
   );
 };

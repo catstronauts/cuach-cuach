@@ -1,0 +1,23 @@
+@import "@styles/abstract";
+
+.btn {
+  font-size: 16px;
+  padding: 12px 32px;
+  font-weight: 600;
+  background: $color-main;
+  color: $color-main-text;
+  border: none;
+  border-radius: $border-radius;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  @include transition(all);
+
+  &:hover {
+    background: $color-main-dark;
+  }
+}
+
+.disabled {
+
+}

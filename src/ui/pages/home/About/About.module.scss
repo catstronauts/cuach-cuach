@@ -1,0 +1,80 @@
+@import '@styles/abstract';
+
+.about {
+  position: relative;
+  margin: auto;
+  max-width: 1440px;
+
+  @include bp-lg {
+    height: 543px;
+    margin-bottom: 96px;
+  }
+}
+
+.imgWrapper {
+
+  @include bp-lg {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.img {
+  width: 100%;
+  max-width: 818px;
+  object-fit: cover;
+  margin: auto;
+  max-height: 543px;
+
+  @include bp-lg {
+    width: 818px;
+  }
+}
+
+.background {
+
+  @include bp-lg {
+    background:  $color-main-light;
+    position: absolute;
+    top: 25%;
+    right: 12.5%;
+    bottom: -50px;
+    left: 0;
+  }
+}
+
+.text {
+  margin: auto;
+  width: 85%;
+  max-width: 600px;
+  padding-top: 20px;
+
+  @include bp-lg {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 400px;
+    padding: 56px 64px 56px 88px;
+    background-color: #fff;
+    transform: translateY(-50%);
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 2.1em;
+  color: $color-main;
+  font-weight: 600;
+
+  @include bp-lg {
+    font-size: 2.5em;
+  }
+}
+
+.paragraph {
+  margin: 0;
+  font-size: 18px;
+  padding: 15px 0;
+  line-height: 30px;
+}

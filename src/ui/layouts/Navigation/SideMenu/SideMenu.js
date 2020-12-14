@@ -8,7 +8,6 @@ import Overlay from './SideMenu.Overlay';
 import Panel from './SideMenu.Panel';
 import styles from './SideMenu.module.scss';
 
-
 const SideMenu = ({ options, className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,10 +20,10 @@ const SideMenu = ({ options, className }) => {
       id='navigation'
       className={classnames(
         styles.nav,
-        className,
+        className
       )}
       role="navigation"
-      >
+    >
       <Container>
         <div className={styles.content}>
           <Link className={styles.logo} to="/">

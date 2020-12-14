@@ -2,44 +2,51 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
-import Hero from '@components/Hero';
+// import Hero from '@components/Hero';
+import Values from '@ui/pages/home/Values';
+import Categories from '@ui/pages/home/Categories';
+import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
+import Section from '@layouts/Section';
 import ArticlePreview from '@components/CardArticle';
-import styles from './index.module.scss';
+import aboutImg from '@assets/images/cuachcuach.jpg';
+import { About } from '@ui/pages/home/About';
 
-const RootIndex = (props) => {
+const Home = (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
   const posts = get(props, 'data.allContentfulBlogPost.edges');
-  const [author = {}] = get(props, 'data.allContentfulPerson.edges');
-  const { name, title, shortBio, heroImage } = author.node;
 
   return (
     <Layout location={props.location}>
-      <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
-        <Hero img={heroImage.fluid} imgAlt={name}>
-          <div className={styles.heroDetails}>
-            <h3 className={styles.heroHeadline}>{name}</h3>
-            <p className={styles.heroTitle}>{title}</p>
-            <p>{shortBio.shortBio}</p>
-          </div>
-        </Hero>
-        <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => (
-              <li key={node.slug}>
-                <ArticlePreview article={node} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <Helmet title={siteTitle} />
+
+      <HeroSection />
+      {/* Category section */}
+      <Categories />
+
+      {/* About Section */}
+      <About
+        img={aboutImg}
+        title='Taller Cuach Cuach'
+        text='Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.'
+        href='www.facebook.com'
+      />
+
+      <Values />
+
+      <Section title="Recent articles">
+        <ArticlePreview.List>
+          {posts.map(({ node }) => (
+            <ArticlePreview key={node.slug} article={node} />
+          ))}
+        </ArticlePreview.List>
+      </Section>
+
     </Layout>
   );
 };
 
-export default RootIndex;
+export default Home;
 
 export const pageQuery = graphql`
   query HomeQuery {
@@ -58,29 +65,6 @@ export const pageQuery = graphql`
           description {
             childMarkdownRemark {
               html
-            }
-          }
-        }
-      }
-    }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      edges {
-        node {
-          name
-          shortBio {
-            shortBio
-          }
-          title
-          heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
-            ) {
-              ...GatsbyContentfulFluid_tracedSVG
             }
           }
         }

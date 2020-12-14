@@ -5,7 +5,7 @@ import styles from './SideMenu.module.scss';
 const Overlay = ({ isOpen, onClose }) => (
   <div className={classnames(
     styles.overlay,
-    isOpen && styles.overlay__isOpen,
+    isOpen && styles.overlay__isOpen
   )}
   onClick={onClose}
   />

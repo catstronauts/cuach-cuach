@@ -1,0 +1,15 @@
+@import "@styles/abstract";
+
+.socialLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: inline-block;
+  margin-right: 10px;
+  &:last-child {
+    margin: 0;
+  }
+}

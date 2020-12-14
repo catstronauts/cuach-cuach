@@ -1,39 +1,45 @@
 $black: #222;
 $white: #fefefe;
-$white-dark: #bbb;
+$white-dark: #ebebeb;
 $grey: #bbb;
+$grey-dark: #6d6a6a;
 $red: red;
-$green: #329232;
+$green: #cddc39;
+$green-dark: #8bc34a;
 $yellow: #ffe354;
 $blue: #1780C6;
 $pink: #f2cece;
-$pinkDark: #d9415d;
+$pink-dark: #ef637c;
 
 $text-white: $white;
 $text-black: #31383f;
+$text-main: $text-black;
 
 /* -------------- */
 /* --- Colors --- */
 /* -------------- */
 $color-main: $blue;
-$color-main-text: $text-black;
-$color-main-dark: darken($color-main, 20%);
-$color-main-darker: darken($color-main, 40%);
+$color-main-text: $text-white;
+$color-main-dark: darken($color-main, 7%);
+$color-main-darker: darken($color-main, 15%);
+$color-main-light: lighten($color-main, 10%);
+$color-main-lighter: lighten($color-main, 20%);
 
 $color-sec: $yellow;
 $color-sec-text: $text-black;
 $color-sec-dark: darken($color-sec, 20%);
 $color-sec-darker: darken($color-sec, 40%);
+$color-sec-light: lighten($color-sec, 15%);
 $color-sec-lighter: lighten($color-sec, 30%);
-
 
 $color-status-success: $green;
 $color-status-error: $red;
 
+
 /* -------------- */
 /* --- Others --- */
 /* -------------- */
-$border-radius: 2px;
+$border-radius: 4px;
 $border-style: solid;
 $border-width: 1px;
 $border-color: $color-main;
@@ -56,6 +62,7 @@ $font-family-title: 'Aleo', serif;
 /* ********************* */
 /* -- 2. Breakpoints --- */
 /* ********************* */
+$bp_xxs:480px !default;
 $bp_xs: 767px !default;
 $bp_sm: $bp_xs + 1 !default;
 $bp_md: 992px !default;

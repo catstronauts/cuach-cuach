@@ -1,7 +1,35 @@
+@import "@styles/abstract";
+
 .footer {
-  background: #cacaca;
-  height: 70px;
   width: 100%;
-  margin: auto;
-  text-align: center;
+  padding: 14px 0;
+  text-align: center;  
+  border-top: 1px solid $grey;
+  background: $white-dark;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include bp-sm {
+    flex-direction: row;
+  }
+}
+
+.companyDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+
+  @include bp-sm {
+    margin-bottom: 0;
+  }
+}
+.img {
+  width: 40px;
+  margin-right: 12px;
 }

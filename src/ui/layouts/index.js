@@ -1,17 +1,42 @@
-import React from 'react';
-import Footer from './Footer';
-import { Container } from './Container';
-import { Navigation } from './Navigation';
-import './base.scss';
+import React, { createContext } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import get from 'lodash/get';
+import Footer from '@layouts/Footer';
+import { Navigation } from '@layouts/Navigation';
 
-const Template = ({ children }) => (
-  <>
-    <Navigation />
-    <Container>
+export const AppContext = createContext({});
+
+const Template = ({ children }) => {
+  const data = useStaticQuery(query);
+  const socialMedia = get(data, 'allContentfulSocialMedia.edges', []);
+  const appState = {
+    socialLinks: socialMedia.map((sm = {}) => sm.node || {}),
+  };
+
+  return (
+    <AppContext.Provider value={appState}>
+      <Navigation />
       {children}
-    </Container>
-    <Footer />
-  </>
-);
+      <Footer />
+    </AppContext.Provider>
+  );
+};
 
 export default Template;
+
+const query = graphql`
+  query {
+    allContentfulSocialMedia {
+      totalCount
+      pageInfo {
+        perPage
+      }
+      edges {
+        node {
+          type
+          url
+        }
+      }
+    }
+  }
+`;

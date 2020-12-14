@@ -1,0 +1,45 @@
+@import '@styles/abstract';
+
+.mobile {
+  min-height: calc(100vh - 70px);
+}
+
+.img {
+
+  min-height: 200px;
+  @include bg-cover;
+}
+
+.text {
+  padding: 20px 35px;
+
+  @include bp-md {
+    max-width: 450px;
+    margin: auto;
+    padding-top: 50px;
+  }
+}
+
+.title {
+  font-size: 1.6em;
+  line-height: 40px;
+  margin: 0;
+
+  strong {
+    display: block;
+    color: $color-main;
+    font-size: 1.5em;
+    font-weight: 900;
+  }
+
+  @include bp-md {
+    font-size: 1.9em;
+  }
+}
+
+.paragraph{
+
+  @include bp-md {
+    font-size: 1.2em;
+  }
+}

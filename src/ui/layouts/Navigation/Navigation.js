@@ -1,38 +1,32 @@
 import React from 'react';
+import useWindowSize from '@hooks/useWindowSize';
 import { NavigationBar } from './NavigationBar';
 import { SideMenu } from './SideMenu';
-import styles from './Navigation.module.scss';
 
 const menuItems = [
   {
-    to: "/",
-    caption: "Home",
+    to: '/',
+    caption: 'Home',
   },
   {
-    to: "/blog/",
-    caption: "Blog",
+    to: '/blog/',
+    caption: 'Blog',
   },
   {
-    to: "/",
-    caption: "About",
+    to: '/about',
+    caption: 'About',
   },
   {
-    to: "/",
-    caption: "Contáctanos",
+    to: '/',
+    caption: 'Contáctanos',
   },
 ];
 
-const Navigation = () => (
-  <>
-    <NavigationBar
-      options={menuItems}
-      className={styles.navigationBar}
-    />
-    <SideMenu
-      options={menuItems}
-      className={styles.sideBar}
-    />
-  </>
-);
+const Navigation = () => {
+  const { isDesktop } = useWindowSize();
 
+  return isDesktop
+    ? <NavigationBar options={menuItems} />
+    : <SideMenu options={menuItems} />;
+};
 export default Navigation;
