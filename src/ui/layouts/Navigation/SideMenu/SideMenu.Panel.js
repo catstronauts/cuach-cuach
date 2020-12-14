@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
-import xIcon from '@assets/images/xIcon.png';
 import { SocialLinks } from '@layouts/SocialLinks';
+import { Icon } from '@components/Icon';
 import styles from './SideMenu.module.scss';
 
 const MenuItem = ({ children, caption, to }) => (
@@ -25,11 +25,11 @@ const Panel = ({ options, isOpen, onClose }) => (
     )}
   >
     <div className={styles.sideMenuContent}>
-      {/* TODO: Temporal fix, uncoment next line and delete dupicated when found same size burger and X icons  */}
-      {/* <div className={styles.menuIcon} onClick={onClose}> */}
-      <div className={styles.xIcon} onClick={onClose}>
-        <img src={xIcon} alt='close icon' />
-      </div>
+      <Icon
+        name='times'
+        className={styles.xIcon}
+        onClick={onClose}
+      />
       <div className={styles.textContent}>
         <div className={styles.navigationMenu}>
           <ul className={styles.navigation}>
