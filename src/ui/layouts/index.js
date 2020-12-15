@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import get from 'lodash/get';
 import Footer from '@layouts/Footer';
 import { Navigation } from '@layouts/Navigation';
+import '@styles/index.scss';
 
 export const AppContext = createContext({});
 
