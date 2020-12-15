@@ -13,12 +13,16 @@ const Icon = ({
   type = 'fas',
   clickable = false,
   className,
+  onClick,
 }) => (
-  <div className={classnames(
-    styles.wrapper,
-    clickable && styles.clickable,
-    className
-  )}>
+  <div
+    onClick={onClick}
+    className={classnames(
+      styles.wrapper,
+      clickable && styles.clickable,
+      className
+    )}
+  >
     <FontAwesomeIcon
       icon={[type, name]}
       className={styles.icon}/>

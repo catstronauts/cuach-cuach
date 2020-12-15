@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import classnames from 'classnames';
 import Container from '@layouts/Container';
 import icon from '@assets/images/icon.png';
-import burger from '@assets/images/burger_menu.png';
+import { Icon } from '@components/Icon';
 import Overlay from './SideMenu.Overlay';
 import Panel from './SideMenu.Panel';
 import styles from './SideMenu.module.scss';
@@ -29,12 +29,14 @@ const SideMenu = ({ options, className }) => {
           <Link className={styles.logo} to="/">
             <img className={styles.img} src={icon} alt='Cuach Cuach logo' />
           </Link>
-          <div className={styles.menuIcon} onClick={toggleClick}>
-            <img src={burger} alt='burger icon' />
-          </div>
+          <Icon
+            name='bars'
+            className={styles.menuIcon}
+            onClick={toggleClick}
+          />
         </div>
       </Container>
-      <Overlay 
+      <Overlay
         isOpen={isOpen}
         onClose={toggleClick}
       />
