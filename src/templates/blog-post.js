@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import get from 'lodash/get';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
@@ -9,12 +8,10 @@ import styles from './blog-post.module.scss';
 
 const BlogPostTemplate = (props) => {
   const post = get(props, 'data.contentfulBlogPost', {});
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
   const { heroImage, title } = post;
 
   return (
-    <Layout location={props.location}>
-      <Helmet title={`${post.title} | ${siteTitle}`} />
+    <Layout pageTitle={post.title}>
       <Hero img={heroImage.fluid} imgAlt={title}/>
       <Section>
         <h1 className={styles.title}>{post.title}</h1>

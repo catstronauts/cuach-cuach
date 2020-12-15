@@ -11,7 +11,7 @@ export const SocialLinks = ({ className, itemClassName }) => {
     <ul className={classnames(styles.socialLinks, className)}>
       {socialLinks.map((link = {}, i) => (
         <li key={i} className={classnames(styles.item, itemClassName)}>
-          <a href={link.url} target="_black">
+          <a href={link.url} target="_black" alt={`link to ${link.type} account`}>
             <IconSocial name={link.type} clickable />
           </a>
         </li>
