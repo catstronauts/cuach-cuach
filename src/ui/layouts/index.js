@@ -20,7 +20,13 @@ const Template = ({ children, pageTitle }) => {
         title={pageTitle
           ? `${pageTitle} | Cuach-Cuach`
           : 'Cuach-Cuach'}
-      />
+        meta={[
+          { name: 'description', content: 'Taller de artesanias cuach-cuach' },
+          { name: 'keywords', content: 'taller, cuachcuach, cuach, textil, manualidades, cuadros' },
+        ]}
+      >
+        <html lang="es" />
+      </Helmet>
       <AppContext.Provider value={appState}>
         <Navigation />
         {children}
