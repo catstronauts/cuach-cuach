@@ -1,12 +1,13 @@
 import React, { createContext } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import get from 'lodash/get';
 import Footer from '@layouts/Footer';
 import { Navigation } from '@layouts/Navigation';
 
 export const AppContext = createContext({});
 
-const Template = ({ children }) => {
+const Template = ({ children, pageTitle }) => {
   const data = useStaticQuery(query);
   const socialMedia = get(data, 'allContentfulSocialMedia.edges', []);
   const appState = {
@@ -14,11 +15,18 @@ const Template = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={appState}>
-      <Navigation />
-      {children}
-      <Footer />
-    </AppContext.Provider>
+    <>
+      <Helmet
+        title={pageTitle
+          ? `${pageTitle} | Cuach-Cuach`
+          : 'Cuach-Cuach'}
+      />
+      <AppContext.Provider value={appState}>
+        <Navigation />
+        {children}
+        <Footer />
+      </AppContext.Provider>
+    </>
   );
 };
 

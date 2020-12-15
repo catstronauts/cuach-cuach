@@ -1,13 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
 import Us from '@ui/pages/home/Us';
 import styles from './blog.module.scss';
 
-const BlogIndex = ({ data = {} }) => {
-  const siteTitle = data?.site?.siteMetadata?.title;
+const BlogIndex = ({ data = {}, ...rest }) => {
   const siteAuthors = data?.allContentfulPerson?.edges || [];
 
   const authors = siteAuthors.map((auth = {}) => ({
@@ -17,8 +15,7 @@ const BlogIndex = ({ data = {} }) => {
   }));
 
   return (
-    <Layout>
-      <Helmet title={siteTitle} />
+    <Layout pageTitle="Quienes somos">
       <div className={styles.hero}>About Us</div>
 
       {/* Us Section */}
