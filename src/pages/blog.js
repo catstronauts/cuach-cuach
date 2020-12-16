@@ -1,19 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
-import { Helmet } from 'react-helmet';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
 import ArticlePreview from '@components/CardArticle';
 import styles from './blog.module.scss';
 
 const BlogIndex = (props) => {
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
   const posts = get(props, 'data.allContentfulBlogPost.edges');
 
   return (
-    <Layout location={props.location}>
-      <Helmet title={siteTitle} />
+    <Layout pageTitle="Blog">
       <div className={styles.hero}>Blog</div>
 
       <Section title="Recent articles">
@@ -40,7 +37,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           description {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
-import { Helmet } from 'react-helmet';
 // import Hero from '@components/Hero';
 import Values from '@ui/pages/home/Values';
 import Categories from '@ui/pages/home/Categories';
@@ -13,12 +12,10 @@ import aboutImg from '@assets/images/cuachcuach.jpg';
 import { About } from '@ui/pages/home/About';
 
 const Home = (props) => {
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
   const posts = get(props, 'data.allContentfulBlogPost.edges');
 
   return (
-    <Layout location={props.location}>
-      <Helmet title={siteTitle} />
+    <Layout pageTitle="Home">
 
       <HeroSection />
       {/* Category section */}
@@ -59,7 +56,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           description {
