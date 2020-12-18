@@ -1,0 +1,78 @@
+@import '@styles/abstract';
+
+.page404 {
+  min-height: calc(100vh - 132px);
+  max-width: 92%;
+  margin: auto;
+
+  @include vertical-align;
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  text-align: center;
+}
+
+.title {
+  max-width: 400px;
+  
+  @include sectionTitle;
+  margin: auto;
+  font-size: 25px;
+}
+
+.title404 {
+  font-size: 55px; 
+}
+
+.paragraph {
+  padding: 15px 0 35px;
+
+  @include sectionSubtitle;
+}
+
+.imagesWrapper {
+  width: 100%;
+  margin: auto;
+  padding-top: 16px;
+
+  @include bp-sm {
+    margin-top: -300px;   
+  }
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 120px;
+  margin: auto;
+
+  @include bp-sm {
+    width: 150px;    
+  }
+}
+
+.img1,
+.img2 {
+  object-fit: cover;
+}
+
+.img1 {
+  @include bp-sm {
+    padding-right: 200px;
+    transform: rotate(-20deg);
+  }
+}
+
+.img2 {
+  @include bp-sm {
+    padding-left: 200px;
+    transform: rotate(10deg);
+  }
+}
