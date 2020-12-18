@@ -1,12 +1,11 @@
 import React from 'react';
 import Layout from '@layouts';
-// import { Section } from '@layouts/Section';
 import Button from '@ui/components/Button';
 import styles from './404.module.scss';
 import img1 from '@assets/images/404_1.png';
 import img2 from '@assets/images/404_2.png'
 
-const NotFound = ({ data = {} }) => (
+const NotFound = () => (
   <Layout>
     <div className={styles.page404}>
       <div className={styles.content}>
@@ -23,9 +22,6 @@ const NotFound = ({ data = {} }) => (
         </div>
       </div>
     </div>
-    {/* <Section title='No results found 😞'>
-      not found
-    </Section> */}
   </Layout>
 );
 
