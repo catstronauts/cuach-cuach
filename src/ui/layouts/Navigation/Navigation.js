@@ -1,25 +1,14 @@
 import React from 'react';
 import useWindowSize from '@hooks/useWindowSize';
+import { LINKS } from '@src/constants';
 import { NavigationBar } from './NavigationBar';
 import { SideMenu } from './SideMenu';
 
 const menuItems = [
-  {
-    to: '/',
-    caption: 'Home',
-  },
-  {
-    to: '/blog/',
-    caption: 'Blog',
-  },
-  {
-    to: '/about',
-    caption: 'About',
-  },
-  {
-    to: '/',
-    caption: 'Contáctanos',
-  },
+  LINKS.HOME,
+  LINKS.BLOG,
+  LINKS.ABOUT,
+  LINKS.CONTACT_US,
 ];
 
 const Navigation = () => {

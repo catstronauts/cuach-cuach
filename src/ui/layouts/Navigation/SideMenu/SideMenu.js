@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { LINKS } from '@src/constants';
 import Container from '@layouts/Container';
 import icon from '@assets/images/icon.png';
 import { Icon } from '@components/Icon';
@@ -26,7 +27,7 @@ const SideMenu = ({ options, className }) => {
     >
       <Container>
         <div className={styles.content}>
-          <Link className={styles.logo} to="/">
+          <Link className={styles.logo} to={LINKS.HOME.to}>
             <img className={styles.img} src={icon} alt='Cuach Cuach logo' />
           </Link>
           <Icon
