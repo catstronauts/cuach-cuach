@@ -14,7 +14,7 @@ const NotFound = () => (
         <div className={styles.text}>
           <h4 className={styles.title}><span className={styles.title404}>404</span><br />Página no encontrada</h4>
           <p className={styles.paragraph}>Ups! Parece que ésta página no existe.</p>
-          <Link className={styles.logo} to={LINKS.HOME.to}>
+          <Link to={LINKS.HOME.to}>
             <Button caption='Volver al Inicio' />
           </Link>
         </div>
