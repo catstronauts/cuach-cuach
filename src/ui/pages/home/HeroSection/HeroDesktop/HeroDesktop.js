@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import thumb1 from '@assets/images/hero1.png';
-import thumb2 from '@assets/images/hero2.png';
-import thumb3 from '@assets/images/hero3.png';
+import thumb1 from '@assets/images/homeHero/hero1.png';
+import thumb2 from '@assets/images/homeHero/hero2.png';
+import thumb3 from '@assets/images/homeHero/hero3.png';
 import { Container } from '@layouts/Container';
 import { SocialLinks } from '@layouts/SocialLinks';
 import Button from '@components/Button';
