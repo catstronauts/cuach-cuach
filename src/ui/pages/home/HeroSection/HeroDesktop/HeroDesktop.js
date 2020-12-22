@@ -1,43 +1,41 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import thumb1 from '@assets/images/hero1.png';
-import thumb2 from '@assets/images/hero2.png';
-import thumb3 from '@assets/images/hero3.png';
+import get from 'lodash/get';
+import Img from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Container } from '@layouts/Container';
 import { SocialLinks } from '@layouts/SocialLinks';
 import Button from '@components/Button';
 import styles from './HeroDesktop.module.scss';
 
 const dataIcons = [
-  {
-    img: thumb1,
-    imgThumb: thumb1,
-    style: styles.hero_var1,
-  },
-  {
-    img: thumb2,
-    imgThumb: thumb2,
-    style: styles.hero_var2,
-  },
-  {
-    img: thumb3,
-    imgThumb: thumb3,
-    style: styles.hero_var3,
-  },
+  { style: styles.hero_var1 },
+  { style: styles.hero_var2 },
+  { style: styles.hero_var3 },
 ];
 
 const ThumbListImg = ({ thumbImg, onClick }) => (
   <li className={styles.liThumb} onClick={onClick}>
-    <img className={styles.thumbImg} src={thumbImg} role="presentation" />
+    <Img
+      role="presentation"
+      className={styles.thumbImg}
+      fluid={thumbImg}
+    />
   </li>
 );
 
 const HeroDesktop = ({ data, className }) => {
-  const [img, setImg] = useState(thumb1);
+  const staticQuery = useStaticQuery(query);
+  const dataa = dataIcons.map((di, i) => ({
+    ...di,
+    img: get(staticQuery, `hero${i + 1}.childImageSharp.fluid`, {}),
+  }));
+
+  const [img, setImg] = useState(dataa[0].img);
   const [variant, setVariant] = useState();
 
   const handleClick = (i) => {
-    const selected = dataIcons[i];
+    const selected = dataa[i];
 
     setImg(selected.img);
     setVariant(selected.style);
@@ -58,15 +56,19 @@ const HeroDesktop = ({ data, className }) => {
               </a>
             </div>
             <div className={styles.imgContainer}>
-              <img className={styles.img} src={img} role="presentation" />
+              <Img
+                className={styles.img}
+                fluid={img}
+                role="presentation"
+              />
             </div>
           </div>
           <div className={styles.thumbWrapper}>
             <ul className={styles.thumb}>
-              {dataIcons.map((d, i) => (
+              {dataa.map((d, i) => (
                 <ThumbListImg
                   key={i}
-                  thumbImg={d.imgThumb}
+                  thumbImg={d.img}
                   onClick={() => handleClick(i)}
                 />
               ))}
@@ -81,5 +83,40 @@ const HeroDesktop = ({ data, className }) => {
     </div>
   );
 };
+
+const query = graphql`
+  query {
+    hero1: file(
+      sourceInstanceName: {eq: "images"},
+      relativePath: {eq: "homeHero/hero1.png"}
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    hero2: file(
+      sourceInstanceName: {eq: "images"},
+      relativePath: {eq: "homeHero/hero2.png"}
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    hero3: file(
+      sourceInstanceName: {eq: "images"},
+      relativePath: {eq: "homeHero/hero3.png"}
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
 
 export default HeroDesktop;
