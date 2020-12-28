@@ -3,7 +3,8 @@
 .about {
   position: relative;
   margin: auto;
-  max-width: 1440px;
+  
+  @include wider-section;
 
   @include bp-lg {
     height: 543px;
