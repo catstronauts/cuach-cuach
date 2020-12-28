@@ -7,10 +7,12 @@ import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
 import Section from '@layouts/Section';
 import ArticlePreview from '@components/CardArticle';
+import CardProduct from '@components/CardProduct';
 import { About } from '@ui/pages/home/About';
 
 const Home = (props) => {
   const posts = get(props, 'data.allContentfulBlogPost.edges');
+  const products = get(props, 'data.allContentfulProduct.edges');
 
   return (
     <Layout pageTitle="Home">
@@ -28,6 +30,14 @@ const Home = (props) => {
         </ArticlePreview.List>
       </Section>
 
+      <Section title="Nuevos Productos">
+        <CardProduct.List>
+          {products.map(({ node }) => (
+            <CardProduct key={node.slug} article={node} />
+          ))}
+        </CardProduct.List>
+      </Section>
+
     </Layout>
   );
 };
@@ -36,7 +46,7 @@ export default Home;
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(limit: 3, sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
           title
@@ -44,6 +54,23 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid
+            }
+          }
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+    }
+    allContentfulProduct(limit: 3) {
+      edges {
+        node {
+          title
+          images {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid
             }

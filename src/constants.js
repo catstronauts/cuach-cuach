@@ -1,7 +1,7 @@
 export const LINKS = {
   HOME: {
     to: '/',
-    caption: 'Home',
+    caption: 'Inicio',
   },
   BLOG: {
     to: '/blog/',
@@ -12,8 +12,8 @@ export const LINKS = {
     caption: 'About',
   },
   CONTACT_US: {
-    to: '/',
-    caption: 'Contáctanos',
+    to: '/contacto',
+    caption: 'Contacto',
   },
 };
 
