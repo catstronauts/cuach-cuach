@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
+import { Container } from '@layouts/Container';
 import Us from '@ui/pages/home/Us';
 import taller from '@assets/images/taller.jpg';
 import styles from './blog.module.scss';
@@ -17,31 +18,33 @@ const AboutPage = ({ data = {}, ...rest }) => {
 
   return (
     <Layout pageTitle="Quienes somos">
-      {/* <div className={styles.hero}>About Us</div> */}
 
       {/* About Section */}
-      <Section title='Sobre Nosotros'>
-        <h2 className={styles.title}>Taller Cuach Cuach</h2>
+      <Container className={styles.about}>
+        <h2 className={styles.title}>Estos somos nosotros</h2>
 
         <div className={styles.content}>
-          <div className={styles.text}>
-            <p className={styles.paragraph}>Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
-            La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
-            At Catcus, we have something for everyone, whether you are a beginner who wants to start out with a few small pots and trays on your windowsill, the 'green fingered' expert or professional landscape gardener, we have the tools for you.<br/>
-            If you have any questions about us, our products or need help with your garden please get in touch with us via our contact us page. There is always someone on hand to take your questions and experts to offer you gardening advice.<br/>
-            Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
-            La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
-           </p>
+          <div className={styles.contentItem}>
+            <div className={styles.text}>
+              <h2 className={styles.subtitle}>Taller Cuach Cuach</h2>
+              <p className={styles.paragraph}>Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
+              La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
+              At Catcus, we have something for everyone, whether you are a beginner who wants to start out with a few small pots and trays on your windowsill, the 'green fingered' expert or professional landscape gardener, we have the tools for you.<br/>
+              If you have any questions about us, our products or need help with your garden please get in touch with us via our contact us page. There is always someone on hand to take your questions and experts to offer you gardening advice.<br/>
+              Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
+              La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
+            </p>
+            </div>
           </div>
-          <div className={styles.imageWrapper}>
+          <div className={styles.contentItem}>
             <img src={taller} />
           </div>
         </div>
-      </Section>
+      </Container>
   
 
       {/* Us Section */}
-      <Section title='Quién está detrás de Cuach Cuach'>
+      <Section className={styles.us} title='Quién está detrás de Cuach Cuach'>
         <Us
           authors={authors}
           title='Nosotros'
