@@ -32,10 +32,26 @@
   @include sectionTitle;
 }
 
+.division {
+  margin: 10px auto;
+  width: 230px;
+  border-color: white;
+}
+
 .subtitle {
   @include sectionTitle;
-  font-size: 35px;
+  font-size: 40px;
   text-align: center;
+  margin: 0 0 23px;
+
+}
+
+.phrase {
+  color: $grey-dark;
+  text-align: center;
+  font-size: 17px;
+  max-width: 300px;
+  margin: 20px auto 0;
 }
 
 .contentItem {
@@ -46,15 +62,19 @@
 }
 
 .text {
-  padding: 0 50px;
   margin: auto;
+  padding: 0 50px 30px;
+
+  @include bp-md {
+    padding: 0 50px;
+  }
 }
 
 .text2 {
   margin: auto;
 
   @include bp-md {
-  padding: 0 0 0 50px;
+    padding: 0 0 0 50px;
   }
 }
 

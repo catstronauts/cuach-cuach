@@ -27,6 +27,8 @@ const AboutPage = ({ data = {}, ...rest }) => {
           <div className={styles.contentItem}>
             <div className={styles.text}>
               <h2 className={styles.subtitle}>Taller Cuach Cuach</h2>
+              <hr className={styles.division} />
+              <p className={styles.phrase}>Amamos lo que hacemos. Bla bla bla blaBla bla bla bla</p>
             </div>
           </div>
           <div className={styles.contentItem}>
