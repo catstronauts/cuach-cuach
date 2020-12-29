@@ -27,6 +27,16 @@ const AboutPage = ({ data = {}, ...rest }) => {
           <div className={styles.contentItem}>
             <div className={styles.text}>
               <h2 className={styles.subtitle}>Taller Cuach Cuach</h2>
+            </div>
+          </div>
+          <div className={styles.contentItem}>
+            <img src={taller} />
+          </div>
+        </div>
+
+        <div className={`${styles.content} ${styles.content2}`}>
+          <div className={styles.contentItem}>
+            <div className={`${styles.text} ${styles.text2}`}>
               <p className={styles.paragraph}>Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
               La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
               At Catcus, we have something for everyone, whether you are a beginner who wants to start out with a few small pots and trays on your windowsill, the 'green fingered' expert or professional landscape gardener, we have the tools for you.<br/>
@@ -37,7 +47,7 @@ const AboutPage = ({ data = {}, ...rest }) => {
             </div>
           </div>
           <div className={styles.contentItem}>
-            <img src={taller} />
+            <img className={styles.img2} src={taller} />
           </div>
         </div>
       </Container>
