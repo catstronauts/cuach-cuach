@@ -146,6 +146,10 @@
   }
 }
 
+@mixin wider-section {
+  max-width: 1440px;
+}
+
 @mixin sectionTitle {
   margin: 0 0 16px;
   font-size: 48px;
