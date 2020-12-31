@@ -7,10 +7,6 @@ export const LINKS = {
     to: '/blog/',
     caption: 'Blog',
   },
-  GALLERY: {
-    to: '/galeria/',
-    caption: 'Galería',
-  },
   ABOUT: {
     to: '/about',
     caption: 'About',
@@ -18,6 +14,22 @@ export const LINKS = {
   CONTACT_US: {
     to: '/contacto',
     caption: 'Contacto',
+  },
+  GALLERY: {
+    to: '/galeria/',
+    caption: 'Galería',
+  },
+  GALLERY_ARTE: {
+    to: '/galeria-arte/',
+    // caption: 'Galería',
+  },
+  GALLERY_TEXTIL: {
+    to: '/galeria-manufactura/',
+    // caption: 'Galería',
+  },
+  GALLERY_ARQUITECTURA: {
+    to: '/galeria-arquitectura/',
+    // caption: 'Galería',
   },
 };
 

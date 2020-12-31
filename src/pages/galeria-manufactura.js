@@ -5,7 +5,7 @@ import Layout from '@layouts';
 import GalleryPage from '@ui/pages/GalleryPage';
 
 const Content = ({ data }) => (
-  <Layout pageTitle={LINKS.GALLERY.caption}>
+  <Layout pageTitle={LINKS.GALLERY_ARQUITECTURA.caption}>
     <GalleryPage title="Gallery" data={data} />
   </Layout>
 );
@@ -13,8 +13,11 @@ const Content = ({ data }) => (
 export default Content;
 
 export const pageQuery = graphql`
-  query GalleryIndexQuery {
+  query GalleryManufacturaQuery {
     allContentfulProduct(
+      filter: {
+        type: {eq: "manufactura"}
+      }
       sort: {
         fields: [createdAt],
         order: DESC

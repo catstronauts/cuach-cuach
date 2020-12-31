@@ -1,3 +1,5 @@
+@import '@styles/abstract';
+
 .hero {
   display: flex;
   justify-content: center;
@@ -7,96 +9,4 @@
   background: #e1e1e1;
   font-size: 2em;
   overflow: hidden;
-}
-@import '@styles/abstract';
-
-.about {
-  padding: 60px 0;
-  @include wider-section; 
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  padding: 40px 0;
-
-  @include vertical-align;
-
-  @include bp-md {
-    flex-direction: row;
-  }
-}
-
-.title {
-  text-align: center;
-  @include sectionTitle;
-}
-
-.division {
-  margin: 10px auto;
-  width: 230px;
-  border-color: white;
-}
-
-.subtitle {
-  @include sectionTitle;
-  font-size: 36px;
-  text-align: center;
-  margin: 0 0 23px;
-
-}
-
-.phrase {
-  color: $grey-dark;
-  text-align: center;
-  font-size: 17px;
-  max-width: 300px;
-  margin: 20px auto 0;
-}
-
-.contentItem {
-  margin: auto;
-  @include bp-md {
-    flex: 1;
-  }
-}
-
-.text {
-  margin: auto;
-  padding: 0 50px 30px;
-
-  @include bp-md {
-    padding: 0 50px;
-  }
-}
-
-.text2 {
-  margin: auto;
-
-  @include bp-md {
-    padding: 0 0 0 50px;
-  }
-}
-
-.content2 {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.img2 {
-  display: none;
-
-  @include bp-md {
-    display: block;
-  }
-}
-
-.paragraph {
-  font-size: 18px;
-  line-height: 30px;
-  white-space: pre-wrap;
-}
-
-.us {
-  background: $white-dark;
 }

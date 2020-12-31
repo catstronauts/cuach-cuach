@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
+import { LINKS } from '@src/constants';
 import Values from '@ui/pages/home/Values';
 import Categories from '@ui/pages/home/Categories';
 import HeroSection from '@ui/pages/home/HeroSection';
@@ -13,7 +14,7 @@ const Home = (props) => {
   const products = get(props, 'data.allContentfulProduct.edges');
 
   return (
-    <Layout pageTitle="Home">
+    <Layout pageTitle={LINKS.HOME.caption}>
 
       <HeroSection />
       <Categories />
