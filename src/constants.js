@@ -7,10 +7,6 @@ export const LINKS = {
     to: '/',
     caption: 'Inicio',
   },
-  BLOG: {
-    to: '/blog/',
-    caption: 'Blog',
-  },
   ABOUT: {
     to: '/about',
     caption: 'About',
@@ -36,9 +32,6 @@ export const LINKS = {
     caption: 'Galería - arquitectura',
   },
 };
-
-export const getArticleUrlBySlug = (slug) =>
-  `${LINKS.BLOG.to}${slug}`;
 
 export const getProductUrlBySlug = (slug) =>
   `${LINKS.GALLERY.to}${slug}`;

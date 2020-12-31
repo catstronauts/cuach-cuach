@@ -2,7 +2,7 @@ import React from 'react';
 import { LINKS } from '@src/constants';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
-import styles from './blog.module.scss';
+import styles from './contacto.module.scss';
 
 const Content = ({ data = {}, ...rest }) => (
   <Layout pageTitle={LINKS.CONTACT_US.caption}>

@@ -5,7 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
 import Hero from '@components/Hero';
-import styles from './blog-post.module.scss';
+import styles from './gallery-article.module.scss';
 
 const BlogPostTemplate = (props) => {
   const post = get(props, 'data.contentfulProduct', {});
