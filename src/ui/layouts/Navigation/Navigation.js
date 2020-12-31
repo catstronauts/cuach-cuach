@@ -7,6 +7,7 @@ import { SideMenu } from './SideMenu';
 const menuItems = [
   LINKS.HOME,
   LINKS.BLOG,
+  LINKS.GALLERY,
   LINKS.ABOUT,
   LINKS.CONTACT_US,
 ];

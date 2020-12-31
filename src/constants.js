@@ -7,6 +7,10 @@ export const LINKS = {
     to: '/blog/',
     caption: 'Blog',
   },
+  GALLERY: {
+    to: '/galeria/',
+    caption: 'Galería',
+  },
   ABOUT: {
     to: '/about',
     caption: 'About',
@@ -19,3 +23,6 @@ export const LINKS = {
 
 export const getArticleUrlBySlug = (slug) =>
   `${LINKS.BLOG.to}${slug}`;
+
+export const getProductUrlBySlug = (slug) =>
+  `${LINKS.GALLERY.to}${slug}`;
