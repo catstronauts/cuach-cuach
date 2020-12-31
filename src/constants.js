@@ -1,4 +1,8 @@
 export const LINKS = {
+  // EXAMPLE: {
+  //   to: 'url name -> this should match with file names at `src/pages/xxxx.js`',
+  //   caption: 'Text to show on labels',
+  // },
   HOME: {
     to: '/',
     caption: 'Inicio',
@@ -20,16 +24,16 @@ export const LINKS = {
     caption: 'Galería',
   },
   GALLERY_ARTE: {
-    to: '/galeria-arte/',
-    // caption: 'Galería',
+    to: '/galeria/arte/',
+    caption: 'Galería - arte',
   },
   GALLERY_TEXTIL: {
-    to: '/galeria-manufactura/',
-    // caption: 'Galería',
+    to: '/galeria/manufactura/',
+    caption: 'Galería - textil',
   },
   GALLERY_ARQUITECTURA: {
-    to: '/galeria-arquitectura/',
-    // caption: 'Galería',
+    to: '/galeria/arquitectura/',
+    caption: 'Galería - arquitectura',
   },
 };
 
