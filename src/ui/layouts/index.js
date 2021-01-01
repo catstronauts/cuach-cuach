@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import get from 'lodash/get';
 import Footer from '@layouts/Footer';
 import { Navigation } from '@layouts/Navigation';
+import styles from './layout.module.scss';
 import '@styles/index.scss';
 
 export const AppContext = createContext({});
@@ -29,9 +30,13 @@ const Template = ({ children, pageTitle }) => {
         <html lang="es" />
       </Helmet>
       <AppContext.Provider value={appState}>
-        <Navigation />
-        {children}
-        <Footer />
+        <div className={styles.page}>
+          <Navigation />
+          <div className={styles.body}>
+            {children}
+          </div>
+          <Footer />
+        </div>
       </AppContext.Provider>
     </>
   );
