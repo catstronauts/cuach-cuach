@@ -39,7 +39,7 @@
   font-weight: 600;
   text-decoration: none;
   letter-spacing: .05em;
-  @include transition(all);
+  @include transition();
 
   &:hover {
     opacity: 0.9;

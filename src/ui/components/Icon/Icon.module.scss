@@ -29,7 +29,7 @@
   opacity: .6;
 
   cursor: pointer;
-  @include transition(all);
+  @include transition();
 
   &:hover {
     color: $white;

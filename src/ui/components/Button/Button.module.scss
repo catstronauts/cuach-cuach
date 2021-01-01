@@ -11,7 +11,7 @@
   text-align: center;
   outline: none;
   cursor: pointer;
-  @include transition(all);
+  @include transition();
 
   &:hover {
     background: $color-main-dark;
