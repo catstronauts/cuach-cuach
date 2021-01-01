@@ -1,9 +1,14 @@
 @import "@styles/abstract";
 
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   flex-direction: row;
   padding: 0;
   margin: 0;
+  border-bottom: $border;
+  background: $white;
 }
 .content {
   display: flex;
@@ -49,9 +54,11 @@
 }
 
 .img {
-  height: 70px;
-  width: 70px;
-  padding-right: 30px;
+  font-size: 48px;
+  height: 1em;
+  width: 1em;
+  // padding-right: 30px;
+  padding: 8px 16px 8px 0;
   margin: auto 0;
 }
 
