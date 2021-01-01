@@ -2,8 +2,13 @@
 
 .divider {
   margin: 10px auto;
-  width: 80%;
+  width: 100%;
   height: 0;
   border: none;
   border-top: $border;
+}
+
+.themed {
+  opacity: .5;
+  border-color: $color-main;
 }
