@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from './CardArticle.module.scss';
+import styles from './CardProduct.module.scss';
 
-const CardArticle = ({ children, className }) => (
+const List = ({ children, className }) => (
   <ul className={classnames(
     styles.list,
     className
@@ -11,4 +11,4 @@ const CardArticle = ({ children, className }) => (
   </ul>
 );
 
-export default CardArticle;
+export default List;

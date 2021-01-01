@@ -6,7 +6,7 @@ import Container from '@layouts/Container';
 import icon from '@assets/images/icon.png';
 import styles from './NavigationBar.module.scss';
 
-const MenuItem = ({children, caption, to}) => (
+const MenuItem = ({ children, caption, to }) => (
   <li className={styles.navigationItem}>
     <Link
       className={styles.link}

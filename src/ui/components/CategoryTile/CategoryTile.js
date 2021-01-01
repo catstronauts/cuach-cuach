@@ -1,17 +1,18 @@
 import React from 'react';
 import classnames from 'classnames';
+import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import styles from './CategoryTile.module.scss';
 
-const CategoryTile = ({ tag, img = {} }, className) => (
+const CategoryTile = ({ tag, linkTo, img = {} }, className) => (
   <div className={classnames(styles.category, className)}>
     <BackgroundImage
       className={styles.imgWrapper}
       fluid={img}
     >
-      <div className={styles.tag}>
+      <Link to={linkTo} className={styles.tag}>
         {tag}
-      </div>
+      </Link>
     </BackgroundImage>
   </div>
 );

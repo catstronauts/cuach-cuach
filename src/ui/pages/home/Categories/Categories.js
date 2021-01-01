@@ -23,6 +23,7 @@ const ValuesSection = (props) => {
             key={d.id}
             tag={d.title}
             img={d.imgFluid}
+            linkTo={d.linkTo}
           />
         ))}
       </div>
