@@ -4,6 +4,7 @@ import { LINKS } from '@src/constants';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
 import { Container } from '@layouts/Container';
+import { Divider } from '@components/Divider';
 import Us from '@ui/pages/home/Us';
 import taller from '@assets/images/taller.jpg';
 import styles from './about.module.scss';
@@ -28,7 +29,7 @@ const AboutPage = ({ data = {}, ...rest }) => {
           <div className={styles.contentItem}>
             <div className={styles.text}>
               <h2 className={styles.subtitle}>Taller Cuach Cuach</h2>
-              <hr className={styles.division} />
+              <Divider className={styles.division} />
               <p className={styles.phrase}>Amamos lo que hacemos. Bla bla bla blaBla bla bla bla</p>
             </div>
           </div>
