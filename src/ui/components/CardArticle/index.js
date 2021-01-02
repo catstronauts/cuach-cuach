@@ -1,4 +1,0 @@
-import CardArticle from './CardArticle';
-
-export default CardArticle;
-export { CardArticle };
