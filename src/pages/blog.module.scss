@@ -1,3 +1,13 @@
+// .hero {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 61.8vh;
+//   max-height: 400px;
+//   background: #e1e1e1;
+//   font-size: 2em;
+//   overflow: hidden;
+// }
 @import '@styles/abstract';
 
 .about {
@@ -25,7 +35,7 @@
 .division {
   margin: 10px auto;
   width: 230px;
-  border-color: $white;
+  border-color: white;
 }
 
 .subtitle {

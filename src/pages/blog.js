@@ -1,24 +1,17 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
-import Values from '@ui/pages/home/Values';
-import Categories from '@ui/pages/home/Categories';
-import HeroSection from '@ui/pages/home/HeroSection';
 import Layout from '@layouts';
-import Section from '@layouts/Section';
+import { Section } from '@layouts/Section';
 import ArticlePreview from '@components/CardArticle';
-import { About } from '@ui/pages/home/About';
+import styles from './blog.module.scss';
 
-const Home = (props) => {
+const BlogIndex = (props) => {
   const posts = get(props, 'data.allContentfulBlogPost.edges');
 
   return (
-    <Layout pageTitle="Home">
-
-      <HeroSection />
-      <Categories />
-      <About />
-      <Values />
+    <Layout pageTitle="Blog">
+      <div className={styles.hero}>Blog</div>
 
       <Section title="Recent articles">
         <ArticlePreview.List>
@@ -27,15 +20,14 @@ const Home = (props) => {
           ))}
         </ArticlePreview.List>
       </Section>
-
     </Layout>
   );
 };
 
-export default Home;
+export default BlogIndex;
 
 export const pageQuery = graphql`
-  query HomeQuery {
+  query BlogIndexQuery {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
