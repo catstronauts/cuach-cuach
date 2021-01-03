@@ -2,6 +2,7 @@ import React from 'react';
 import { LINKS } from '@src/constants';
 import Layout from '@layouts';
 import { Section } from '@layouts/Section';
+import Contact from '@ui/pages/contact/ContactForm';
 import styles from './contacto.module.scss';
 
 const Content = ({ data = {}, ...rest }) => (
@@ -9,7 +10,7 @@ const Content = ({ data = {}, ...rest }) => (
     <div className={styles.hero}>Contacto</div>
 
     <Section title='Formulario de contacto'>
-
+      <Contact />
     </Section>
   </Layout>
 );
