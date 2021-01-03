@@ -3,8 +3,9 @@
 .nav {
   flex-direction: row;
   position: relative;
-  padding: 0;
+  padding: 10px 0;
   margin: 0;
+  border-bottom: $border;
 }
 .content {
   display: flex;
@@ -17,16 +18,15 @@
 }
 
 .img {
-  height: 70px;
-  width: 70px;
+  font-size: 60px;
+  height: 1em;
+  width: 1em;
   padding-right: 30px;
   margin: auto 0;
 }
 
 .menuIcon {
-  position: absolute;
-  top: 0;
-  right: 0;
+  margin: auto 0;
   opacity: 0.8;
   font-size: 32px;
   padding: 12px 0px 0 8px;
@@ -126,9 +126,7 @@
 }
 
 .socialMedia {
-  border-top: 1px solid $color-main-light;
-  margin: 12px auto;
-  padding: 16px 0;;
+  padding: 10px 0;;
   display: flex;
   justify-content: space-between;
 }
