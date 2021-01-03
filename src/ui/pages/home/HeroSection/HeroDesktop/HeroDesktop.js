@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Container } from '@layouts/Container';
 import { SocialLinks } from '@layouts/SocialLinks';
+import Link from '@components/Link';
 import Button from '@components/Button';
 import styles from './HeroDesktop.module.scss';
 
@@ -51,9 +52,9 @@ const HeroDesktop = ({ data, className }) => {
             <div className={styles.text}>
               <h2 className={styles.title}>{data.title}</h2>
               <p className={styles.paragraph}>{data.subtitle}</p>
-              <a href={data.btnTo}>
-                <Button caption={data.btnTxt} className={styles.btn}/>
-              </a>
+              <Link to={data.btnTo}>
+                <Button caption={data.btnTxt} className={styles.btn} />
+              </Link>
             </div>
             <div className={styles.imgContainer}>
               <Img

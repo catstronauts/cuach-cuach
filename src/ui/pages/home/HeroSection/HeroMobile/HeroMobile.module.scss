@@ -38,8 +38,11 @@
 }
 
 .paragraph{
-
   @include bp-md {
     font-size: 1.2em;
   }
+}
+
+.btn {
+  margin: 24px 0 0;
 }
