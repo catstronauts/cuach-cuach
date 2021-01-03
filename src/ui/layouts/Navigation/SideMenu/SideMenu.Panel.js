@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { SocialLinks } from '@layouts/SocialLinks';
+import { Divider } from '@components/Divider';
 import { Icon } from '@components/Icon';
 import styles from './SideMenu.module.scss';
 
@@ -42,6 +43,7 @@ const Panel = ({ options, isOpen, onClose }) => (
             ))}
           </ul>
         </div>
+        <Divider themed />
         <SocialLinks className={styles.socialMedia} />
       </div>
     </div>

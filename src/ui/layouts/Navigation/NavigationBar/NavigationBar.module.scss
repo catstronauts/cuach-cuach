@@ -1,9 +1,14 @@
 @import "@styles/abstract";
 
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   flex-direction: row;
   padding: 0;
   margin: 0;
+  border-bottom: $border;
+  background: $white;
 }
 .content {
   display: flex;
@@ -25,16 +30,31 @@
 }
 
 .link {
+  position: relative;
   color: currentColor;
-  padding: 0 16px;
+  padding: 0 24px;
   height: 100%;
   display: flex;
   align-items: center;
   text-decoration: none;
 
-  &:hover {
-    border-bottom: 2px solid $color-main;
+  &:before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    background: $color-main;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    opacity: 0.5;
+    @include transition();
   }
+
+  &:hover:before {
+    left: 0;
+    right: 0;
+  }
+
 
   &__isActive {
     color: $color-main;
@@ -49,9 +69,10 @@
 }
 
 .img {
-  height: 70px;
-  width: 70px;
-  padding-right: 30px;
+  font-size: 48px;
+  height: 1em;
+  width: 1em;
+  padding: 8px 16px 8px 0;
   margin: auto 0;
 }
 

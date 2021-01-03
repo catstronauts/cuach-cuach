@@ -42,7 +42,7 @@
 /* ---- 3. Others ---- */
 /* ******************* */
 @mixin transition (
-  $property: $transition-duration,
+  $property: all,
   $duration: $transition-duration,
   $timing: $transition-timing
 ) {

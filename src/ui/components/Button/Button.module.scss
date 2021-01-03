@@ -11,13 +11,19 @@
   text-align: center;
   outline: none;
   cursor: pointer;
-  @include transition(all);
+  @include transition();
 
   &:hover,
   &:focus,
   &:active {
     background: $color-main-dark;
   }
+}
+
+// Modifiers
+.block {
+  display: block;
+  width: 100%;
 }
 
 .disabled {

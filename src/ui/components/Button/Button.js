@@ -8,6 +8,7 @@ const Button = ({
   type = 'button',
   className,
   disabled = false,
+  block = false,
   onClick,
 }) => {
   const content = children || caption;
@@ -22,6 +23,7 @@ const Button = ({
       onClick={handleClick}
       className={classnames(
         styles.btn,
+        block && styles.block,
         disabled && styles.disabled,
         className
       )}
