@@ -10,3 +10,24 @@
   font-size: 2em;
   overflow: hidden;
 }
+
+.recentProducts {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include bp-md {
+    flex-direction: row;
+  }
+
+}
+
+.categoryMenu,
+.productsCards {
+  flex: 1;
+  background: red;
+}
+
+.productsCards {
+  flex: 4;
+  background: forestgreen;
+}

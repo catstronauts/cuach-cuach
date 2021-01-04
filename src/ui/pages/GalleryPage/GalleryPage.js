@@ -11,12 +11,25 @@ const GalleryPage = ({ data, title }) => {
     <>
       <div className={styles.hero}>{title}</div>
 
-      <Section title="Recent articles">
-        <CardProduct.List>
-          {products.map(({ node }) => (
-            <CardProduct key={node.slug} article={node} />
-          ))}
-        </CardProduct.List>
+      <Section title="Recent Products">
+        <div className={styles.recentProducts}>
+          <div className={styles.categoryMenu}>
+            <p className={styles.categoryTitle}>Categorías:</p>
+            <ul>
+              <li className={styles.category}>Manufactura</li>
+              <li className={styles.category}>Arte</li>
+              <li className={styles.category}>Arquitectura</li>
+            </ul>
+          
+          </div>
+          <div className={styles.productsCards}>
+            <CardProduct.List>
+              {products.map(({ node }) => (
+                <CardProduct key={node.slug} article={node} />
+              ))}
+            </CardProduct.List>
+          </div>
+        </div>
       </Section>
     </>
   );
