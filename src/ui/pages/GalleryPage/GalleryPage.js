@@ -12,7 +12,7 @@ const GalleryPage = ({ data, title }) => {
       <div className={styles.hero}>{title}</div>
 
       <Section title="Recent Products">
-        <div className={styles.recentProducts}>
+        <div className={styles.products}>
           <div className={styles.categoryMenu}>
             <p className={styles.categoryTitle}>Categorías:</p>
             <ul>

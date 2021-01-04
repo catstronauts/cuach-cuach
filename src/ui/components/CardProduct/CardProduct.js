@@ -7,16 +7,15 @@ import List from './CardProduct.List';
 import styles from './CardProduct.module.scss';
 
 const CardProduct = ({ article }) => {
-  console.log(article);  
 
   return (
     <li>
-      <div className={styles.preview}>
+      <div className={styles.CardProduct}>
         <Img 
           className={styles.image}
           alt={article.title}
           fluid={article.images[0].fluid} />
-        <h3 className={styles.previewTitle}>
+        <h3 className={styles.productTitle}>
           <Link to={getProductUrlBySlug(article.slug)}>{article.title}</Link>
         </h3>
         <span>{

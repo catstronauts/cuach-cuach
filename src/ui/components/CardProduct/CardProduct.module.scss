@@ -1,5 +1,6 @@
-.previewTitle {
+.CardProduct {
   font-size: 1.5em;
+  // width: 100%;
 }
 
 .tag {
@@ -13,12 +14,20 @@
   margin-right: .5em;
 }
 
+.image {
+  object-fit: cover;
+  
+  & > div {
+    padding-bottom: 100% !important;
+  }
+}
+
 /**
  * article grid
  */
  .list {
   margin: 0;
-  padding: 0;
+  padding: 0 30px;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
