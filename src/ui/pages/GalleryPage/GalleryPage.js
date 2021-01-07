@@ -15,12 +15,11 @@ const GalleryPage = ({ data, title }) => {
         <div className={styles.products}>
           <div className={styles.categoryMenu}>
             <p className={styles.categoryTitle}>Categorías:</p>
-            <ul>
-              <li className={styles.category}>Manufactura</li>
-              <li className={styles.category}>Arte</li>
-              <li className={styles.category}>Arquitectura</li>
-            </ul>
-          
+            <div className={styles.categories}>
+              <p className={styles.category}>Manufactura</p>
+              <p className={styles.category}>Arte</p>
+              <p className={styles.category}>Arquitectura</p>
+            </div>
           </div>
           <div className={styles.productsCards}>
             <CardProduct.List>

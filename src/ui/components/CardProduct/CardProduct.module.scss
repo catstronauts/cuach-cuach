@@ -38,14 +38,17 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 5vmin;
+  grid-gap: 15vmin;
 }
 
 
 .productTitle {
-  padding: 20px 0 12px 0px;
-  font-size: 25px;
+  padding: 20px 0 7px 0px;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 28px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
 .title{
@@ -54,9 +57,10 @@
 
 .price {
   font-size: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 3px;
 }
 
 .description {
   white-space: pre-wrap;
+  color: $grey-dark;
 }

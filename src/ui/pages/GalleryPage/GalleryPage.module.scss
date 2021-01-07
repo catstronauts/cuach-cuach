@@ -25,13 +25,29 @@
 
 }
 
-.categoryMenu,
-.productsCards {
+.categoryMenu {
   flex: 1;
-  background: red;
+  padding: 30px;
+  margin: auto;
+  width: 80%;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.categoryTitle {
+  font-size: 15px;
+  padding-bottom: 12px;
+  font-weight: 600;
+
+}
+
+.category {
+  font-size: 14px;
+  padding-bottom: 5px;
+  color: $grey-dark
 }
 
 .productsCards {
   flex: 4;
-  background: forestgreen;
+  padding: 30px 0;
 }
