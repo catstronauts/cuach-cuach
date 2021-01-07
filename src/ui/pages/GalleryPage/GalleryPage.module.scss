@@ -11,6 +11,10 @@
   overflow: hidden;
 }
 
+.gallery {
+  @include wider-section;
+}
+
 .products {
   display: flex;
   flex-direction: column-reverse;

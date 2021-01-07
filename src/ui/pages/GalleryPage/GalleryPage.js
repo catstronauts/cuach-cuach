@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import { Section } from '@layouts/Section';
+// import { Section } from '@layouts/Section';
 import CardProduct from '@components/CardProduct';
 import styles from './GalleryPage.module.scss';
 
@@ -11,7 +11,7 @@ const GalleryPage = ({ data, title }) => {
     <>
       <div className={styles.hero}>{title}</div>
 
-      <Section title="Recent Products">
+      <div className={styles.gallery}>
         <div className={styles.products}>
           <div className={styles.categoryMenu}>
             <p className={styles.categoryTitle}>Categorías:</p>
@@ -30,7 +30,7 @@ const GalleryPage = ({ data, title }) => {
             </CardProduct.List>
           </div>
         </div>
-      </Section>
+      </div>
     </>
   );
 };
