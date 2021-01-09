@@ -1,5 +1,7 @@
-.previewTitle {
-  font-size: 1.5em;
+@import "@styles/abstract";
+
+.CardProduct {
+  width: 100%;
 }
 
 .tag {
@@ -13,14 +15,81 @@
   margin-right: .5em;
 }
 
-/**
- * article grid
- */
+.imgWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  // padding: 20px 0;
+  margin: auto;
+}
+
+.image {
+  padding-top: 100%;
+
+  @include bg-cover;
+}
+
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: .05em;
+  color: $color-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.9;
+    background: $white;
+    @include transition();
+  }
+}
+
  .list {
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: 0 30px;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5vmin;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15vmin;
+  max-width: 450px;
+
+  @include bp-md {
+    grid-gap: 5vmin;
+    max-width: 100%;
+  }
+}
+
+
+.productTitle {
+  padding: 20px 0 7px 0px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: $color-main;
+}
+
+.title{
+  text-decoration: none;
+}
+
+.price {
+  font-size: 20px;
+  padding-bottom: 3px;
+}
+
+.description {
+  white-space: pre-wrap;
+  color: $grey-dark;
 }

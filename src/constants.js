@@ -18,18 +18,22 @@ export const LINKS = {
   GALLERY: {
     to: '/galeria/',
     caption: 'Galería',
+    text: 'Todo',
   },
   GALLERY_ARTE: {
     to: '/galeria/arte/',
     caption: 'Galería - arte',
+    text: 'Arte'
   },
   GALLERY_TEXTIL: {
     to: '/galeria/manufactura/',
-    caption: 'Galería - textil',
+    caption: 'Galería - manufactura',
+    text: 'Manufactura',
   },
   GALLERY_ARQUITECTURA: {
     to: '/galeria/arquitectura/',
     caption: 'Galería - arquitectura',
+    text: 'Arquitetura'
   },
 };
 
