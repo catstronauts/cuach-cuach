@@ -12,10 +12,6 @@ const CardProduct = ({ article }) => {
   return (
     <li>
       <div className={styles.CardProduct}>
-        {/* <Img 
-          className={styles.image}
-          alt={article.title}
-          fluid={article.images[0].fluid} /> */}
         <div className={styles.imgWrapper}>
           <BackgroundImage
             className={styles.image}

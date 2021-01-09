@@ -21,6 +21,7 @@ const GalleryPage = ({ data, title }) => {
       <div className={styles.gallery}>
         <div className={styles.products}>
           <div className={styles.categoryMenu}>
+          <div className={styles.text}>
             <p className={styles.categoryTitle}>Categorías:</p>
             <div className={styles.categories}>
               <Category
@@ -39,20 +40,8 @@ const GalleryPage = ({ data, title }) => {
                 to={LINKS.GALLERY_ARQUITECTURA.to}
                 text={LINKS.GALLERY_ARQUITECTURA.text}
               />
-
-              {/* <Link to={LINKS.GALLERY.to}>
-                <p className={styles.category}>{LINKS.GALLERY.text}</p>
-              </Link>
-              <Link to={LINKS.GALLERY_TEXTIL.to}>
-                <p className={styles.category}>{LINKS.GALLERY_TEXTIL.text}</p>
-              </Link>
-              <Link to={LINKS.GALLERY_ARTE.to}>
-                <p className={styles.category}>{LINKS.GALLERY_ARTE.text}</p>
-              </Link>
-              <Link to={LINKS.GALLERY_ARQUITECTURA.to}>
-                <p className={styles.category}>{LINKS.GALLERY_ARQUITECTURA.text}</p>
-              </Link> */}
             </div>
+          </div>
           </div>
           <div className={styles.productsCards}>
             <CardProduct.List>

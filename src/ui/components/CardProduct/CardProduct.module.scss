@@ -29,9 +29,6 @@
   @include bg-cover;
 }
 
-/**
- * article grid
- */
  .list {
   margin: auto;
   padding: 0 30px;
@@ -55,6 +52,7 @@
   line-height: 28px;
   text-transform: uppercase;
   letter-spacing: .05em;
+  color: $color-main;
 }
 
 .title{

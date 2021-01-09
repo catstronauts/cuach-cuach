@@ -27,7 +27,7 @@
 
 .categoryMenu {
   flex: 1;
-  padding: 30px;
+  padding: 60px;
   margin: 0 auto;
   width: 80%;
   text-transform: uppercase;
@@ -44,10 +44,14 @@
 .category {
   font-size: 14px;
   padding-bottom: 5px;
-  color: $grey-dark
+  color: $grey-dark;
 }
 
+.text {
+  position: sticky;
+  top: 90px;
+}
 .productsCards {
   flex: 4;
-  padding: 30px 0;
+  padding: 60px 0;
 }
