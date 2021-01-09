@@ -9,7 +9,7 @@ import Us from '@ui/pages/home/Us';
 import taller from '@assets/images/taller.jpg';
 import styles from './about.module.scss';
 
-const AboutPage = ({ data = {}, ...rest }) => {
+const AboutPage = ({ data = {} }) => {
   const siteAuthors = data?.allContentfulPerson?.edges || [];
 
   const authors = siteAuthors.map((auth = {}) => ({
@@ -21,8 +21,6 @@ const AboutPage = ({ data = {}, ...rest }) => {
   return (
     <>
       <Helmet pageTitle={LINKS.ABOUT.caption} />
-
-      {/* About Section */}
       <Container className={styles.about}>
         <h2 className={styles.title}>Estos somos nosotros</h2>
 
@@ -43,7 +41,7 @@ const AboutPage = ({ data = {}, ...rest }) => {
           <div className={styles.contentItem}>
             <div className={`${styles.text} ${styles.text2}`}>
               <p className={styles.paragraph}>
-                Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
+                Somos una pareja  de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
                 La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
                 At Catcus, we have something for everyone, whether you are a beginner who wants to start out with a few small pots and trays on your windowsill, the 'green fingered' expert or professional landscape gardener, we have the tools for you.<br/>
                 If you have any questions about us, our products or need help with your garden please get in touch with us via our contact us page. There is always someone on hand to take your questions and experts to offer you gardening advice.<br/>

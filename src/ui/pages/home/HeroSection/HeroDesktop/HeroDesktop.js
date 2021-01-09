@@ -5,8 +5,8 @@ import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Container } from '@layouts/Container';
 import { SocialLinks } from '@layouts/SocialLinks';
-import Link from '@components/Link';
-import Button from '@components/Button';
+import { Link } from '@components/Link';
+import { Button } from '@components/Button';
 import styles from './HeroDesktop.module.scss';
 
 const dataIcons = [

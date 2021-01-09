@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 import Img from 'gatsby-image';
 import { getProductUrlBySlug } from '@src/constants';
 import List from './CardProduct.List';

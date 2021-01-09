@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 import { LINKS } from '@src/constants';
-import Button from '@ui/components/Button';
+import { Button } from '@ui/components/Button';
 import styles from './404.module.scss';
 import img1 from '@assets/images/404_1.png';
 import img2 from '@assets/images/404_2.png';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 import { LINKS } from '@src/constants';
 import icon from '@assets/images/icon.png';
 import { Container } from '@layouts/Container';

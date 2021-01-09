@@ -1,17 +1,18 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 import classnames from 'classnames';
 import { SocialLinks } from '@layouts/SocialLinks';
 import { Divider } from '@components/Divider';
 import { Icon } from '@components/Icon';
 import styles from './SideMenu.module.scss';
 
-const MenuItem = ({ children, caption, to }) => (
+const MenuItem = ({ children, caption, to, onGoTo }) => (
   <li className={styles.navigationItem}>
     <Link
       className={styles.link}
       to={to}
-      activeClassName={styles.link__isActive}
+      onClick={onGoTo}
+      classNameActive={styles.link__isActive}
     >
       {children || caption}
     </Link>
@@ -39,6 +40,7 @@ const Panel = ({ options, isOpen, onClose }) => (
                 key={index}
                 to={op.to}
                 caption={op.caption}
+                onGoTo={onClose}
               />
             ))}
           </ul>

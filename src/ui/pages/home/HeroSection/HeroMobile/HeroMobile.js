@@ -1,7 +1,7 @@
 import React from 'react';
 import img from '@assets/images/taller.jpg';
-import Link from '@components/Link';
-import Button from '@components/Button';
+import { Link } from '@components/Link';
+import { Button } from '@components/Button';
 import styles from './HeroMobile.module.scss';
 
 const HeroMobile = ({ data, className }) => (
