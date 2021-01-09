@@ -33,12 +33,18 @@
  * article grid
  */
  .list {
-  margin: 0;
+  margin: auto;
   padding: 0 30px;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 15vmin;
+  max-width: 450px;
+
+  @include bp-md {
+    grid-gap: 5vmin;
+    max-width: 100%;
+  }
 }
 
 
