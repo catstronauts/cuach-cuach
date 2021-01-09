@@ -16,6 +16,7 @@
 }
 
 .imgWrapper {
+  position: relative;
   width: 100%;
   max-width: 450px;
   overflow: hidden;
@@ -27,6 +28,30 @@
   padding-top: 100%;
 
   @include bg-cover;
+}
+
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: .05em;
+  color: $color-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.9;
+    background: $white;
+    @include transition();
+  }
 }
 
  .list {

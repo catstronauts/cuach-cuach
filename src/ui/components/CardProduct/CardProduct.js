@@ -16,7 +16,10 @@ const CardProduct = ({ article }) => {
           <BackgroundImage
             className={styles.image}
             alt={article.title}
-            fluid={article.images[0].fluid} />
+            fluid={article.images[0].fluid}>
+            
+            <Link className={styles.layer} to={getProductUrlBySlug(article.slug)}>Ver detalle</Link>
+          </BackgroundImage>
         </div>
         
         <div className={styles.text}>
