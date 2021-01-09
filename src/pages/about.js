@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { LINKS } from '@src/constants';
 import { Helmet } from '@layouts/Helmet';
+// import { PageTransitioner } from '@layouts/PageTransitioner';
 import { Section } from '@layouts/Section';
 import { Container } from '@layouts/Container';
 import { Divider } from '@components/Divider';
@@ -21,6 +22,9 @@ const AboutPage = ({ data = {} }) => {
   return (
     <>
       <Helmet pageTitle={LINKS.ABOUT.caption} />
+      {/* <PageTransitioner /> */}
+
+      {/* About Section */}
       <Container className={styles.about}>
         <h2 className={styles.title}>Estos somos nosotros</h2>
 
