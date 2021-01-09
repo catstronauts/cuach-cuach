@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { LINKS } from '@src/constants';
-import Layout from '@layouts';
+import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import { Container } from '@layouts/Container';
 import { Divider } from '@components/Divider';
@@ -19,7 +19,8 @@ const AboutPage = ({ data = {}, ...rest }) => {
   }));
 
   return (
-    <Layout pageTitle={LINKS.ABOUT.caption}>
+    <>
+      <Helmet pageTitle={LINKS.ABOUT.caption} />
 
       {/* About Section */}
       <Container className={styles.about}>
@@ -66,7 +67,7 @@ const AboutPage = ({ data = {}, ...rest }) => {
         >
         </Us>
       </Section>
-    </Layout>
+    </>
   );
 };
 
