@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 import BackgroundImage from 'gatsby-background-image';
 import styles from './CategoryTile.module.scss';
 

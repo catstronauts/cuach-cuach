@@ -1,8 +1,15 @@
 import React from 'react';
 import get from 'lodash/get';
-import { Section } from '@layouts/Section';
+import { Link } from '@components/Link';
+import { LINKS } from '@src/constants';
 import CardProduct from '@components/CardProduct';
 import styles from './GalleryPage.module.scss';
+
+const Category = ({ to, text }) => (
+  <Link to={to}>
+    <p className={styles.category}>{text}</p>
+  </Link>
+);
 
 const GalleryPage = ({ data, title }) => {
   const products = get(data, 'allContentfulProduct.edges');
@@ -11,13 +18,40 @@ const GalleryPage = ({ data, title }) => {
     <>
       <div className={styles.hero}>{title}</div>
 
-      <Section title="Recent articles">
-        <CardProduct.List>
-          {products.map(({ node }) => (
-            <CardProduct key={node.slug} article={node} />
-          ))}
-        </CardProduct.List>
-      </Section>
+      <div className={styles.gallery}>
+        <div className={styles.products}>
+          <div className={styles.categoryMenu}>
+          <div className={styles.text}>
+            <p className={styles.categoryTitle}>Categorías:</p>
+            <div className={styles.categories}>
+              <Category
+                to={LINKS.GALLERY.to}
+                text={LINKS.GALLERY.text}
+              />
+              <Category
+                to={LINKS.GALLERY_TEXTIL.to}
+                text={LINKS.GALLERY_TEXTIL.text}
+              />
+              <Category
+                to={LINKS.GALLERY_ARTE.to}
+                text={LINKS.GALLERY_ARTE.text}
+              />
+              <Category
+                to={LINKS.GALLERY_ARQUITECTURA.to}
+                text={LINKS.GALLERY_ARQUITECTURA.text}
+              />
+            </div>
+          </div>
+          </div>
+          <div className={styles.productsCards}>
+            <CardProduct.List>
+              {products.map(({ node }) => (
+                <CardProduct key={node.slug} article={node} />
+              ))}
+            </CardProduct.List>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

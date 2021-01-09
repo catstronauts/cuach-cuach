@@ -24,8 +24,9 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          price
           images {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid {
               ...GatsbyContentfulFluid
             }
           }

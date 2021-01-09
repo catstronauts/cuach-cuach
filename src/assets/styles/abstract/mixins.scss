@@ -75,7 +75,6 @@
 }
 
 @mixin bg-cover {
-  // min-height: calc(100% - 40px);
   width: 100%;
   display: block;
   background-size: cover;
@@ -148,6 +147,7 @@
 
 @mixin wider-section {
   max-width: 1440px;
+  margin: auto;
 }
 
 @mixin sectionTitle {

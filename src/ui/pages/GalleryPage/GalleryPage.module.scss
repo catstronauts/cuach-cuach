@@ -10,3 +10,48 @@
   font-size: 2em;
   overflow: hidden;
 }
+
+.gallery {
+  @include wider-section;
+}
+
+.products {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include bp-md {
+    flex-direction: row;
+  }
+
+}
+
+.categoryMenu {
+  flex: 1;
+  padding: 60px;
+  margin: 0 auto;
+  width: 80%;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.categoryTitle {
+  font-size: 15px;
+  padding-bottom: 12px;
+  font-weight: 600;
+
+}
+
+.category {
+  font-size: 14px;
+  padding-bottom: 5px;
+  color: $grey-dark;
+}
+
+.text {
+  position: sticky;
+  top: 90px;
+}
+.productsCards {
+  flex: 4;
+  padding: 60px 0;
+}
