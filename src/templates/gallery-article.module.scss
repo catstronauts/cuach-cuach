@@ -1,7 +1,39 @@
-@import "@styles";
+@import '@styles/abstract';
 
 .title {
   padding: 0 0 0.4em 0;
   margin: 0 0 5vmin 0;
   border-bottom: $border;
+}
+
+.productPage {
+  display: flex;
+  flex-direction: column;
+
+  @include bp-md {
+    flex-direction: row;
+    
+  }
+}
+
+.images {
+  max-width: 450px;
+  margin: auto;
+
+  @include bp-md {
+    flex: 1; 
+  }
+}
+
+.mainImage {
+  padding-top: 100%;
+
+  @include bg-cover;
+}
+
+.text {
+  white-space: pre-wrap;
+  @include bp-md {
+    flex: 1; 
+  }
 }
