@@ -4,7 +4,6 @@ import get from 'lodash/get';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
-// import Hero from '@components/Hero';
 import BackgroundImage from 'gatsby-background-image';
 import styles from './gallery-article.module.scss';
 
@@ -19,7 +18,13 @@ const ProductPage = (props) => {
       <Section>
         <div className={styles.productPage}>
           <div className={styles.images}>
-            <BackgroundImage className={styles.mainImage} fluid={images[0].fluid} imgAlt={title}/>
+            <div className={styles.thumbnails}>
+              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
+              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
+            </div>
+            <div className={styles.mainImageWrapper}>
+              <BackgroundImage className={styles.mainImage} fluid={images[0].fluid} imgAlt={title}/>
+            </div>
           </div>
           <div className={styles.text}>
             <h1 className={styles.title}>{post.title}</h1>
