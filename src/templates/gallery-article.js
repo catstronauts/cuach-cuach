@@ -8,8 +8,8 @@ import BackgroundImage from 'gatsby-background-image';
 import styles from './gallery-article.module.scss';
 
 const ProductPage = (props) => {
-  const post = get(props, 'data.contentfulProduct', {});
-  const { images = [], title } = post;
+  const product = get(props, 'data.contentfulProduct', {});
+  const { images = [], title, price, body = {} } = product;
 
   return (
     <>
@@ -27,8 +27,14 @@ const ProductPage = (props) => {
             </div>
           </div>
           <div className={styles.text}>
-            <h1 className={styles.title}>{post.title}</h1>
-            {documentToReactComponents(post.body.json)}
+            <h1 className={styles.title}>{title}</h1>
+            <p>{
+            !!price
+              ? `Precio: $${price}`
+              : ''
+            }
+            </p> 
+            {documentToReactComponents(body.json)}
           </div>
         </div>
       </Section>
@@ -42,6 +48,7 @@ export const pageQuery = graphql`
   query GalleryArticleBySlug($slug: String!) {
     contentfulProduct(slug: { eq: $slug }) {
       title
+      price
       images {
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid
