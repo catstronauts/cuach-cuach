@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 // import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import { getProductUrlBySlug } from '@src/constants';

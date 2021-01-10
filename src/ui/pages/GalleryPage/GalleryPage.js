@@ -6,8 +6,12 @@ import CardProduct from '@components/CardProduct';
 import styles from './GalleryPage.module.scss';
 
 const Category = ({ to, text }) => (
-  <Link to={to}>
-    <p className={styles.category}>{text}</p>
+  <Link
+    to={to}
+    className={styles.category}
+    classNameActive={styles.category__isActive}
+  >
+    {text}
   </Link>
 );
 

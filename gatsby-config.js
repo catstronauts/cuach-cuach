@@ -46,8 +46,15 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-transition-link',
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: path.resolve(__dirname, 'src/ui/layouts'),
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

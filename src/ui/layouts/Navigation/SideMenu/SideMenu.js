@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 import classnames from 'classnames';
 import { LINKS } from '@src/constants';
 import Container from '@layouts/Container';
