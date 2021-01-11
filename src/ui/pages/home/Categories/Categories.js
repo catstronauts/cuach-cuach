@@ -1,12 +1,15 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { LINKS } from '@src/constants';
 import useGetImg from '@hooks/useGetImg';
 import { Section } from '@layouts/Section';
+import { Link } from '@components/Link';
+import { Button } from '@components/Button';
 import CategoryTile from '@components/CategoryTile';
 import { data as dataValues } from './data';
 import styles from './Categories.module.scss';
 
-const ValuesSection = (props) => {
+const ValuesSection = () => {
   const staticQuery = useStaticQuery(query);
   const { getImgFluidByFileName } = useGetImg(staticQuery);
 
@@ -23,9 +26,13 @@ const ValuesSection = (props) => {
             key={d.id}
             tag={d.title}
             img={d.imgFluid}
+            linkTo={d.linkTo}
           />
         ))}
       </div>
+      <Link to={LINKS.GALLERY.to} className={styles.btnWrapper}>
+        <Button caption='Ver Todo' />
+      </Link>
     </Section>
   );
 };

@@ -31,14 +31,15 @@
   right: 0;
   margin: 30px;
   padding: 23px 30px;
-  background: white;
+  background: $white;
   opacity: 0.8;
   text-transform: uppercase;
   text-align: center;
   font-size: 1.1em;
   font-weight: 600;
-  @include transition(all);
+  text-decoration: none;
   letter-spacing: .05em;
+  @include transition();
 
   &:hover {
     opacity: 0.9;

@@ -1,11 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '@layouts';
+import { LINKS } from '@src/constants';
+import { Helmet } from '@layouts/Helmet';
+// import { PageTransitioner } from '@layouts/PageTransitioner';
 import { Section } from '@layouts/Section';
+import { Container } from '@layouts/Container';
+import { Divider } from '@components/Divider';
 import Us from '@ui/pages/home/Us';
-import styles from './blog.module.scss';
+import taller from '@assets/images/taller.jpg';
+import styles from './about.module.scss';
 
-const BlogIndex = ({ data = {}, ...rest }) => {
+const AboutPage = ({ data = {} }) => {
   const siteAuthors = data?.allContentfulPerson?.edges || [];
 
   const authors = siteAuthors.map((auth = {}) => ({
@@ -15,11 +20,48 @@ const BlogIndex = ({ data = {}, ...rest }) => {
   }));
 
   return (
-    <Layout pageTitle="Quienes somos">
-      <div className={styles.hero}>About Us</div>
+    <>
+      <Helmet pageTitle={LINKS.ABOUT.caption} />
+      {/* <PageTransitioner /> */}
+
+      {/* About Section */}
+      <Container className={styles.about}>
+        <h2 className={styles.title}>Estos somos nosotros</h2>
+
+        <div className={styles.content}>
+          <div className={styles.contentItem}>
+            <div className={styles.text}>
+              <h2 className={styles.subtitle}>Taller Cuach Cuach</h2>
+              <Divider className={styles.division} />
+              <p className={styles.phrase}>Amamos lo que hacemos. Bla bla bla blaBla bla bla bla</p>
+            </div>
+          </div>
+          <div className={styles.contentItem}>
+            <img src={taller} />
+          </div>
+        </div>
+
+        <div className={`${styles.content} ${styles.content2}`}>
+          <div className={styles.contentItem}>
+            <div className={`${styles.text} ${styles.text2}`}>
+              <p className={styles.paragraph}>
+                Somos una pareja  de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
+                La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
+                At Catcus, we have something for everyone, whether you are a beginner who wants to start out with a few small pots and trays on your windowsill, the 'green fingered' expert or professional landscape gardener, we have the tools for you.<br/>
+                If you have any questions about us, our products or need help with your garden please get in touch with us via our contact us page. There is always someone on hand to take your questions and experts to offer you gardening advice.<br/>
+                Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
+                La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
+              </p>
+            </div>
+          </div>
+          <div className={styles.contentItem}>
+            <img className={styles.img2} src={taller} />
+          </div>
+        </div>
+      </Container>
 
       {/* Us Section */}
-      <Section title='Quién está detrás de Cuach Cuach'>
+      <Section className={styles.us} title='Quién está detrás de Cuach Cuach'>
         <Us
           authors={authors}
           title='Nosotros'
@@ -27,11 +69,11 @@ const BlogIndex = ({ data = {}, ...rest }) => {
         >
         </Us>
       </Section>
-    </Layout>
+    </>
   );
 };
 
-export default BlogIndex;
+export default AboutPage;
 
 export const pageQuery = graphql`
   query AboutIndexQuery {

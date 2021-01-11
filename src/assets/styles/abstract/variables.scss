@@ -3,6 +3,8 @@ $white: #fefefe;
 $white-dark: #ebebeb;
 $grey: #bbb;
 $grey-dark: #6d6a6a;
+$grey-light: #ededed;
+
 $red: red;
 $green: #cddc39;
 $green-dark: #8bc34a;
@@ -42,8 +44,9 @@ $color-status-error: $red;
 $border-radius: 4px;
 $border-style: solid;
 $border-width: 1px;
-$border-color: $color-main;
+$border-color: $grey-light;
 $border: $border-style $border-width $border-color;
+$border-theme: $border-style $border-width $color-main;
 
 $transition-duration: 0.5s;
 $transition-timing: ease;

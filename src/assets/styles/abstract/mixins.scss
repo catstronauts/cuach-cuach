@@ -42,7 +42,7 @@
 /* ---- 3. Others ---- */
 /* ******************* */
 @mixin transition (
-  $property: $transition-duration,
+  $property: all,
   $duration: $transition-duration,
   $timing: $transition-timing
 ) {
@@ -75,7 +75,6 @@
 }
 
 @mixin bg-cover {
-  // min-height: calc(100% - 40px);
   width: 100%;
   display: block;
   background-size: cover;
@@ -144,6 +143,11 @@
   ::-webkit-scrollbar-thumb:window-inactive {
     background: $main;
   }
+}
+
+@mixin wider-section {
+  max-width: 1440px;
+  margin: auto;
 }
 
 @mixin sectionTitle {
