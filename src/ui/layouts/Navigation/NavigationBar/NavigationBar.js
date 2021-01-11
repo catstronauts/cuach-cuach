@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@components/Link';
 import classnames from 'classnames';
 import { LINKS } from '@src/constants';
 import Container from '@layouts/Container';
@@ -10,7 +10,7 @@ const MenuItem = ({ children, caption, to }) => (
   <li className={styles.navigationItem}>
     <Link
       className={styles.link}
-      activeClassName={styles.link__isActive}
+      classNameActive={styles.link__isActive}
       to={to}
     >
       {children || caption}

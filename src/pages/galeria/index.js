@@ -1,13 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { LINKS } from '@src/constants';
-import Layout from '@layouts';
+import { Helmet } from '@layouts/Helmet';
 import GalleryPage from '@ui/pages/GalleryPage';
 
 const Content = ({ data }) => (
-  <Layout pageTitle={LINKS.GALLERY.caption}>
+  <>
+    <Helmet pageTitle={LINKS.GALLERY.caption} />
     <GalleryPage title="Gallery" data={data} />
-  </Layout>
+  </>
 );
 
 export default Content;
@@ -24,8 +25,9 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          price
           images {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid {
               ...GatsbyContentfulFluid
             }
           }
