@@ -91,9 +91,9 @@
 
 @mixin underlineText (
   $color: $color-main,
-  $h: 4px
+  $h: 2px
 ) {
-  background-image: linear-gradient(0, $color 0, $color);
+  background-image: linear-gradient(0, $color-sec 0, $color-sec);
   background-position: bottom;
   background-size: (100% $h);
 	background-repeat: no-repeat;
@@ -161,4 +161,3 @@
 @mixin sectionSubtitle {
   font-size: 18px;
 }
-

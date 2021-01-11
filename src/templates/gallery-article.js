@@ -5,6 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import { Link } from '@components/Link';
+import { LINKS } from '@src/constants';
 import BackgroundImage from 'gatsby-background-image';
 import styles from './gallery-article.module.scss';
 
@@ -46,7 +47,7 @@ const ProductPage = (props) => {
             </p> 
             <p className={styles.body}>{documentToReactComponents(body.json)}</p>
             <div className={styles.messageUs}>
-              <p>Si te gusta o tienes una idea en mente que quieres que desarrollemos envíanos un mensaje <Link>aquí</Link>.</p>
+              <p>Si te gusta o tienes una idea en mente que quieres que desarrollemos envíanos un mensaje <Link to={LINKS.CONTACT_US.to}>aquí</Link>.</p>
             </div>
           </div>
         </div>
