@@ -22,7 +22,7 @@ const ProductPage = (props) => {
             <BackgroundImage className={styles.mainImage} fluid={images[0].fluid} imgAlt={title}/>
             <div className={styles.thumbnails}>
               <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}>
-                <Link className={styles.layer} />
+                <div className={styles.layer} />
               </BackgroundImage>
               <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
               <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
@@ -38,13 +38,16 @@ const ProductPage = (props) => {
           </div>
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
-            <p>{
+            <p className={styles.price}>{
             !!price
               ? `Precio: $${price}`
               : ''
             }
             </p> 
-            {documentToReactComponents(body.json)}
+            <p className={styles.body}>{documentToReactComponents(body.json)}</p>
+            <div className={styles.messageUs}>
+              <p>Si te gusta o tienes una idea en mente que quieres que desarrollemos envíanos un mensaje <Link>aquí</Link>.</p>
+            </div>
           </div>
         </div>
       </Section>

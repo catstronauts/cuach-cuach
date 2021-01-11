@@ -78,3 +78,17 @@
     @include transition();
   }
 }
+
+.messageUs {
+  padding-top: 30px;
+  color: $grey-dark;
+}
+
+.price {
+  font-weight: 600;
+  padding-bottom: 30px
+}
+
+.body {
+  color: $grey-dark;
+}
