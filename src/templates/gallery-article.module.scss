@@ -1,7 +1,94 @@
-@import "@styles";
+@import '@styles/abstract';
 
 .title {
   padding: 0 0 0.4em 0;
   margin: 0 0 5vmin 0;
   border-bottom: $border;
+  color: $color-main;
+}
+
+.productPage {
+  display: flex;
+  flex-direction: column;
+
+  @include bp-md {
+    flex-direction: row;
+    
+  }
+}
+
+.images {
+  max-width: 450px;
+
+  @include bp-md {
+    flex: 1;
+    margin: auto;
+  }
+}
+
+.mainImage {
+  padding-top: 100%;
+
+  @include bg-cover;
+}
+
+.thumbnails {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
+.thumbnail {
+  flex-basis: 24%;
+  padding-top: 24%;
+  margin: 0 0 10px;
+  cursor: pointer;
+  @include bg-cover;
+
+  &__filler {
+    flex-basis: 24%;
+    // height: 2px;
+    // background: red;
+  }
+}
+
+.text {
+  white-space: pre-wrap;
+  padding-top: 30px;
+
+  @include bp-md {
+    flex: 1; 
+    padding-top: 0;
+    padding-left: 50px;
+  }
+}
+
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  &:hover {
+    opacity: 0.9;
+    background: $white;
+    @include transition();
+  }
+}
+
+.messageUs {
+  padding-top: 30px;
+  color: $grey-dark;
+}
+
+.price {
+  font-weight: 600;
+  padding-bottom: 30px
+}
+
+.body {
+  color: $grey-dark;
 }
