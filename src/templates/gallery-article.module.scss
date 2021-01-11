@@ -32,20 +32,49 @@
   @include bg-cover;
 }
 
-.thumbnail {
-  padding-top: 100%;
+.thumbnails {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 15px;
+}
 
+.thumbnail {
+  flex-basis: 24%;
+  padding-top: 24%;
+  margin: 0 0 10px;
+  cursor: pointer;
   @include bg-cover;
+
+  &__filler {
+    flex-basis: 24%;
+    // height: 2px;
+    // background: red;
+  }
 }
 
 .text {
   white-space: pre-wrap;
   padding-top: 30px;
-  background: beige;
 
   @include bp-md {
     flex: 1; 
     padding-top: 0;
     padding-left: 50px;
+  }
+}
+
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  &:hover {
+    opacity: 0.9;
+    background: $white;
+    @include transition();
   }
 }
