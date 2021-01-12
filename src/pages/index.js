@@ -44,7 +44,7 @@ export const pageQuery = graphql`
           slug
           price
           images {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid {
               ...GatsbyContentfulFluid
             }
           }

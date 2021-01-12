@@ -5,7 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import { Link } from '@components/Link';
-import BackgroundImage from 'gatsby-background-image';
+import Carousel from './gallery-article.Carousel';
 import styles from './gallery-article.module.scss';
 
 const ProductPage = (props) => {
@@ -18,24 +18,7 @@ const ProductPage = (props) => {
       
       <Section>
         <div className={styles.productPage}>
-          <div className={styles.images}>
-            <BackgroundImage className={styles.mainImage} fluid={images[0].fluid} imgAlt={title}/>
-            <div className={styles.thumbnails}>
-              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}>
-                <div className={styles.layer} />
-              </BackgroundImage>
-              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
-              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
-              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
-              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
-              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
-              <BackgroundImage className={styles.thumbnail} fluid={images[0].fluid} imgAlt={title}/>
-              <div className={styles.thumbnail__filler} />
-              <div className={styles.thumbnail__filler} />
-              <div className={styles.thumbnail__filler} />
-              <div className={styles.thumbnail__filler} />
-            </div>
-          </div>
+          <Carousel images={images} />
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.price}>{
