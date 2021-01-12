@@ -11,6 +11,7 @@ const Component = ({
   className,
   classNameActive,
   withEffectTransition = true,
+  highlight = false,
 }) => (
   <AniLink
     to={to}
@@ -18,6 +19,7 @@ const Component = ({
     activeClassName={classNameActive}
     className={classnames(
       styles.link,
+      highlight && styles.highlight,
       className
     )}
 
