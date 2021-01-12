@@ -24,7 +24,7 @@ const ProductPage = (props) => {
             <h1 className={styles.title}>{title}</h1>
             {
             !!price
-              ? <p className={styles.price}>`Precio: $${price}`</p> 
+              ? <p className={styles.price}>Precio: ${price}</p> 
               : ''
             }
            
