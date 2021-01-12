@@ -39,12 +39,12 @@ const ProductPage = (props) => {
           </div>
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
-            <p className={styles.price}>{
+            {
             !!price
-              ? `Precio: $${price}`
+              ? <p className={styles.price}>`Precio: $${price}`</p> 
               : ''
             }
-            </p> 
+           
             <p className={styles.body}>{documentToReactComponents(body.json)}</p>
             <div className={styles.messageUs}>
               <p>Si te gusta o tienes una idea en mente que quieres que desarrollemos envíanos un mensaje <Link to={LINKS.CONTACT_US.to}>aquí</Link>.</p>

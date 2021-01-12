@@ -2,7 +2,7 @@
 
 .title {
   padding: 0 0 0.4em 0;
-  margin: 0 0 5vmin 0;
+  margin: 0 0 3vmin 0;
   border-bottom: $border;
   color: $color-main;
 }
@@ -22,7 +22,7 @@
 
   @include bp-md {
     flex: 1;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 
