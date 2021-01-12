@@ -14,8 +14,11 @@ const menuItems = [
 const Navigation = () => {
   const { isDesktop } = useWindowSize();
 
-  return isDesktop
-    ? <NavigationBar options={menuItems} />
-    : <SideMenu options={menuItems} />;
+  return (
+    <>
+      <NavigationBar options={menuItems} className={!isDesktop && 'hidden'} />
+      <SideMenu options={menuItems} className={isDesktop && 'hidden'} />
+    </>
+  );
 };
 export default Navigation;
