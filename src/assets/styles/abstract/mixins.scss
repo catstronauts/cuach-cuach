@@ -60,17 +60,23 @@
 }
 
 @mixin fieldBox() {
+  position: relative;
   width: 100%;
   border-radius: $border-radius;
   box-sizing: border-box;
   outline: none;
-  border: 1px solid $color-sec-lighter;
-  padding: 8px;
+  border: $border;
+  padding: 12px;
+  background: $white;
 
+  @include transition(background);
   @include placeholder {
     font-style: italic;
-    color: $color-secondary-text;
+    color: $color-sec-text;
     font-weight: 100;
+  }
+  &:focus {
+    background: rgba($color-main, 0.1);
   }
 }
 
