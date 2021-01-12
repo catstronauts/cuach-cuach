@@ -1,4 +1,4 @@
-@import "@styles/abstract";
+  @import "@styles/abstract";
 
 .nav {
   position: sticky;
@@ -62,8 +62,8 @@
 }
 
 .logo {
+  display: flex;
   flex-direction: row;
-  text-decoration: none;
 
   @include vertical-align;  
 }
