@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import useWindowSize from '@hooks/useWindowSize';
+import { useAppContext } from '@layouts';
 import useGetImg from '@hooks/useGetImg';
 import { Section } from '@layouts/Section';
 import { data as dataValues } from './data';
@@ -8,7 +8,8 @@ import { Slides } from './ValuesSlides';
 import { Carousel } from './ValuesCarousel';
 
 const ValuesSection = (props) => {
-  const { isDesktop } = useWindowSize();
+  const { windowProps = {} } = useAppContext();
+  const { isDesktop } = windowProps;
   const staticQuery = useStaticQuery(query);
   const { getImgFluidByFileName } = useGetImg(staticQuery);
 
