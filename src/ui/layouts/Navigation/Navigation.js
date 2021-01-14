@@ -14,7 +14,9 @@ const menuItems = [
 const Navigation = () => {
   const { windowProps = {} } = useAppContext();
   const { isDesktop } = windowProps;
-
+  console.log('Navigation', isDesktop);
+  console.log(windowProps);
+  
   return (
     <>
       <NavigationBar options={menuItems} className={!isDesktop && 'hidden'} />
