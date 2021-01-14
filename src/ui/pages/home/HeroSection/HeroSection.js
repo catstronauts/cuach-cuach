@@ -1,6 +1,6 @@
 import React from 'react';
 import { LINKS } from '@src/constants';
-import useWindowSize from '@hooks/useWindowSize';
+import { useAppContext } from '@layouts';
 import { HeroMobile } from './HeroMobile';
 import { HeroDesktop } from './HeroDesktop';
 
@@ -12,7 +12,8 @@ const content = {
 };
 
 const HeroSection = () => {
-  const { isTabletAndUp } = useWindowSize();
+  const { windowProps = {} } = useAppContext();
+  const { isTabletAndUp } = windowProps;
 
   return !isTabletAndUp
     ? <HeroMobile data={content} />
