@@ -37,13 +37,20 @@ const useWindowSize = () => {
 
   useEffect(() => {
     handleResize();
+    console.log('Loaded');
   }, []);
 
   const handleResize = () => {
     setSize(getSize());
+    console.log('handleResize1', getSize());
+  };
+  const handleResize2 = () => {
+    setSize(getSize());
+    console.log('handleResize2', getSize());
   };
 
   useEventListener('resize', handleResize, getWindow());
+  useEventListener('load', handleResize2, getWindow());
 
   return {
     size,
