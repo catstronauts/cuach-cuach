@@ -13,7 +13,7 @@ const Button = ({
 }) => {
   const content = children || caption;
   const handleClick = () => {
-    (disabled && onClick) && onClick();
+    (!disabled && onClick) && onClick();
   };
 
   return content ? (

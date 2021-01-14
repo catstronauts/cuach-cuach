@@ -2,7 +2,7 @@
 
 .title {
   padding: 0 0 0.4em 0;
-  margin: 0 0 5vmin 0;
+  margin: 0 0 3vmin 0;
   border-bottom: $border;
   color: $color-main;
 }
@@ -22,7 +22,7 @@
 
   @include bp-md {
     flex: 1;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 
@@ -45,12 +45,14 @@
   padding-top: 24%;
   margin: 0 0 10px;
   cursor: pointer;
-  @include bg-cover;
 
+  @include bg-cover;
+  @include transition(opacity);
+  &:hover {
+    opacity: 0.6 !important;
+  }
   &__filler {
     flex-basis: 24%;
-    // height: 2px;
-    // background: red;
   }
 }
 
@@ -62,20 +64,6 @@
     flex: 1; 
     padding-top: 0;
     padding-left: 50px;
-  }
-}
-
-.layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-
-  &:hover {
-    opacity: 0.9;
-    background: $white;
-    @include transition();
   }
 }
 
@@ -91,4 +79,29 @@
 
 .body {
   color: $grey-dark;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-main;
+  }
+
+  ul li {
+    &::marker {
+      color: $color-main;
+    }
+  }
+
+  p a {
+    color: $color-main;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    
+    @include underlineText();
+    will-change: background-size;
+    transition: background-size .25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    
+    &:hover {
+      background-size: (100% 100%);
+    }
+  }
 }

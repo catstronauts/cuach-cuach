@@ -1,5 +1,5 @@
 import React from 'react';
-import useWindowSize from '@hooks/useWindowSize';
+import { useAppContext } from '@layouts';
 import { LINKS } from '@src/constants';
 import { NavigationBar } from './NavigationBar';
 import { SideMenu } from './SideMenu';
@@ -12,7 +12,8 @@ const menuItems = [
 ];
 
 const Navigation = () => {
-  const { isDesktop } = useWindowSize();
+  const { windowProps = {} } = useAppContext();
+  const { isDesktop } = windowProps;
 
   return (
     <>
