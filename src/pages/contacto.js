@@ -11,7 +11,21 @@ const Content = () => (
     <div className={styles.hero}>Contacto</div>
 
     <Section title='Formulario de contacto'>
-      <Contact />
+      <div className={styles.contactPage}>
+        <div className={styles.info}>
+          <div className={styles.title}> ¿Tienes alguna duda? </div>
+          <div className={styles.content}> 
+            <p>Si quieres comprar o hacer un encargo especial llámanos o envíanos un email.<br />
+            +56 994 403 823<br />
+            contacto@cuachcuach.cl<br />
+            Chiguayante, Chile<br />
+            </p>
+          </div>
+        </div>
+        <div className={styles.form}>
+          <Contact />
+        </div>
+      </div>
     </Section>
   </>
 );
