@@ -1,11 +1,12 @@
 import React from 'react';
+import classnames from 'classnames';
 import img from '@assets/images/taller.jpg';
 import { Link } from '@components/Link';
 import { Button } from '@components/Button';
 import styles from './HeroMobile.module.scss';
 
 const HeroMobile = ({ data, className }) => (
-  <div className={`${styles.mobile} ${className}`}>
+  <div className={classnames(styles.mobile, className)}>
     <div className={styles.img}>
       <img src={img} alt="Taller cuach cuach" />
     </div>
