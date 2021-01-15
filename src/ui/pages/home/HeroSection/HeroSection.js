@@ -1,8 +1,9 @@
 import React from 'react';
 import { LINKS } from '@src/constants';
-import useWindowSize from '@hooks/useWindowSize';
+// import { useAppContext } from '@layouts';
 import { HeroMobile } from './HeroMobile';
 import { HeroDesktop } from './HeroDesktop';
+import styles from './HeroSection.module.scss';
 
 const content = {
   title: <>Lorem ipsum dolor <strong>Cuach Cuach</strong></>,
@@ -12,11 +13,18 @@ const content = {
 };
 
 const HeroSection = () => {
-  const { isTabletAndUp } = useWindowSize();
+  // const { windowProps = {} } = useAppContext();
+  // const { isTabletAndUp } = windowProps;
 
-  return !isTabletAndUp
-    ? <HeroMobile data={content} />
-    : <HeroDesktop data={content} />;
+  return (
+    <>
+      <HeroMobile data={content} className={styles.mob} />
+      <HeroDesktop data={content} className={styles.desk} />
+    </>
+  )
+  // return !isTabletAndUp
+  //   ? <HeroMobile data={content} />
+  //   : <HeroDesktop data={content} />;
 };
 
 export default HeroSection;

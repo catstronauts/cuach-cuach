@@ -1,6 +1,8 @@
+@import "@styles/abstract";
+
 .hero {
   position: relative;
-  background: #000;
+  // background: $color-main;
   color: #fff;
   text-align: center;
 }

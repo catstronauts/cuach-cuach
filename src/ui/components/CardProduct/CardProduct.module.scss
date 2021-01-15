@@ -35,10 +35,7 @@
   left: 0;
   right: 0;
   top: 0;
-  font-size: 18px;
   font-weight: 600;
-  line-height: 28px;
-  letter-spacing: .05em;
   color: $color-main;
   display: flex;
   justify-content: center;
@@ -84,11 +81,15 @@
 }
 
 .price {
-  font-size: 20px;
   padding-bottom: 3px;
+  font-weight: 600;
 }
 
 .description {
   white-space: pre-wrap;
   color: $grey-dark;
+}
+
+.search {
+  font-size: 21px;
 }

@@ -3,6 +3,7 @@ import { Link } from '@components/Link';
 // import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import { getProductUrlBySlug } from '@src/constants';
+import { Icon } from '@components/Icon';
 import List from './CardProduct.List';
 
 import styles from './CardProduct.module.scss';
@@ -18,7 +19,12 @@ const CardProduct = ({ article }) => {
             alt={article.title}
             fluid={article.images[0].fluid}>
             
-            <Link className={styles.layer} to={getProductUrlBySlug(article.slug)}>Ver detalle</Link>
+            <Link className={styles.layer} to={getProductUrlBySlug(article.slug)}>
+              <Icon  
+                name='search'
+                className={styles.search} />
+              {/* Ver detalle */}
+            </Link>
           </BackgroundImage>
         </div>
         
@@ -28,7 +34,7 @@ const CardProduct = ({ article }) => {
           </h3>
           <div className={styles.price}>{
             !!article.price
-              ? `$${article.price}`
+              ? `Precio: $${article.price}`
               : ''
             }
           </div>

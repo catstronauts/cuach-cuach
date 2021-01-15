@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classnames from 'classnames';
-import { AppContext } from '@layouts';
+import { useAppContext } from '@layouts';
 import { IconSocial } from '@components/Icon';
 import styles from './SocialLinks.module.scss';
 
 export const SocialLinks = ({ className, itemClassName }) => {
-  const { socialLinks = [] } = useContext(AppContext);
+  const { socialLinks = [] } = useAppContext();
 
   return socialLinks.length ? (
     <ul className={classnames(styles.socialLinks, className)}>

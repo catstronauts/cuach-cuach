@@ -1,5 +1,5 @@
 // @flow
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useEventListener from '@hooks/useEventListener';
 
 export const MQ = {
@@ -35,11 +35,22 @@ const getSize = () => {
 const useWindowSize = () => {
   const [size, setSize] = useState(getSize);
 
+  useEffect(() => {
+    handleResize();
+    console.log('Loaded');
+  }, []);
+
   const handleResize = () => {
     setSize(getSize());
+    console.log('handleResize1', getSize());
+  };
+  const handleResize2 = () => {
+    setSize(getSize());
+    console.log('handleResize2', getSize());
   };
 
   useEventListener('resize', handleResize, getWindow());
+  useEventListener('load', handleResize2, getWindow());
 
   return {
     size,
