@@ -1,0 +1,17 @@
+@import '@styles/abstract';
+
+.mob {
+  display: block;
+
+  @include bp-md {
+    display: none;
+  }
+}
+
+.desk {
+  display: none;
+
+  @include bp-md {
+    display: flex;
+  }
+}
