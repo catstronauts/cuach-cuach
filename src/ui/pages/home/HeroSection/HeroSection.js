@@ -15,9 +15,10 @@ const HeroSection = () => {
   const { windowProps = {} } = useAppContext();
   const { isTabletAndUp } = windowProps;
 
-  return !isTabletAndUp
-    ? <HeroMobile data={content} />
-    : <HeroDesktop data={content} />;
+  return <HeroDesktop data={content} />;
+  // return !isTabletAndUp
+  //   ? <HeroMobile data={content} />
+  //   : <HeroDesktop data={content} />;
 };
 
 export default HeroSection;
