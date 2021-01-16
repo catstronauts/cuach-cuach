@@ -1,0 +1,22 @@
+@import "./abstract/index.scss";
+
+@mixin webTheme($color: $blue) {
+  --main-color: #{$color};
+  --main-color-text: #{$text-white};
+  --main-color-dark: #{darken($color, 7%)};
+  --main-color-darker: #{darken($color, 15%)};
+  --main-color-light: #{lighten($color, 10%)};
+  --main-color-lighter: #{lighten($color, 30%)}; //#{lighten($color, 30%)};
+  --main-color-lightest: #{lighten($color, 40%)};
+}
+
+:root {
+  @include webTheme($blue);
+}
+
+.green {
+  @include webTheme($green-dark);
+}
+.pink {
+  @include webTheme($pink-dark);
+}   
