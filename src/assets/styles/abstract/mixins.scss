@@ -76,7 +76,8 @@
     font-weight: 100;
   }
   &:focus {
-    background: rgba($color-main, 0.1);
+    background: $color-main-lightest;
+    // background: rgba($color-main, 0.1);
   }
 }
 
