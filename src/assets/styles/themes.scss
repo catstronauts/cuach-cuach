@@ -16,9 +16,11 @@
 
 .green {
   @include webTheme($green-dark);
+  --main-color-lighter: #cddc39;
   --main-color-lightest: #eef3bb;
 }
 .pink {
   @include webTheme($pink-dark);
+  --main-color-lighter: #f2cece;
   --main-color-lightest: #f9eaea;
 }   
