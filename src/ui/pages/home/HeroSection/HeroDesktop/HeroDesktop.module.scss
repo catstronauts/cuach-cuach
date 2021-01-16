@@ -81,7 +81,7 @@
 
 .liThumb {
   list-style: none;
-  display: inline-block;
+  display: flex;
   margin: 0 20px;
   cursor: pointer;
   transition: $transition-duration;
