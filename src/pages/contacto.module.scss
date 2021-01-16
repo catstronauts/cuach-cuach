@@ -1,16 +1,4 @@
 @import '@styles/abstract';
-
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 61.8vh;
-  max-height: 400px;
-  background: #e1e1e1;
-  font-size: 2em;
-  overflow: hidden;
-}
-
 .contactPage {
   display: flex;
   flex-direction: column;
@@ -32,6 +20,11 @@
     padding-top: 0;
   }
 
+}
+
+.title {
+  @include sectionTitle;
+  font-size: 30px;
 }
 
 .content {
