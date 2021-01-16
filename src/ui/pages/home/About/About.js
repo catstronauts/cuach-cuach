@@ -36,7 +36,7 @@ const query = graphql`
   query {
     aboutImg: file(
       sourceInstanceName: {eq: "images"},
-      relativePath: {eq: "taller.jpg"}
+      relativePath: {eq: "cuachcuach.jpg"}
     ) {
       childImageSharp {
         fluid {
