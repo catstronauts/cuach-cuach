@@ -2,6 +2,7 @@ import React from 'react';
 import get from 'lodash/get';
 import { Link } from '@components/Link';
 import { LINKS } from '@src/constants';
+import { HeroTitle } from '@components/HeroTitle';
 import CardProduct from '@components/CardProduct';
 import styles from './GalleryPage.module.scss';
 
@@ -20,7 +21,7 @@ const GalleryPage = ({ data, title }) => {
 
   return (
     <>
-      <div className={styles.hero}>{title}</div>
+       <HeroTitle>{title}</HeroTitle>
 
       <div className={styles.gallery}>
         <div className={styles.products}>
