@@ -33,17 +33,28 @@ const HeroDesktop = ({ data, className }) => {
   }));
 
   const [img, setImg] = useState(dataa[0].img);
-  const [variant, setVariant] = useState();
 
   const handleClick = (i) => {
     const selected = dataa[i];
 
+    const body = document.getElementsByTagName("BODY")[0];
+
+    switch(i) {
+      case 1:
+        body.className ="pink";
+        break;
+      case 2:
+        body.className = "green";
+        break;
+      case 0:
+      default:
+        body.className = "";
+    }
     setImg(selected.img);
-    setVariant(selected.style);
   };
 
   return (
-    <div className={classnames(styles.hero, variant, className)}>
+    <div className={classnames(styles.hero, className)}>
       <div className={styles.shape_1} />
       <div className={styles.shape_2} />
       <Container className={styles.container}>

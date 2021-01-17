@@ -65,18 +65,22 @@
   border-radius: $border-radius;
   box-sizing: border-box;
   outline: none;
-  border: $border;
+  border: solid 1px $grey;
   padding: 12px;
   background: $white;
 
-  @include transition(background);
+  @include transition();
   @include placeholder {
     font-style: italic;
     color: $color-sec-text;
     font-weight: 100;
   }
+  &:hover,
   &:focus {
-    background: rgba($color-main, 0.1);
+    border-color: $color-main-light;
+  }
+  &:focus {
+    background: $color-main-lightest;
   }
 }
 
@@ -106,19 +110,13 @@
 	box-decoration-break: clone;
 }
 
-
-@mixin textSelected (
-  $text: $color-main,
-  $bg: $grey
-) {
+@mixin textSelected {
   /* For Firefox */
   ::-moz-selection {
-    color: $text;
-    background: $bg;
+    @content;
   }
   ::selection {
-    color: $text;
-    background: $bg;
+    @content;
   }
 }
 

@@ -1,0 +1,26 @@
+@import "./abstract/index.scss";
+
+@mixin webTheme($color: $blue) {
+  --main-color: #{$color};
+  --main-color-text: #{$text-white};
+  --main-color-dark: #{darken($color, 7%)};
+  --main-color-darker: #{darken($color, 15%)};
+  --main-color-light: #{lighten($color, 10%)};
+  --main-color-lighter: #{lighten($color, 30%)};
+  --main-color-lightest: #{lighten(desaturate(adjust-hue($color, -1), 2.71), 50.00)};
+}
+
+:root {
+  @include webTheme($blue);
+}
+
+.green {
+  @include webTheme($green-dark);
+  --main-color-lighter: #cddc39;
+  --main-color-lightest: #eef3bb;
+}
+.pink {
+  @include webTheme($pink-dark);
+  --main-color-lighter: #f2cece;
+  --main-color-lightest: #f9eaea;
+}

@@ -20,12 +20,13 @@ $text-main: $text-black;
 /* -------------- */
 /* --- Colors --- */
 /* -------------- */
-$color-main: $blue;
-$color-main-text: $text-white;
-$color-main-dark: darken($color-main, 7%);
-$color-main-darker: darken($color-main, 15%);
-$color-main-light: lighten($color-main, 10%);
-$color-main-lighter: lighten($color-main, 20%);
+$color-main: var(--main-color);
+$color-main-text: var(--main-color-text);
+$color-main-dark: var(--main-color-dark);
+$color-main-darker: var(--main-color--darker);
+$color-main-light: var(--main-color-light);
+$color-main-lighter: var(--main-color-lighter);
+$color-main-lightest: var(--main-color-lightest);
 
 $color-sec: $yellow;
 $color-sec-text: $text-black;

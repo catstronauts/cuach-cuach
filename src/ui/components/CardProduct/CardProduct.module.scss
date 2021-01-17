@@ -11,7 +11,7 @@
   padding: .33333rem .5rem;
   line-height: 1;
   border-radius: 2px;
-  border: 1px solid #A0A0A0;
+  border: $border;
   margin-right: .5em;
 }
 
@@ -36,6 +36,7 @@
   right: 0;
   top: 0;
   font-weight: 600;
+  background: $white;
   color: $color-main;
   display: flex;
   justify-content: center;
@@ -43,10 +44,9 @@
   opacity: 0;
   text-decoration: none;
 
+  @include transition(opacity);
   &:hover {
-    opacity: 0.9;
-    background: $white;
-    @include transition();
+    opacity: 0.9;    
   }
 }
 
@@ -91,5 +91,5 @@
 }
 
 .search {
-  font-size: 21px;
+  font-size: 48px;
 }

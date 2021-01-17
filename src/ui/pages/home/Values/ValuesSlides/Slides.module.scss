@@ -4,7 +4,7 @@
   display: flex;
   padding: 0 0 24px;
   margin-bottom: 24px;
-  border-bottom: 1px solid rgba($color-main, .2);
+  border-bottom: 1px solid $color-main-lighter;
 }
 .content {
   flex-grow: 1;
