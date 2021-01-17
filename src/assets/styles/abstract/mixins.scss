@@ -110,19 +110,13 @@
 	box-decoration-break: clone;
 }
 
-
-@mixin textSelected (
-  $text: $color-main,
-  $bg: $grey
-) {
+@mixin textSelected {
   /* For Firefox */
   ::-moz-selection {
-    color: $text;
-    background: $bg;
+    @content;
   }
   ::selection {
-    color: $text;
-    background: $bg;
+    @content;
   }
 }
 
