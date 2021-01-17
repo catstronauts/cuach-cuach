@@ -1,13 +1,39 @@
 @import '@styles/abstract';
 
 .mobile {
-  min-height: calc(100vh - 70px);
+  padding-bottom: 50px;
+  background: $color-main-lightest;
 }
 
+.shape_1,
+.shape_2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  @include transition(background);
+}
+
+.image {
+  z-index: 3;
+  position: relative;
+}
+
+// Triangle shapes
+.shape_1 { clip-path: polygon(105% 0%, 0% 100%, 100% 100%); }
+.shape_2 { clip-path: polygon(100% 30%, 0% 100%, 100% 100%); }
+
 .img {
+  position: relative;
 
   min-height: 200px;
   @include bg-cover;
+
+  .shape_1 { background: $color-main-lighter; }
+  .shape_2 { background: $color-main-light; }
 }
 
 .text {
@@ -22,8 +48,18 @@
 
 .title {
   font-size: 1.6em;
-  line-height: 40px;
   margin: 0;
+  line-height: 35px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 2;
 
   strong {
     display: block;
@@ -34,6 +70,8 @@
 
   @include bp-md {
     font-size: 1.9em;
+    padding-bottom: 0;
+    line-height: 40px;
   }
 }
 
