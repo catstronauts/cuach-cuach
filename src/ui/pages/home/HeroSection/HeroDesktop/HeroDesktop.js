@@ -44,7 +44,7 @@ const HeroDesktop = ({ data, className }) => {
         body.className ="pink";
         break;
       case 2:
-        body.className = "green";
+        body.className = "blue";
         break;
       case 0:
       default:

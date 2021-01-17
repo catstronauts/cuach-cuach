@@ -10,10 +10,10 @@
   --main-color-lightest: #{lighten(desaturate(adjust-hue($color, -1), 2.71), 50.00)};
 }
 
-:root {
+.blue {
   @include webTheme($blue);
 }
-
+:root,
 .green {
   @include webTheme($green-dark);
   --main-color-lighter: #cddc39;
