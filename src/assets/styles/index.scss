@@ -53,3 +53,8 @@ a {
 @include textSelected {
   background: $color-main-lightest;
 }
+
+@include scrollbar (
+  $color-main,
+  $color-main-lightest
+)
