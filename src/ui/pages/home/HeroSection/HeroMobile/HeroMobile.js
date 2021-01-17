@@ -10,10 +10,11 @@ const HeroMobile = ({ data, className }) => (
     <div className={styles.img}>
       <div className={styles.shape_1} />
       <div className={styles.shape_2} />
+      <h2 className={styles.title}>{data.title}</h2>
       <img className={styles.image} src={img} alt="Taller cuach cuach" />
     </div>
     <div className={styles.text}>
-      <h2 className={styles.title}>{data.title}</h2>
+      {/* <h2 className={styles.title}>{data.title}</h2> */}
       <p className={styles.paragraph}>{data.subtitle}</p>
       <Link to={data.btnTo}>
         <Button caption={data.btnTxt} block className={styles.btn} />
