@@ -49,3 +49,10 @@ a {
 .hidden {
   display: none;
 }
+
+::-moz-selection { /* Code for Firefox */
+  background: $color-main-lightest;
+}
+::selection {
+  background: $color-main-lightest;
+}
