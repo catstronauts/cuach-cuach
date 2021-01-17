@@ -65,19 +65,22 @@
   border-radius: $border-radius;
   box-sizing: border-box;
   outline: none;
-  border: $border;
+  border: solid 1px $grey;
   padding: 12px;
   background: $white;
 
-  @include transition(background);
+  @include transition();
   @include placeholder {
     font-style: italic;
     color: $color-sec-text;
     font-weight: 100;
   }
+  &:hover,
+  &:focus {
+    border-color: $color-main-light;
+  }
   &:focus {
     background: $color-main-lightest;
-    // background: rgba($color-main, 0.1);
   }
 }
 
