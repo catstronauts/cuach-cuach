@@ -6,6 +6,7 @@ import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import { Container } from '@layouts/Container';
 import { Divider } from '@components/Divider';
+import { HeroTitle } from '@components/HeroTitle';
 import Us from '@ui/pages/home/Us';
 import taller from '@assets/images/taller.jpg';
 import styles from './about.module.scss';
@@ -22,12 +23,11 @@ const AboutPage = ({ data = {} }) => {
   return (
     <>
       <Helmet pageTitle={LINKS.ABOUT.caption} />
+        <HeroTitle>Estos somos nosotros</HeroTitle>
       {/* <PageTransitioner /> */}
 
       {/* About Section */}
       <Container className={styles.about}>
-        <h2 className={styles.title}>Estos somos nosotros</h2>
-
         <div className={styles.content}>
           <div className={styles.contentItem}>
             <div className={styles.text}>
