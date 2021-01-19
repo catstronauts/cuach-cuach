@@ -1,6 +1,6 @@
 @import '@styles/abstract';
 .service {
-  background: $color-main;
+  background: $color-main-lightest;
   padding: 60px 0;
 
   @include bp-lg {
