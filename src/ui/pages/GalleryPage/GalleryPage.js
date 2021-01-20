@@ -1,5 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
+import { Pagination } from '@components/Pagination';
 import { Link } from '@components/Link';
 import { LINKS } from '@src/constants';
 import { HeroTitle } from '@components/HeroTitle';
@@ -15,8 +16,15 @@ const Category = ({ to, text }) => (
     {text}
   </Link>
 );
+const formatPath = (path) => {
+  const newPath = path.replace(/[0-9]/g, '');
 
-const GalleryPage = ({ data, title }) => {
+  return (newPath.substring(newPath.length-1) == "/")
+    ? newPath.substring(0, newPath.length-1)
+    : newPath
+}
+
+const GalleryPage = ({ data, title, pathContext = {}, path = '' }) => {
   const products = get(data, 'allContentfulProduct.edges');
 
   return (
@@ -55,6 +63,7 @@ const GalleryPage = ({ data, title }) => {
               ))}
             </CardProduct.List>
           </div>
+          <Pagination {...pathContext} path={formatPath(path)} />
         </div>
       </div>
     </>
