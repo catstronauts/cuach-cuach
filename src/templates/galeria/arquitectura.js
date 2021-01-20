@@ -1,24 +1,27 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from "react";
+import { graphql } from "gatsby";
 import { LINKS } from '@src/constants';
 import { Helmet } from '@layouts/Helmet';
 import GalleryPage from '@ui/pages/GalleryPage';
 
-const Content = ({ data }) => (
+export default (props) => (
   <>
     <Helmet pageTitle={LINKS.GALLERY.caption} />
-    <GalleryPage title="Gallery" data={data} />
+    <GalleryPage title="Gallery" {...props} />
   </>
 );
 
-export default Content;
-
-export const pageQuery = graphql`
-  query GalleryIndexQuery {
+export const blogListQuery = graphql`
+  query prodArqQuery($skip: Int!, $limit: Int!) {
     allContentfulProduct(
+      limit: $limit
+      skip: $skip
       sort: {
         fields: [createdAt],
         order: DESC
+      }
+      filter: {
+        type: {eq: "arquitectura"}
       }
     ) {
       edges {
