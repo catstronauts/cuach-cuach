@@ -34,27 +34,27 @@ const GalleryPage = ({ data, title, pathContext = {}, path = '' }) => {
       <div className={styles.gallery}>
         <div className={styles.products}>
           <div className={styles.categoryMenu}>
-          <div className={styles.text}>
-            <p className={styles.categoryTitle}>Categorías:</p>
-            <div className={styles.categories}>
-              <Category
-                to={LINKS.GALLERY.to}
-                text={LINKS.GALLERY.text}
-              />
-              <Category
-                to={LINKS.GALLERY_TEXTIL.to}
-                text={LINKS.GALLERY_TEXTIL.text}
-              />
-              <Category
-                to={LINKS.GALLERY_ARTE.to}
-                text={LINKS.GALLERY_ARTE.text}
-              />
-              <Category
-                to={LINKS.GALLERY_ARQUITECTURA.to}
-                text={LINKS.GALLERY_ARQUITECTURA.text}
-              />
+            <div className={styles.text}>
+              <p className={styles.categoryTitle}>Categorías:</p>
+              <div className={styles.categories}>
+                <Category
+                  to={LINKS.GALLERY.to}
+                  text={LINKS.GALLERY.text}
+                />
+                <Category
+                  to={LINKS.GALLERY_TEXTIL.to}
+                  text={LINKS.GALLERY_TEXTIL.text}
+                />
+                <Category
+                  to={LINKS.GALLERY_ARTE.to}
+                  text={LINKS.GALLERY_ARTE.text}
+                />
+                <Category
+                  to={LINKS.GALLERY_ARQUITECTURA.to}
+                  text={LINKS.GALLERY_ARQUITECTURA.text}
+                />
+              </div>
             </div>
-          </div>
           </div>
           <div className={styles.productsCards}>
             <CardProduct.List>
@@ -62,8 +62,8 @@ const GalleryPage = ({ data, title, pathContext = {}, path = '' }) => {
                 <CardProduct key={node.slug} article={node} />
               ))}
             </CardProduct.List>
+            <Pagination className={styles.pagination} {...pathContext} path={formatPath(path)} />
           </div>
-          <Pagination {...pathContext} path={formatPath(path)} />
         </div>
       </div>
     </>
