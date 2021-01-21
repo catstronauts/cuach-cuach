@@ -24,7 +24,7 @@ const formatPath = (path) => {
     : newPath
 }
 
-const GalleryPage = ({ data, title, pathContext = {}, path = '' }) => {
+const GalleryPage = ({ data, title, pageContext = {}, path = '' }) => {
   const products = get(data, 'allContentfulProduct.edges');
 
   return (
@@ -63,7 +63,7 @@ const GalleryPage = ({ data, title, pathContext = {}, path = '' }) => {
               ))}
             </CardProduct.List>
           </div>
-          <Pagination {...pathContext} path={formatPath(path)} />
+          <Pagination {...pageContext} path={formatPath(path)} />
         </div>
       </div>
     </>
