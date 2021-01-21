@@ -11,10 +11,10 @@ const menuItems = [
   LINKS.CONTACT_US,
 ];
 
-const Navigation = () => (
+const Navigation = (props) => (
   <>
-    <SideMenu options={menuItems} className={styles.mob} />
-    <NavigationBar options={menuItems} className={styles.desk} />
+    <SideMenu options={menuItems} className={styles.mob} {...props} />
+    <NavigationBar options={menuItems} className={styles.desk} {...props} />
   </>
 );
 
