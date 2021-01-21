@@ -25,7 +25,7 @@ const MenuItem = ({ children, caption, to, location = {} }) => {
         className={classnames(
           styles.link,
           isActive() && styles.link__isActive
-        )}        
+        )}
       >
         {children || caption}
       </Link>
