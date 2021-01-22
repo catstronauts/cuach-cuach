@@ -79,8 +79,8 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
         const createProductListPages = (products = [], template, url) => {
-          const productsPerPage = 3
-          const numPages = Math.ceil(products.length / productsPerPage)
+          const productsPerPage = 6;
+          const numPages = Math.ceil(products.length / productsPerPage);
           Array.from({ length: numPages }).forEach((_, i) => {
             createPage({
               path: i === 0 ? `/${url}` : `/${url}/${i + 1}`,
