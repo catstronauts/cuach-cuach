@@ -1,29 +1,15 @@
 @import '@styles/abstract';
 
-
-@mixin heroPalet (
-  $c-main: $color-main-lighter,
-  $c-sec: $color-main-light,
-  $bg: lighten($c-main, 30%)
-) {
-  background: $bg;
-
-  .title strong { color: $c-sec; }
-  .btn { background: $c-sec; }
-  .shape_1 { background: $c-main; }
-  .shape_2 { background: $c-sec; }
-}
-
 .hero {
   position: relative;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 65px);
   display: flex;
   align-items: center;
 
-  &, // default scenario
-  &_var1 { @include heroPalet(); }
-  &_var2 { @include heroPalet($pink, $pink-dark, lighten($pink, 7%)); }
-  &_var3 { @include heroPalet($green, $green-dark); }
+  background: $color-main-lightest;
+
+  .shape_1 { background: $color-main-lighter; }
+  .shape_2 { background: $color-main-light; }
 }
 
 .container {
@@ -50,8 +36,9 @@
 
 .title {
   font-size: 4em;
-  line-height: 1.4em;
+  line-height: 72px;
   font-weight: 500;
+  padding-bottom: 20px;
 
   strong {
     display: block;
@@ -59,6 +46,11 @@
     font-size: 1.1em;
     font-weight: 900;
   }
+}
+
+.paragraph {
+  line-height: 30px;
+  font-size: 19px;
 }
 
 .btn {
@@ -89,7 +81,7 @@
 
 .liThumb {
   list-style: none;
-  display: inline-block;
+  display: flex;
   margin: 0 20px;
   cursor: pointer;
   transition: $transition-duration;

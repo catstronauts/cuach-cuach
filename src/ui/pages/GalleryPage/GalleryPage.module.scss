@@ -1,16 +1,5 @@
 @import '@styles/abstract';
 
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 61.8vh;
-  max-height: 400px;
-  background: #e1e1e1;
-  font-size: 2em;
-  overflow: hidden;
-}
-
 .gallery {
   @include wider-section;
 }
@@ -74,7 +63,9 @@
   position: sticky;
   top: 90px;
 }
+
 .productsCards {
   flex: 4;
   padding: 60px 0;
 }
+

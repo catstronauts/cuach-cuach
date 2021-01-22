@@ -11,10 +11,48 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allContentfulProduct {
+            productsAll: allContentfulProduct(
+              limit: 1000
+            ) {
               edges {
                 node {
                   slug
+                }
+              }
+            }
+            productsArt: allContentfulProduct(
+              limit: 1000
+              filter: {
+                type: {eq: "arte"}
+              }
+            ) {
+              edges {
+                node {
+                  id
+                }
+              }
+            }
+            productsArq: allContentfulProduct(
+              limit: 1000
+              filter: {
+                type: {eq: "arquitectura"}
+              }
+            ) {
+              edges {
+                node {
+                  id
+                }
+              }
+            }
+            productsFab: allContentfulProduct(
+              limit: 1000
+              filter: {
+                type: {eq: "manufactura"}
+              }
+            ) {
+              edges {
+                node {
+                  id
                 }
               }
             }
@@ -26,9 +64,12 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
-        const products = result.data.allContentfulProduct.edges;
+        const productsAll = result.data.productsAll.edges;
+        const productsArt = result.data.productsArt.edges;
+        const productsFab = result.data.productsFab.edges;
+        const productsArq = result.data.productsArq.edges;
 
-        products.forEach(post => {
+        productsAll.forEach(post => {
           createPage({
             path: `/galeria/${post.node.slug}/`,
             component: galleryArticle,
@@ -37,6 +78,44 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
+        const createProductListPages = (products = [], template, url) => {
+          const productsPerPage = 6;
+          const numPages = Math.ceil(products.length / productsPerPage);
+          Array.from({ length: numPages }).forEach((_, i) => {
+            createPage({
+              path: i === 0 ? `/${url}` : `/${url}/${i + 1}`,
+              component: template,
+              context: {
+                limit: productsPerPage,
+                skip: i * productsPerPage,
+                numPages,
+                currentPage: i + 1,
+              },
+            });
+          });
+        };
+
+        createProductListPages(
+          productsAll,
+          path.resolve('./src/templates/galeria/all.js'),
+          'galeria'
+        );
+        createProductListPages(
+          productsArt,
+          path.resolve('./src/templates/galeria/arte.js'),
+          'galeria/arte'
+        );
+        createProductListPages(
+          productsFab,
+          path.resolve('./src/templates/galeria/manufactura.js'),
+          'galeria/manufactura'
+        );
+        createProductListPages(
+          productsArq,
+          path.resolve('./src/templates/galeria/arquitectura.js'),
+          'galeria/arquitectura'
+        );
+
       })
     );
   });

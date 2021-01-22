@@ -1,6 +1,5 @@
 import React from 'react';
 import { LINKS } from '@src/constants';
-// import { useAppContext } from '@layouts';
 import { HeroMobile } from './HeroMobile';
 import { HeroDesktop } from './HeroDesktop';
 import styles from './HeroSection.module.scss';
@@ -12,19 +11,11 @@ const content = {
   btnTo: LINKS.GALLERY.to,
 };
 
-const HeroSection = () => {
-  // const { windowProps = {} } = useAppContext();
-  // const { isTabletAndUp } = windowProps;
-
-  return (
-    <>
-      <HeroMobile data={content} className={styles.mob} />
-      <HeroDesktop data={content} className={styles.desk} />
-    </>
-  )
-  // return !isTabletAndUp
-  //   ? <HeroMobile data={content} />
-  //   : <HeroDesktop data={content} />;
-};
+const HeroSection = () => (
+  <>
+    <HeroMobile data={content} className={styles.mob} />
+    <HeroDesktop data={content} className={styles.desk} />
+  </>
+);
 
 export default HeroSection;

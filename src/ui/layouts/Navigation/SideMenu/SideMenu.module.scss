@@ -61,7 +61,7 @@
   width: $w;
   margin-left: calc(-1 * #{$w});
   z-index: 50;
-  background: #e4e4e4;
+  background: $grey-light;
   font-size: 1.6em;
   @include transition(margin-left);
 

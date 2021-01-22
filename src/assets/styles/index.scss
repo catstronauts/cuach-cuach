@@ -1,5 +1,6 @@
 @import "./abstract/index.scss";
 @import "./normalize.scss";
+@import "./themes.scss";
 
 // @include scrollbar ();
 // @font-face {
@@ -48,3 +49,12 @@ a {
 .hidden {
   display: none;
 }
+
+@include textSelected {
+  background: $color-main-lightest;
+}
+
+@include scrollbar (
+  $color-main,
+  $color-main-lightest
+)

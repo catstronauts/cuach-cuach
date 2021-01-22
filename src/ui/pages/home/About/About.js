@@ -2,6 +2,8 @@ import React from 'react';
 import get from 'lodash/get';
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
+import { Link } from '@components/Link';
+import { LINKS } from '@src/constants';
 import styles from './About.module.scss';
 
 const About = () => {
@@ -24,7 +26,7 @@ const About = () => {
         <p className={styles.paragraph}>
           Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura.
         </p>
-        <a href="www.facebook.com">Ver más...</a>
+        <Link highlight to={LINKS.ABOUT.to}>Ver más...</Link>
       </div>
     </div>
   );
@@ -34,7 +36,7 @@ const query = graphql`
   query {
     aboutImg: file(
       sourceInstanceName: {eq: "images"},
-      relativePath: {eq: "taller.jpg"}
+      relativePath: {eq: "cuachcuach.jpg"}
     ) {
       childImageSharp {
         fluid {

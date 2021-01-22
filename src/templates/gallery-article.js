@@ -20,19 +20,17 @@ const ProductPage = (props) => {
       <Section>
         <div className={styles.productPage}>
           <Carousel images={images} />
-          <div className={styles.text}>
+          <article className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
-            {
-            !!price
-              ? <p className={styles.price}>`Precio: $${price}`</p> 
-              : ''
+            {!!price &&
+              <p className={styles.price}><strong>Precio: ${price}</strong></p> 
             }
-           
-            <p className={styles.body}>{documentToReactComponents(body.json)}</p>
+
+            <div className={styles.body}>{documentToReactComponents(body.json)}</div>
             <div className={styles.messageUs}>
               <p>Si te gusta o tienes una idea en mente que quieres que desarrollemos envíanos un mensaje <Link highlight to={LINKS.CONTACT_US.to}>aquí</Link>.</p>
             </div>
-          </div>
+          </article>
         </div>
       </Section>
     </>
