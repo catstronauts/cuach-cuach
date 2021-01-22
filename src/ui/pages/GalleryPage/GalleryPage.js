@@ -67,8 +67,8 @@ const GalleryPage = ({ data, title, pageContext = {}, path = '' }) => {
                 <CardProduct key={node.slug} article={node} />
               ))}
             </CardProduct.List>
+            <Pagination className={styles.pagination} {...pageContext} path={formatPath(path)} />
           </div>
-          <Pagination {...pageContext} path={formatPath(path)} />
         </div>
       </div>
     </>

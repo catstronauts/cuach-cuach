@@ -97,25 +97,25 @@ exports.createPages = ({ graphql, actions }) => {
 
         createProductListPages(
           productsAll,
-          path.resolve("./src/templates/galeria/all.js"),
+          path.resolve('./src/templates/galeria/all.js'),
           'galeria'
         );
         createProductListPages(
           productsArt,
-          path.resolve("./src/templates/galeria/arte.js"),
+          path.resolve('./src/templates/galeria/arte.js'),
           'galeria/arte'
         );
         createProductListPages(
           productsFab,
-          path.resolve("./src/templates/galeria/manufactura.js"),
+          path.resolve('./src/templates/galeria/manufactura.js'),
           'galeria/manufactura'
         );
         createProductListPages(
           productsArq,
-          path.resolve("./src/templates/galeria/arquitectura.js"),
+          path.resolve('./src/templates/galeria/arquitectura.js'),
           'galeria/arquitectura'
         );
-        
+
       })
     );
   });

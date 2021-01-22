@@ -42,13 +42,15 @@ $img-width: 250px;
 }
 
 .name {
-  font-size: 25px;
+  color: $color-main;
+  font-size: 23px;
   letter-spacing: 3px;
 }
 
 .job {
   font-size: 18px;
   padding: 5px 0 3px 0;
+  color: $color-main-light;
 }
 
 

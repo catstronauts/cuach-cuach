@@ -23,7 +23,7 @@ const ProductPage = (props) => {
           <article className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
             {!!price &&
-              <p className={styles.price}>Precio: ${price}</p> 
+              <p className={styles.price}><strong>Precio: ${price}</strong></p> 
             }
 
             <div className={styles.body}>{documentToReactComponents(body.json)}</div>
