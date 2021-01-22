@@ -11,10 +11,10 @@ const UsCard = ({ name, job, description, imgFluid }) => (
     </div>
     <div className={styles.cardText}>
       <div className={styles.name}>
-        <h4>{name}</h4>
+        <h4><strong>{name}</strong></h4>
       </div>
       <div className={styles.job}>
-        <h4>{job}</h4>
+        <h4><strong>{job}</strong></h4>
       </div>
       <div className={styles.description}>
         <p>{description}</p>

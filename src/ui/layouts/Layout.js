@@ -7,12 +7,12 @@ import { AppProvider } from './Context';
 import styles from './layout.module.scss';
 import '@styles/index.scss';
 
-const Template = ({ children }) => (
+const Template = ({ children, location }) => (
   <>
     <Helmet />
     <AppProvider>
       <div className={styles.page}>
-        <Navigation />
+        <Navigation location={location} />
         <div className={styles.body}>
           {children}
         </div>
