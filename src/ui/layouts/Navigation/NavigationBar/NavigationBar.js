@@ -1,30 +1,23 @@
 import React from 'react';
+import { pathIsActive } from '@src/utils';
+import { LINKS } from '@src/constants';
 import { Link } from '@components/Link';
 import classnames from 'classnames';
-import { LINKS } from '@src/constants';
 import Container from '@layouts/Container';
 import icon from '@assets/images/icon.png';
 import styles from './NavigationBar.module.scss';
 
 const MenuItem = ({ children, caption, to, location = {} }) => {
   const { pathname } = location;
+  const isActive = pathIsActive(pathname, to, LINKS.HOME.to);
 
-  const isActive = () => {
-    if(pathname === LINKS.HOME.to) {
-      return pathname === to;
-    } else if(to === LINKS.HOME.to) {
-      return false;
-    }
-    return pathname.includes(to);
-  }
-  
   return (
     <li className={styles.navigationItem}>
       <Link
         to={to}
         className={classnames(
           styles.link,
-          isActive() && styles.link__isActive
+          isActive && styles.link__isActive
         )}
       >
         {children || caption}
