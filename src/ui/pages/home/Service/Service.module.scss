@@ -1,0 +1,48 @@
+@import '@styles/abstract';
+.service {
+  background: $color-main-lightest;
+  padding: 60px 0;
+
+  @include bp-lg {
+    padding: 0;
+  }
+}
+
+.serviceContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 61.8vh;
+  padding: 100px 0;
+
+   @include bp-lg {
+    flex-direction: row;
+    max-height: 450px;
+    padding: 20px 0;  
+    @include wider-section;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 20px 40px;
+
+  @include bp-lg {
+    padding: 0px 60px;
+  }
+}
+
+.icon {
+  font-size: 50px;
+}
+
+.title {
+  margin: 15px 0 8px;
+  font-size: 23px;
+}
+
+.paragraph {
+  font-size: 20px;
+}
