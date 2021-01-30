@@ -19,8 +19,9 @@ const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
   <li className={classnames(
     styles.thumbList,
     active && styles.thumbList_active,
+    onClick={onClick}
   )}>
-    <div className={styles.liThumb} onClick={onClick}>
+    <div className={styles.liThumb}>
       <Img
         role="presentation"
         className={styles.thumbImg}
