@@ -1,12 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
 // import TransitionLink from 'gatsby-plugin-transition-link';
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styles from './Link.module.scss';
 
 const Component = ({
   to,
-  onClick={onClick},
+  onClick = null,
   children,
   className,
   classNameActive,
@@ -24,7 +24,7 @@ const Component = ({
     )}
 
     fade={withEffectTransition}
-  
+
     // cover={withEffectTransition}
     // direction="right"
 

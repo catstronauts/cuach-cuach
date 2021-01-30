@@ -37,18 +37,18 @@ const HeroDesktop = ({ data, className }) => {
   const handleClick = (i) => {
     const selected = dataa[i];
 
-    const body = document.getElementsByTagName("BODY")[0];
+    const body = document.getElementsByTagName('BODY')[0];
 
-    switch(i) {
+    switch (i) {
       case 1:
-        body.className ="pink";
+        body.className = 'pink';
         break;
       case 2:
-        body.className = "blue";
+        body.className = 'blue';
         break;
       case 0:
       default:
-        body.className = "";
+        body.className = '';
     }
     setImg(selected.img);
   };
