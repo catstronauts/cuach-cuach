@@ -10,9 +10,9 @@ import { Button } from '@components/Button';
 import styles from './HeroDesktop.module.scss';
 
 const dataIcons = [
-  { style: styles.hero_var1, id: '4rsBP9P4ivZTUlV9eY3ZwV' },
-  { style: styles.hero_var2, id: '2VVZOykmb49D1iVZRAAkmO' },
-  { style: styles.hero_var3, id: '4wrFdVLEjNh9KE2Q6o2k8y' },
+  { style: styles.hero_var1, contentful_id: '4rsBP9P4ivZTUlV9eY3ZwV' },
+  { style: styles.hero_var2, contentful_id: '2VVZOykmb49D1iVZRAAkmO' },
+  { style: styles.hero_var3, contentful_id: '4wrFdVLEjNh9KE2Q6o2k8y' },
 ];
 
 const ThumbListImg = ({ thumbImg, onClick }) => (
@@ -31,7 +31,7 @@ const HeroDesktop = ({ data, className }) => {
   const _data = dataIcons.map((di, i) => ({
     ...di,
     img: get(
-      imgs.find(im => di.id === im.node.contentful_id),
+      imgs.find(im => di.contentful_id === im.node.contentful_id),
       'node.fluid',
       null
     ),
