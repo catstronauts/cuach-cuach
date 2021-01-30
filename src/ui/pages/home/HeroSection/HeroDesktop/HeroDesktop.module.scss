@@ -83,6 +83,11 @@
 .thumbList {
   display: flex;
   flex-direction: column;
+  list-style: none;
+
+  &_active .liIcon {
+    background: currentColor;
+  }
 }
 
 .liThumb {
@@ -105,7 +110,6 @@
 }
 
 .liIconWrapper {
-  list-style: none;
   margin: auto;
   padding: 10px;
 }
@@ -114,8 +118,11 @@
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background: $color-main-lightest;
+  color: $color-main-lightest;
+  border: 2px solid currentColor;
+  background: transparent;
 }
+
 
 .socialMedia {
   position: absolute;

@@ -16,24 +16,25 @@ const dataIcons = [
 ];
 
 const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
-  <div className={classnames(
+  <li className={classnames(
     styles.thumbList,
     active && styles.thumbList_active,
   )}>
-    <li className={styles.liThumb} onClick={onClick}>
+    <div className={styles.liThumb} onClick={onClick}>
       <Img
         role="presentation"
         className={styles.thumbImg}
         fluid={thumbImg}
       />
-    </li>
-    <li className={styles.liIconWrapper}>
+    </div>
+    <div className={styles.liIconWrapper}>
       <div className={styles.liIcon} />
-    </li>
-  </div>
+    </div>
+  </li>
 );
 
 const HeroDesktop = ({ data, className }) => {
+  const [selection, setSeletion] = useState(0);
   const staticQuery = useStaticQuery(query);
   const imgs = get(staticQuery, 'allContentfulAsset.edges', []);
   const _data = dataIcons.map((di, i) => ({
@@ -45,11 +46,9 @@ const HeroDesktop = ({ data, className }) => {
     ),
   }));
 
-  const [img, setImg] = useState(_data[0].img);
 
   const handleClick = (i) => {
-    const selected = _data[i];
-
+    setSeletion(i)
     const body = document.getElementsByTagName('BODY')[0];
 
     switch (i) {
@@ -63,7 +62,6 @@ const HeroDesktop = ({ data, className }) => {
       default:
         body.className = '';
     }
-    setImg(selected.img);
   };
 
   return (
@@ -83,7 +81,7 @@ const HeroDesktop = ({ data, className }) => {
             <div className={styles.imgContainer}>
               <Img
                 className={styles.img}
-                fluid={img}
+                fluid={_data[selection].img}
                 role="presentation"
               />
             </div>
@@ -94,7 +92,7 @@ const HeroDesktop = ({ data, className }) => {
                 <ThumbListImg
                   key={i}
                   thumbImg={d.img}
-                  active={false}
+                  active={selection === i}
                   onClick={() => handleClick(i)}
                 />
               ))}
