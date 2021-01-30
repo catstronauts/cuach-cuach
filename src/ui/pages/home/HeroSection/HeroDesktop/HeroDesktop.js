@@ -15,14 +15,22 @@ const dataIcons = [
   { style: styles.hero_var3 },
 ];
 
-const ThumbListImg = ({ thumbImg, onClick }) => (
-  <li className={styles.liThumb} onClick={onClick}>
-    <Img
-      role="presentation"
-      className={styles.thumbImg}
-      fluid={thumbImg}
-    />
-  </li>
+const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
+  <div className={classnames(
+    styles.thumbList,
+    active && styles.thumbList_active,
+  )}>
+    <li className={styles.liThumb} onClick={onClick}>
+      <Img
+        role="presentation"
+        className={styles.thumbImg}
+        fluid={thumbImg}
+      />
+    </li>
+    <li className={styles.liIconWrapper}>
+      <div className={styles.liIcon} />
+    </li>
+  </div>
 );
 
 const HeroDesktop = ({ data, className }) => {
@@ -81,6 +89,7 @@ const HeroDesktop = ({ data, className }) => {
                 <ThumbListImg
                   key={i}
                   thumbImg={d.img}
+                  active={false}
                   onClick={() => handleClick(i)}
                 />
               ))}
