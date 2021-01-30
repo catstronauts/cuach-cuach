@@ -10,9 +10,9 @@ import { Button } from '@components/Button';
 import styles from './HeroDesktop.module.scss';
 
 const dataIcons = [
-  { style: styles.hero_var1 },
-  { style: styles.hero_var2 },
-  { style: styles.hero_var3 },
+  { style: styles.hero_var1, contentful_id: '4rsBP9P4ivZTUlV9eY3ZwV' },
+  { style: styles.hero_var2, contentful_id: '2VVZOykmb49D1iVZRAAkmO' },
+  { style: styles.hero_var3, contentful_id: '4wrFdVLEjNh9KE2Q6o2k8y' },
 ];
 
 const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
@@ -35,28 +35,33 @@ const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
 
 const HeroDesktop = ({ data, className }) => {
   const staticQuery = useStaticQuery(query);
-  const dataa = dataIcons.map((di, i) => ({
+  const imgs = get(staticQuery, 'allContentfulAsset.edges', []);
+  const _data = dataIcons.map((di, i) => ({
     ...di,
-    img: get(staticQuery, `hero${i + 1}.childImageSharp.fluid`, {}),
+    img: get(
+      imgs.find(im => di.contentful_id === im.node.contentful_id),
+      'node.fluid',
+      null
+    ),
   }));
 
-  const [img, setImg] = useState(dataa[0].img);
+  const [img, setImg] = useState(_data[0].img);
 
   const handleClick = (i) => {
-    const selected = dataa[i];
+    const selected = _data[i];
 
-    const body = document.getElementsByTagName("BODY")[0];
+    const body = document.getElementsByTagName('BODY')[0];
 
-    switch(i) {
+    switch (i) {
       case 1:
-        body.className ="pink";
+        body.className = 'pink';
         break;
       case 2:
-        body.className = "blue";
+        body.className = 'blue';
         break;
       case 0:
       default:
-        body.className = "";
+        body.className = '';
     }
     setImg(selected.img);
   };
@@ -85,7 +90,7 @@ const HeroDesktop = ({ data, className }) => {
           </div>
           <div className={styles.thumbWrapper}>
             <ul className={styles.thumb}>
-              {dataa.map((d, i) => (
+              {_data.map((d, i) => (
                 <ThumbListImg
                   key={i}
                   thumbImg={d.img}
@@ -107,33 +112,19 @@ const HeroDesktop = ({ data, className }) => {
 
 const query = graphql`
   query {
-    hero1: file(
-      sourceInstanceName: {eq: "images"},
-      relativePath: {eq: "homeHero/hero1.png"}
-    ) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    hero2: file(
-      sourceInstanceName: {eq: "images"},
-      relativePath: {eq: "homeHero/hero2.png"}
-    ) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    hero3: file(
-      sourceInstanceName: {eq: "images"},
-      relativePath: {eq: "homeHero/hero3.png"}
-    ) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
+    allContentfulAsset(filter: {
+      contentful_id: {in: [
+        "4rsBP9P4ivZTUlV9eY3ZwV",
+        "2VVZOykmb49D1iVZRAAkmO",
+        "4wrFdVLEjNh9KE2Q6o2k8y",
+      ]}
+    }) {
+      edges {
+        node {
+          contentful_id
+          fluid(maxWidth: 500, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
         }
       }
     }
