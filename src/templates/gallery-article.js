@@ -16,7 +16,7 @@ const ProductPage = (props) => {
   return (
     <>
       <Helmet pageTitle={title} />
-      
+
       <Section>
         <div className={styles.productPage}>
           <Carousel images={images} />
@@ -45,8 +45,8 @@ export const pageQuery = graphql`
       title
       price
       images {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid
+        fluid(maxWidth: 450, resizingBehavior: SCALE) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
       body {

@@ -46,8 +46,8 @@ export const pageQuery = graphql`
           slug
           price
           images {
-            fluid {
-              ...GatsbyContentfulFluid
+            fluid(maxWidth: 450, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {

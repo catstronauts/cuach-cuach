@@ -1,10 +1,10 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
 import { LINKS } from '@src/constants';
 import { Helmet } from '@layouts/Helmet';
 import GalleryPage from '@ui/pages/GalleryPage';
 
-export default (props) => (
+const Page = (props) => (
   <>
     <Helmet pageTitle={LINKS.GALLERY.caption} />
     <GalleryPage title="Gallery" {...props} />
@@ -31,7 +31,7 @@ export const blogListQuery = graphql`
           price
           images {
             fluid {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {
@@ -44,3 +44,5 @@ export const blogListQuery = graphql`
     }
   }
 `;
+
+export default Page;
