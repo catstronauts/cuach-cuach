@@ -35,16 +35,16 @@
 }
 
 .title {
-  font-size: 4em;
+  font-size: 3em;
   line-height: 72px;
   font-weight: 500;
   padding-bottom: 20px;
 
   strong {
     display: block;
+    font-family: $font-family-title;
     color: $color-main;
-    font-size: 1.1em;
-    font-weight: 900;
+    font-size: 62px;
   }
 }
 
