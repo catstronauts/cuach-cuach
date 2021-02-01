@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet as ReactHelmet } from 'react-helmet';
+import favicon from '@assets/images/favicon.png'
 import '@styles/index.scss';
 
 export const Helmet = ({ pageTitle }) => (
@@ -13,6 +14,7 @@ export const Helmet = ({ pageTitle }) => (
     ]}
   >
     <html lang="es" />
+    <link rel="icon" type="image/png" href={favicon} />
   </ReactHelmet>
 );
 
