@@ -4,6 +4,8 @@ $img-width: 250px;
 
 .title {
   @include sectionTitle;
+  font-family: $font-family-title;
+  font-size: 36px;
 }
 
 .subtitle {
@@ -42,6 +44,7 @@ $img-width: 250px;
 }
 
 .name {
+  font-family: $font-family-title;
   color: $color-main;
   font-size: 23px;
   letter-spacing: 3px;
@@ -49,7 +52,7 @@ $img-width: 250px;
 
 .job {
   font-size: 18px;
-  padding: 5px 0 3px 0;
+  padding: 3px 0;
   color: $color-main-light;
 }
 

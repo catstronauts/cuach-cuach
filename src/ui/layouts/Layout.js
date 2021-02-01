@@ -4,6 +4,8 @@ import { Helmet } from '@layouts/Helmet';
 import { Footer } from '@layouts/Footer';
 import { Navigation } from '@layouts/Navigation';
 import { AppProvider } from './Context';
+import "@fontsource/roboto"
+import "@fontsource/lexend-giga"
 import styles from './layout.module.scss';
 import '@styles/index.scss';
 
