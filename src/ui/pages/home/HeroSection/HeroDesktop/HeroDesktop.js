@@ -15,17 +15,27 @@ const dataIcons = [
   { style: styles.hero_var3, contentful_id: '4wrFdVLEjNh9KE2Q6o2k8y' },
 ];
 
-const ThumbListImg = ({ thumbImg, onClick }) => (
-  <li className={styles.liThumb} onClick={onClick}>
-    <Img
-      role="presentation"
-      className={styles.thumbImg}
-      fluid={thumbImg}
-    />
+const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
+  <li className={classnames(
+    styles.thumbList,
+    active && styles.thumbList_active,
+    onClick={onClick}
+  )}>
+    <div className={styles.liThumb}>
+      <Img
+        role="presentation"
+        className={styles.thumbImg}
+        fluid={thumbImg}
+      />
+    </div>
+    <div className={styles.liIconWrapper}>
+      <div className={styles.liIcon} />
+    </div>
   </li>
 );
 
 const HeroDesktop = ({ data, className }) => {
+  const [selection, setSeletion] = useState(0);
   const staticQuery = useStaticQuery(query);
   const imgs = get(staticQuery, 'allContentfulAsset.edges', []);
   const _data = dataIcons.map((di, i) => ({
@@ -37,11 +47,9 @@ const HeroDesktop = ({ data, className }) => {
     ),
   }));
 
-  const [img, setImg] = useState(_data[0].img);
 
   const handleClick = (i) => {
-    const selected = _data[i];
-
+    setSeletion(i)
     const body = document.getElementsByTagName('BODY')[0];
 
     switch (i) {
@@ -55,7 +63,6 @@ const HeroDesktop = ({ data, className }) => {
       default:
         body.className = '';
     }
-    setImg(selected.img);
   };
 
   return (
@@ -75,7 +82,7 @@ const HeroDesktop = ({ data, className }) => {
             <div className={styles.imgContainer}>
               <Img
                 className={styles.img}
-                fluid={img}
+                fluid={_data[selection].img}
                 role="presentation"
               />
             </div>
@@ -86,6 +93,7 @@ const HeroDesktop = ({ data, className }) => {
                 <ThumbListImg
                   key={i}
                   thumbImg={d.img}
+                  active={selection === i}
                   onClick={() => handleClick(i)}
                 />
               ))}

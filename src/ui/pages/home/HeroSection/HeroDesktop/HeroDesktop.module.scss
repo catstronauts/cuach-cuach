@@ -75,8 +75,19 @@
 
 .thumb {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   padding: 0;
+}
+
+.thumbList {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+
+  &_active .liIcon {
+    background: currentColor;
+  }
 }
 
 .liThumb {
@@ -92,11 +103,26 @@
 }
 
 .thumbImg {
-  display: block;
+  display: flex;
   width: 100%;
   width: 60px;
   max-width: 60px;
 }
+
+.liIconWrapper {
+  margin: auto;
+  padding: 10px;
+}
+
+.liIcon {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  color: $color-main-lightest;
+  border: 2px solid currentColor;
+  background: transparent;
+}
+
 
 .socialMedia {
   position: absolute;
