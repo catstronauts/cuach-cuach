@@ -18,7 +18,7 @@ const ValuesSection = () => {
       <div className={styles.categorySection}>
         {dataValues.map(d => (
           <CategoryTile
-            key={d.id}
+            key={d.contentful_id}
             tag={d.title}
             img={get(
               imgs.find(im => d.contentful_id === im.node.contentful_id),

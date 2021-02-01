@@ -16,11 +16,12 @@ const dataIcons = [
 ];
 
 const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
-  <li className={classnames(
-    styles.thumbList,
-    active && styles.thumbList_active,
-    onClick={onClick}
-  )}>
+  <li
+    onClick = {onClick}
+    className={classnames(
+      styles.thumbList,
+      active && styles.thumbList_active
+    )}>
     <div className={styles.liThumb}>
       <Img
         role="presentation"
@@ -47,9 +48,8 @@ const HeroDesktop = ({ data, className }) => {
     ),
   }));
 
-
   const handleClick = (i) => {
-    setSeletion(i)
+    setSeletion(i);
     const body = document.getElementsByTagName('BODY')[0];
 
     switch (i) {
