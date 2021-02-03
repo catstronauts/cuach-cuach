@@ -14,3 +14,8 @@ export const pathIsActive = (pagePath, pathTo, pathBase) => {
   }
   return pagePath.includes(formatPath(pathTo));
 };
+
+export const priceTag = (price) =>
+  price
+    ? `Precio: $${price}`
+    : '';
