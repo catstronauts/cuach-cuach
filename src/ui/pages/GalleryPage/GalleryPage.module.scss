@@ -6,7 +6,7 @@
 
 .products {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 
   @include bp-md {
     flex-direction: row;
@@ -16,11 +16,19 @@
 
 .categoryMenu {
   flex: 1;
-  padding: 60px;
+  padding: 60px 0 0 60px;
   margin: 0 auto;
-  width: 80%;
+  width: 450px;
   text-transform: uppercase;
   letter-spacing: .05em;
+
+  @include bp-md {
+    padding: 60px 0 0 30px;
+  }
+
+  @include bp-lg {
+    padding: 60px;
+  }
 }
 
 .categoryTitle {
