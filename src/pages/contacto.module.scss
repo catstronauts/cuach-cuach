@@ -24,6 +24,7 @@
 
 .title {
   @include sectionTitle;
+  font-family: $font-family-title;
   font-size: 30px;
 }
 

@@ -3,17 +3,17 @@ import { LINKS } from '@src/constants';
 export const data = [
   {
     title: 'manufactura',
-    imgName: 'category_01.jpg',
+    contentful_id: '2spPYJjeEbB1UOqs3sWdjk',
     linkTo: LINKS.GALLERY_TEXTIL.to,
   },
   {
     title: 'arte',
-    imgName: 'category_02.jpg',
+    contentful_id: '2ZsuRBfRSrKWyq0EgYFAAV',
     linkTo: LINKS.GALLERY_ARTE.to,
   },
   {
     title: 'arquitectura',
-    imgName: 'category_03.jpg',
+    contentful_id: '716fUmL7CeuiGV025Yxrgx',
     linkTo: LINKS.GALLERY_ARQUITECTURA.to,
   },
 ];

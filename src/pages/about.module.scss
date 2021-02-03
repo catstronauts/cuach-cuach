@@ -28,6 +28,7 @@
 
 .subtitle {
   @include sectionTitle;
+  font-family: $font-family-title;
   font-size: 36px;
   text-align: center;
   margin: 0 0 23px;
@@ -37,7 +38,7 @@
 .phrase {
   color: $grey-dark;
   text-align: center;
-  font-size: 17px;
+  font-size: 20px;
   max-width: 300px;
   margin: 20px auto 0;
 }

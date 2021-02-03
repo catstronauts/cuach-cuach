@@ -9,6 +9,7 @@ import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import CardProduct from '@components/CardProduct';
 import { About } from '@ui/pages/home/About';
+import { Service } from '@ui/pages/home/Service';
 
 const Home = (props) => {
   const products = get(props, 'data.allContentfulProduct.edges');
@@ -19,6 +20,7 @@ const Home = (props) => {
 
       <HeroSection />
       <Categories />
+      <Service />
       <About />
       <Values />
 
@@ -44,8 +46,8 @@ export const pageQuery = graphql`
           slug
           price
           images {
-            fluid {
-              ...GatsbyContentfulFluid
+            fluid(maxWidth: 450, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {

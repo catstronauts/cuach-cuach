@@ -3,7 +3,7 @@
 .mob {
   display: block;
 
-  @include bp-sm {
+  @include bp-md {
     display: none;
   }
 }
@@ -11,7 +11,7 @@
 .desk {
   display: none;
 
-  @include bp-sm {
+  @include bp-md {
     display: flex;
   }
 }
