@@ -1,4 +1,5 @@
 import React from 'react';
+import { priceTag } from '@src/utils';
 import { Link } from '@components/Link';
 import BackgroundImage from 'gatsby-background-image';
 import { getProductUrlBySlug } from '@src/constants';
@@ -8,6 +9,8 @@ import List from './CardProduct.List';
 import styles from './CardProduct.module.scss';
 
 const CardProduct = ({ article }) => {
+  const { images } = article;
+  const f = (!!images && images.length) ? images[0].fluid : {};
 
   return (
     <li>
@@ -16,26 +19,23 @@ const CardProduct = ({ article }) => {
           <BackgroundImage
             className={styles.image}
             alt={article.title}
-            fluid={article.images[0].fluid}>
-            
+            fluid={f}
+          >
+
             <Link className={styles.layer} to={getProductUrlBySlug(article.slug)}>
-              <Icon  
+              <Icon
                 name='search'
                 className={styles.search} />
               {/* Ver detalle */}
             </Link>
           </BackgroundImage>
         </div>
-        
+
         <div className={styles.text}>
           <h3 className={styles.productTitle}>
             <Link className={styles.title} to={getProductUrlBySlug(article.slug)}>{article.title}</Link>
           </h3>
-          <div className={styles.price}>{
-            !!article.price
-              ? `Precio: $${article.price}`
-              : ''
-            }
+          <div className={styles.price}>{priceTag(article.price)}
           </div>
           <p
             className={styles.description}
