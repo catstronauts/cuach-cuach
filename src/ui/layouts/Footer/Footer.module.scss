@@ -25,6 +25,9 @@
   justify-content: center;
   margin-bottom: 14px;
   text-decoration: none;
+  font-family: $font-family-title;
+  color: $color-main;
+
 
   @include bp-sm {
     margin-bottom: 0;
