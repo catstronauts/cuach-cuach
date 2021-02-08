@@ -10,6 +10,10 @@ import { Section } from '@layouts/Section';
 import CardProduct from '@components/CardProduct';
 import { About } from '@ui/pages/home/About';
 import { Service } from '@ui/pages/home/Service';
+import Img from '@assets/images/home-img.jpg'
+import styles from './Home.module.scss';
+
+
 
 const Home = (props) => {
   const products = get(props, 'data.allContentfulProduct.edges');
@@ -23,7 +27,9 @@ const Home = (props) => {
       <Service />
       <About />
       <Values />
-
+      <div>
+        <img className={styles.bgImg} src={Img} />
+      </div>
       <Section title="Nuevos Productos">
         <CardProduct.List>
           {products.map(({ node }) => (
