@@ -1,8 +1,8 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form as RFFForm } from 'react-final-form';
 
-const Form = ({ children, className, onSubmit, iniValues = {} }) => {
+const Form = ({ children, className, onSubmit, onChange, iniValues = {} }) => {
   const handleSubmit = (values) => {
     // TODO: check if it is valid
     onSubmit(values);
@@ -15,6 +15,10 @@ const Form = ({ children, className, onSubmit, iniValues = {} }) => {
       // validate={formValidate}
       render={({ handleSubmit, values }) => {
         // const valid = formIsValid(values);
+
+        useEffect(() => {
+          onChange && onChange(values);
+        }, [values]);
 
         return (
           <form onSubmit={handleSubmit} className={className}>
