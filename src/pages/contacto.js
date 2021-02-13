@@ -15,7 +15,7 @@ const Content = () => (
       <div className={styles.contactPage}>
         <div className={styles.info}>
           <div className={styles.title}> ¿Tienes alguna duda? </div>
-          <div className={styles.content}> 
+          <div className={styles.content}>
             <p>Si quieres comprar o hacer un encargo especial llámanos o envíanos un email.<br />
             +56 994 403 823<br />
             contacto@cuachcuach.cl<br />
