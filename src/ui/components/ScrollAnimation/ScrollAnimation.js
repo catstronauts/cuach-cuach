@@ -24,6 +24,7 @@ const Component = ({ children, animation, className }) => {
       // onLeaveViewport={() => console.log('leave')}
       className={classnames(
         animation,
+        styles.animation,
         viewed
           ? styles.active
           : styles.inactive,

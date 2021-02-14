@@ -1,23 +1,22 @@
 @import "@styles/abstract";
 
-.inactive {
-  animation-play-state: paused;
+.animation {
   animation-delay: 0s;
   animation: 1s ease-in 1;
   animation-fill-mode: forwards;
 }
-.active {
-  animation-play-state: running;
-}
+
+.inactive { animation-play-state: paused; }
+.active   { animation-play-state: running; }
 
 .delay_0 {
   animation-delay: 0;
 }
 .delay_1 {
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
 }
 .delay_2 {
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 }
 
 
