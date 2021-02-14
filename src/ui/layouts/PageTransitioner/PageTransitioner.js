@@ -2,7 +2,7 @@
 // https://gatsby-plugin-transition-link.netlify.app/
 
 import React from 'react';
-import { TransitionState } from "gatsby-plugin-transition-link";
+import { TransitionState } from 'gatsby-plugin-transition-link';
 
 const Portal = () => (
   <TransitionState>
@@ -10,9 +10,7 @@ const Portal = () => (
       console.log(transitionStatus);
       console.log(mount);
 
-      return (
-        <div />
-      )
+      return <div />;
     }}
   </TransitionState>
 );

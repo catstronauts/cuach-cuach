@@ -1,3 +1,11 @@
+export const isProduction = process.env.NODE_ENV === 'production';
+
+// Email constants
+export const EMAILJS_SERVICE_ID = 'gmail';
+export const EMAILJS_TEMPLATE_ID = 'template_2v9s12t';
+export const EMAILJS_USER_ID = 'user_MKo97gaxfyq2vnV35VE4g';
+
+// Url constants
 export const LINKS = {
   // EXAMPLE: {
   //   to: 'url name -> this should match with file names at `src/pages/xxxx.js`',
@@ -33,7 +41,7 @@ export const LINKS = {
   GALLERY_ARQUITECTURA: {
     to: '/galeria/arquitectura/',
     caption: 'Galería - arquitectura',
-    text: 'Arquitetura'
+    text: 'Arquitetura',
   },
 };
 

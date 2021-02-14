@@ -5,23 +5,17 @@ import { Button } from '@components/Button';
 import styles from './Pagination.module.scss';
 
 const Pagination = ({ path, currentPage, limit, numPages, className }) => {
-  const linkPrev =  (currentPage === 2)
+  const linkPrev = (currentPage === 2)
     ? `${path}`
     : `${path}/${currentPage - 1}`;
   const linkNext = `${path}/${currentPage + 1}`;
-  const disablePrev = (currentPage === 1)
-    ? true
-    : false;
-  const disableNext = (currentPage === numPages)
-    ? true
-    : false;
-
+  const disablePrev = !!(currentPage === 1);
+  const disableNext = !!(currentPage === numPages);
 
   return (numPages !== 1) ? (
-    <div 
-      className={classnames(
-        styles.pagination,
-        className
+    <div className={classnames(
+      styles.pagination,
+      className
     )}>
       <Link className={styles.link} to={linkPrev}>
         <Button className={styles.btn} disabled={disablePrev} caption='<'/>

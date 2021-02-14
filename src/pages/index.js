@@ -13,8 +13,6 @@ import { Service } from '@ui/pages/home/Service';
 import Img from '@assets/images/home-img.jpg'
 import styles from './Home.module.scss';
 
-
-
 const Home = (props) => {
   const products = get(props, 'data.allContentfulProduct.edges');
 
