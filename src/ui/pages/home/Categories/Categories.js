@@ -7,6 +7,7 @@ import { Link } from '@components/Link';
 import { Button } from '@components/Button';
 import CategoryTile from '@components/CategoryTile';
 import { data as dataValues } from './data';
+import { ScrollAnimation, animationStyles } from '@components/ScrollAnimation';
 import styles from './Categories.module.scss';
 
 const ValuesSection = () => {
@@ -15,20 +16,22 @@ const ValuesSection = () => {
 
   return (
     <Section title='Nuestras líneas de trabajo'>
-      <div className={styles.categorySection}>
-        {dataValues.map(d => (
-          <CategoryTile
-            key={d.contentful_id}
-            tag={d.title}
-            img={get(
-              imgs.find(im => d.contentful_id === im.node.contentful_id),
-              'node.fluid',
-              null
-            )}
-            linkTo={d.linkTo}
-          />
-        ))}
-      </div>
+      <ScrollAnimation animation={animationStyles.fadeIn}>
+        <div className={styles.categorySection}>
+          {dataValues.map(d => (
+            <CategoryTile
+              key={d.contentful_id}
+              tag={d.title}
+              img={get(
+                imgs.find(im => d.contentful_id === im.node.contentful_id),
+                'node.fluid',
+                null
+              )}
+              linkTo={d.linkTo}
+            />
+          ))}
+        </div>
+      </ScrollAnimation>
       <Link to={LINKS.GALLERY.to} className={styles.btnWrapper}>
         <Button caption='Ver Todo' />
       </Link>

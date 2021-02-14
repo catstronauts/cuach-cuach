@@ -1,0 +1,31 @@
+@import "@styles/abstract";
+
+.inactive {
+  animation-play-state: paused;
+  animation-delay: 0s;
+  animation: 1s ease-in 1;
+  animation-fill-mode: forwards;
+}
+.active {
+  animation-play-state: running;
+}
+
+.delay_0 {
+  animation-delay: 0;
+}
+.delay_1 {
+  animation-delay: 0.2s;
+}
+.delay_2 {
+  animation-delay: 0.4s;
+}
+
+
+// Animations
+.fadeIn {
+  opacity: 0;
+  @include keyframe(fadeIn) {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
