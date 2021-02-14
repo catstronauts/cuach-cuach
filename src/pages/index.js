@@ -8,6 +8,7 @@ import HeroSection from '@ui/pages/home/HeroSection';
 import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import CardProduct from '@components/CardProduct';
+import InstagramFeeds from '@components/InstagramFeeds';
 import { About } from '@ui/pages/home/About';
 import { Service } from '@ui/pages/home/Service';
 import Img from '@assets/images/home-img.jpg'
@@ -35,6 +36,7 @@ const Home = (props) => {
           ))}
         </CardProduct.List>
       </Section>
+      <InstagramFeeds />
     </>
   );
 };

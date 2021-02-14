@@ -1,11 +1,11 @@
 @import '@styles/abstract';
 .service {
-  background: $color-main;
+  background: $color-main-light;
   color: $white;
   text-shadow: 1px ​0px 1px $color-main-lightest;
-  padding: 60px 0;
+  padding: 90px 0;
 
-  @include bp-lg {
+  @include bp-sm {
     padding: 0;
   }
 }
