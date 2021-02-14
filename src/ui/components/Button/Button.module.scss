@@ -28,7 +28,7 @@
 
 .disabled {
   background:  $grey;
-  cursor: none;
+  cursor: not-allowed;
 
   &:hover {
     background:  $grey;
