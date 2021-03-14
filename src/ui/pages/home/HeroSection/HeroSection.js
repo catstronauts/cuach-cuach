@@ -5,8 +5,8 @@ import { HeroDesktop } from './HeroDesktop';
 import styles from './HeroSection.module.scss';
 
 const content = {
-  title: <>Lorem ipsum dolor <strong>Cuach Cuach</strong></>,
-  subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisl dui, aliquet sit amet semper id, rhoncus gravida arcu. Nam eu eros mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+  title: <>Arte <strong>Cuach Cuach</strong></>,
+  subtitle: 'Nuestro arte está inspirado en la cultura e identidad de nuestra Región y en la riqueza de su entorno natural. Creamos cuadros que transmiten respeto hacia la naturaleza y a su gente. Nuestros cuadros son pintados a mano con técnicas variadas como Acuarelas, Acrílicos, entre otros.',
   btnTxt: 'Leer más',
   btnTo: LINKS.GALLERY.to,
 };
