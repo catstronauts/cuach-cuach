@@ -17,7 +17,7 @@ export const LINKS = {
   },
   ABOUT: {
     to: '/about',
-    caption: 'About',
+    caption: 'Nosotros',
   },
   CONTACT_US: {
     to: '/contacto',
