@@ -50,6 +50,11 @@
   }
 }
 
+.img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
 .text {
   margin: auto;
   padding: 0 50px 30px;
@@ -61,7 +66,8 @@
 
 .text2 {
   margin: auto;
-
+  aspect-ratio: 4/3;
+  object-fit: cover;
   @include bp-md {
     padding: 0 0 0 50px;
   }

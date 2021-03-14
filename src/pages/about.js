@@ -8,6 +8,7 @@ import { Divider } from '@components/Divider';
 import { HeroTitle } from '@components/HeroTitle';
 import Us from '@ui/pages/home/Us';
 import taller from '@assets/images/taller.jpg';
+import cuachcuach from '@assets/images/cuachcuachfoto.jpg';
 import styles from './about.module.scss';
 
 const AboutPage = ({ data = {} }) => {
@@ -31,11 +32,11 @@ const AboutPage = ({ data = {} }) => {
             <div className={styles.text}>
               <h2 className={styles.subtitle}>Taller Cuach Cuach</h2>
               <Divider className={styles.division} />
-              <p className={styles.phrase}>Amamos lo que hacemos. Bla bla bla blaBla bla bla bla</p>
+              <p className={styles.phrase}>Amamos lo que hacemos</p>
             </div>
           </div>
           <div className={styles.contentItem}>
-            <img src={taller} />
+            <img className={styles.img} src={cuachcuach} />
           </div>
         </div>
 
