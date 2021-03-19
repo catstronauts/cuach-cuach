@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet as ReactHelmet } from 'react-helmet';
-import favicon from '@assets/images/favicon.png'
+import favicon from '@assets/images/favicon.png';
 import '@styles/index.scss';
 
 export const Helmet = ({ pageTitle }) => (

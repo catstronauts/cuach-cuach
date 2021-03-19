@@ -1,14 +1,15 @@
 import React from 'react';
-// import { useMail } from 'hooks/useMail';
-// import styles from './Contact.module.scss';
-// import Icon from '@components/Icon';
+import { useMail } from '@hooks/useMail';
+import { useBoolean } from '@hooks/useBoolean';
+import Icon from '@components/Icon';
 import Button from '@components/Button';
 import { Form } from '@components/formComponents/Form';
 import { Field } from '@components/formComponents/Field';
+import styles from './ContactForm.module.scss';
 
 const Contact = () => {
-  // const { isSent, isLoading, actions: mailActions } = useMail();
-  const { isSent, isLoading, actions: mailActions } = {};
+  const { isSent, isLoading, actions: mailActions } = useMail();
+  const [isValid, isValidActions] = useBoolean(false);
 
   const isEmail = (email) => {
     // eslint-disable-next-line no-useless-escape
@@ -16,10 +17,9 @@ const Contact = () => {
     return re.test(String(email).toLowerCase());
   };
 
-  const isValid = (vals = {}) => {
+  const handleFormChange = (vals) => {
     const { name, email, message } = vals;
-
-    return (
+    isValidActions.setValue(
       !!name &&
       !!email &&
       !!isEmail(email) &&
@@ -27,14 +27,17 @@ const Contact = () => {
     );
   };
   const handleSendMail = (vals) => {
-    if (isValid(vals)) {
+    if (isValid) {
       mailActions.send(vals);
     } else {
     }
   };
 
   return !isSent ? (
-    <Form onSubmit={handleSendMail}>
+    <Form
+      onSubmit={handleSendMail}
+      onChange={handleFormChange}
+    >
       <Field
         name='name'
         label='Nombre'
@@ -54,16 +57,22 @@ const Contact = () => {
         placeholder="Tu mensaje..."
         disabled={isLoading}
       />
-      <Button disabled={isLoading}>Enviar</Button>
+
+      <Button
+        block
+        type='submit'
+        caption='Enviar'
+        disabled={!isValid || isLoading}
+      />
+
     </Form>
   ) : (
-    <div>abc</div>
-    // <div className={styles.confirmation}>
-    //   <Icon className={styles.confirmation_icon} name='check-circle' />
-    //   <span className={styles.confirmation_txt}>
-    //     Thank, your message has been sent!
-    //   </span>
-    // </div>
+    <div className={styles.confirmation}>
+      <Icon className={styles.confirmation_icon} name='check-circle' />
+      <span className={styles.confirmation_txt}>
+        Gracias, tu mensaje nos llegara pronto!
+      </span>
+    </div>
   );
 };
 

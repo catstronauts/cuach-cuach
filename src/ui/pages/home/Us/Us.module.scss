@@ -1,6 +1,7 @@
 @import '@styles/abstract';
 
 $img-width: 250px;
+$img-width-md: 300px;
 
 .title {
   @include sectionTitle;
@@ -23,6 +24,15 @@ $img-width: 250px;
 
 .card {
   padding: 0 30px;
+
+  @include bp-md {
+    display: flex;
+    flex-direction: row;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
 .cardImgWrapper {
@@ -30,17 +40,35 @@ $img-width: 250px;
   height: $img-width;
   margin: auto;
   padding: 35px 0;
+
+  @include bp-md {
+    width: $img-width-md;
+    height: $img-width-md;
+  }
 }
 
 .cardImg {
-  width: 100%;
+  width: $img-width;
   height: $img-width;
   object-fit: cover;
   border-radius: 50%;
+  
+  @include bp-md {
+    width: $img-width-md;
+    height: $img-width-md;
+  }
 }
 
 .cardText {
   max-width: 300px;
+
+  @include bp-md {
+    align-self: center;
+    max-width: 100%;
+    text-align: left;
+    padding: 0 80px;
+    
+  }
 }
 
 .name {
@@ -52,7 +80,7 @@ $img-width: 250px;
 
 .job {
   font-size: 18px;
-  padding: 3px 0;
+  padding: 7px 0 6px;
   color: $color-main-light;
 }
 

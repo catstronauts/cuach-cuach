@@ -1,0 +1,11 @@
+@import "@styles/abstract";
+
+.bgImg { 
+  // @include bg-cover;
+  height: 61.8vh;
+  max-height: 500px;
+  width: 90%;
+  margin: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+}

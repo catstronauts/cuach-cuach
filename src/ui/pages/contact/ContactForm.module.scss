@@ -1,0 +1,31 @@
+@import "@styles/abstract";
+
+.confirmation {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 8px;
+  border: 1px solid currentColor;
+  border-radius: $border-radius;
+  color: $color-status-success;
+  text-align: center;
+  opacity: 0;
+  background: rgba($color-status-success, .1);
+
+  animation-name: animtaionShow;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  @keyframes animtaionShow {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+  }
+
+  &_icon {
+    font-size: 60px;
+    color: currentColor;
+  }
+  &_txt {
+    display: block;
+    font-size: 16px;
+    margin: 16px 0 0;
+  }
+}
