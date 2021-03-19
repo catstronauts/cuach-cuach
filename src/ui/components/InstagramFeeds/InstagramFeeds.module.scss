@@ -1,0 +1,53 @@
+@import '@styles/abstract';
+
+.instagramContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.title {
+  font-family: $font-family-title;
+  margin: auto;
+  font-size: 23px;
+  padding-bottom: 20px;
+  max-width: 1180px;
+}
+
+.instagramFeeds {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  
+    a {
+      width: 50%;
+      display: none;
+      @include transition(opacity);
+      
+      &:nth-child(-n+2) {
+        display: block;
+      }
+     
+      @include bp-md {
+        width: 33.33%;  
+        &:nth-child(-n+3) {
+          display: block;
+        }
+      }
+
+      @include bp-lg {
+        width: 16.66%;  
+        display: block;
+      }
+    
+      &:hover {
+        opacity: 0.5;   
+      }
+
+      img {
+        // padding: 5px 10px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+    }
+}
