@@ -3,25 +3,30 @@ import { Helmet as ReactHelmet } from 'react-helmet';
 import { Link } from '@components/Link';
 import styles from './InstagramFeeds.module.scss';
 
+const INTAGRAM_COMPONENT_ID = 'instafeed-container';
+
 const InstagramFeeds = ({ limit = 6 }) => {
-  useEffect(()=> {
+  useEffect(() => {
     const waitForElement = () => {
       if (!!window.Instafeed) {
+        const accessToken = process.env.INSTAGRAM_TOKEN;
         const userFeed = new Instafeed({
           get: 'user',
-          target: "instafeed-container",
+          target: INTAGRAM_COMPONENT_ID,
           resolution: 'low_resolution',
           limit,
-          accessToken: process.env.INSTAGRAM_TOKEN
+          accessToken,
         });
-        userFeed.run();
-      }
-      else {
+
+        if (accessToken) {
+          userFeed.run();
+        }
+      } else {
         setTimeout(waitForElement, 250);
       }
-    }
+    };
     waitForElement();
-  }, [])
+  }, [limit]);
 
   return (
     <>
@@ -30,7 +35,7 @@ const InstagramFeeds = ({ limit = 6 }) => {
       </ReactHelmet>
       <div className={styles.instagramContainer}>
         <h3 className={styles.title}>Síguenos en <Link to='https://www.instagram.com/cuachcuach/' highlight>@cuachcuach</Link></h3>
-        <div className={styles.instagramFeeds} id="instafeed-container" />
+        <div className={styles.instagramFeeds} id={INTAGRAM_COMPONENT_ID} />
       </div>
     </>
   );
