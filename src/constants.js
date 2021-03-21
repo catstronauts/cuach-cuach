@@ -1,6 +1,7 @@
 export const isProduction = process.env.NODE_ENV === 'production';
 
 export const INSTAGRAM_TOKEN = process.env.INSTAGRAM_TOKEN;
+export const TEST = process.env.GATSBY_TEST;
 
 // Email constants
 export const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
