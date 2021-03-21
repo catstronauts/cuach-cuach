@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet as ReactHelmet } from 'react-helmet';
+import { INSTAGRAM_TOKEN } from '@src/constants';
 import { Link } from '@components/Link';
 import styles from './InstagramFeeds.module.scss';
 
@@ -9,7 +10,7 @@ const InstagramFeeds = ({ limit = 6 }) => {
   useEffect(() => {
     const waitForElement = () => {
       if (!!window.Instafeed) {
-        const accessToken = process.env.INSTAGRAM_TOKEN;
+        const accessToken = INSTAGRAM_TOKEN;
         const userFeed = new Instafeed({
           get: 'user',
           target: INTAGRAM_COMPONENT_ID,
