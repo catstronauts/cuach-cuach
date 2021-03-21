@@ -1,12 +1,11 @@
 export const isProduction = process.env.NODE_ENV === 'production';
 
-export const INSTAGRAM_TOKEN = process.env.INSTAGRAM_TOKEN;
-export const TEST = process.env.GATSBY_TEST;
+export const INSTAGRAM_TOKEN = process.env.GATSBY_INSTAGRAM_TOKEN;
 
 // Email constants
-export const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
-export const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
-export const EMAILJS_USER_ID = process.env.EMAILJS_USER_ID;
+export const EMAILJS_SERVICE_ID = process.env.GATSBY_EMAILJS_SERVICE_ID;
+export const EMAILJS_TEMPLATE_ID = process.env.GATSBY_EMAILJS_TEMPLATE_ID;
+export const EMAILJS_USER_ID = process.env.GATSBY_EMAILJS_USER_ID;
 
 // Url constants
 export const LINKS = {
