@@ -16,9 +16,9 @@ const Content = () => (
         <div className={styles.info}>
           <div className={styles.title}> ¿Tienes alguna duda? </div>
           <div className={styles.content}>
-            <p>Si quieres comprar o hacer un encargo especial llámanos o envíanos un email.<br />
+            <p>Si quieres comprar o hacer un encargo especial llámanos o envíanos un email o un WhatsApp.<br />
             +56 994 403 823<br />
-            contacto@cuachcuach.cl<br />
+            cuachines@gmail.com<br />
             Chiguayante, Chile<br />
             </p>
           </div>
