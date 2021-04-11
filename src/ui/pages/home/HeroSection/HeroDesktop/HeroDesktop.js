@@ -8,12 +8,7 @@ import { SocialLinks } from '@layouts/SocialLinks';
 import { Link } from '@components/Link';
 import { Button } from '@components/Button';
 import styles from './HeroDesktop.module.scss';
-
-const dataIcons = [
-  { contentful_id: '4rsBP9P4ivZTUlV9eY3ZwV', bodyClassName: '' },
-  { contentful_id: '2VVZOykmb49D1iVZRAAkmO', bodyClassName: 'pink' },
-  { contentful_id: '4wrFdVLEjNh9KE2Q6o2k8y', bodyClassName: 'blue' },
-];
+import { dataIcons } from './data';
 
 const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
   <li
@@ -68,8 +63,8 @@ const HeroDesktop = ({ data, className }) => {
         <div className={styles.heroWrapper}>
           <div className={styles.heroSection}>
             <div className={styles.text}>
-              <h2 className={styles.title}>{data.title}</h2>
-              <p className={styles.paragraph}>{data.subtitle}</p>
+              <h2 className={styles.title}>{_data[selection].title}</h2>
+              <p className={styles.paragraph}>{_data[selection].subtitle}</p>
               <Link to={data.btnTo}>
                 <Button caption={data.btnTxt} className={styles.btn} />
               </Link>
