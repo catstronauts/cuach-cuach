@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import get from 'lodash/get';
 import Img from 'gatsby-image';
@@ -10,9 +10,9 @@ import { Button } from '@components/Button';
 import styles from './HeroDesktop.module.scss';
 
 const dataIcons = [
-  { style: styles.hero_var1, contentful_id: '4rsBP9P4ivZTUlV9eY3ZwV' },
-  { style: styles.hero_var2, contentful_id: '2VVZOykmb49D1iVZRAAkmO' },
-  { style: styles.hero_var3, contentful_id: '4wrFdVLEjNh9KE2Q6o2k8y' },
+  { contentful_id: '4rsBP9P4ivZTUlV9eY3ZwV', bodyClassName: '' },
+  { contentful_id: '2VVZOykmb49D1iVZRAAkmO', bodyClassName: 'pink' },
+  { contentful_id: '4wrFdVLEjNh9KE2Q6o2k8y', bodyClassName: 'blue' },
 ];
 
 const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
@@ -36,6 +36,7 @@ const ThumbListImg = ({ thumbImg, onClick, active = false }) => (
 );
 
 const HeroDesktop = ({ data, className }) => {
+  const body = document.getElementsByTagName('BODY')[0];
   const [selection, setSeletion] = useState(0);
   const staticQuery = useStaticQuery(query);
   const imgs = get(staticQuery, 'allContentfulAsset.edges', []);
@@ -48,20 +49,14 @@ const HeroDesktop = ({ data, className }) => {
     ),
   }));
 
-  const handleClick = (i) => {
-    setSeletion(i);
-    const body = document.getElementsByTagName('BODY')[0];
+  useEffect(() => {
+    handleClick(_data.findIndex(d => d.bodyClassName === body.className));
+  }, []);
 
-    switch (i) {
-      case 1:
-        body.className = 'pink';
-        break;
-      case 2:
-        body.className = 'blue';
-        break;
-      case 0:
-      default:
-        body.className = '';
+  const handleClick = (i) => {
+    if (i >= 0 && i < _data.length) {
+      setSeletion(i);
+      body.className = _data[i].bodyClassName;
     }
   };
 
