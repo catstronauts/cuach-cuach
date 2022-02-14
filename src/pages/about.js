@@ -5,9 +5,11 @@ import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import { Container } from '@layouts/Container';
 import { Divider } from '@components/Divider';
+import { Link } from '@components/Link';
 import { HeroTitle } from '@components/HeroTitle';
 import Us from '@ui/pages/home/Us';
-import taller from '@assets/images/taller.jpg';
+import about1 from '@assets/images/about1.jpg';
+import about2 from '@assets/images/about2.jpg';
 import styles from './about.module.scss';
 
 const AboutPage = ({ data = {} }) => {
@@ -22,20 +24,20 @@ const AboutPage = ({ data = {} }) => {
   return (
     <>
       <Helmet pageTitle={LINKS.ABOUT.caption} />
-      <HeroTitle>Estos somos nosotros</HeroTitle>
+      <HeroTitle>Acerca de Cuach Cuach</HeroTitle>
 
       {/* About Section */}
       <Container className={styles.about}>
         <div className={styles.content}>
           <div className={styles.contentItem}>
             <div className={styles.text}>
-              <h2 className={styles.subtitle}>Taller Cuach Cuach</h2>
+              <h2 className={styles.subtitle}>Cuach Cuach:  Arte, Diseño y Arquitectura </h2>
               <Divider className={styles.division} />
-              <p className={styles.phrase}>Amamos lo que hacemos. Bla bla bla blaBla bla bla bla</p>
+              <p className={styles.phrase}>Somos Pamela y Leandro, profesora y arquitecto respectivamente. Hace más o menos 10 años comenzamos con Cuach Cuach.</p>
             </div>
           </div>
           <div className={styles.contentItem}>
-            <img src={taller} />
+            <img className={styles.img1} src={about1} />
           </div>
         </div>
 
@@ -43,17 +45,16 @@ const AboutPage = ({ data = {} }) => {
           <div className={styles.contentItem}>
             <div className={`${styles.text} ${styles.text2}`}>
               <p className={styles.paragraph}>
-                Somos una pareja  de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
-                La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
-                At Catcus, we have something for everyone, whether you are a beginner who wants to start out with a few small pots and trays on your windowsill, the 'green fingered' expert or professional landscape gardener, we have the tools for you.<br/>
-                If you have any questions about us, our products or need help with your garden please get in touch with us via our contact us page. There is always someone on hand to take your questions and experts to offer you gardening advice.<br/>
-                Somos una pareja de emprendedores de Chiguayante, ciudad ubicada entre BíoBío y el Cerro Manquimávida. <br/>
-                La naturaleza que rodea nuestro taller y nuestro hogar, nos inspira y nos permite transmitirla a través del arte, el diseño y la manufactura. <br/>
+              Pamela se dedica al diseño y la manufactura de productos en tela, utilizando su máquina de coser para crear mochilas, bolsos y accesorios resistentes y coloridos. <br/>
+              Leandro se dedica a la pintura e ilustración, su arte está inspirado en la cultura y la naturaleza de nuestra zona. Los cuadros son pintados con acuarelas y con acrílicos, en formatos de diferentes tamaños, tanto en bastidores de tela, como en papel de alto gramaje. <br/>  
+              El proceso creativo tanto de los cuadros, como de las mochilas, muchas veces se realiza en conjunto con quienes nos eligen, ya que intentamos siempre acoger las propuestas que nos presentan y lograr un producto que haga feliz a quienes confían en nuestro trabajo.<br/>
+              Realizamos envíos a todo Chile y entregas en el gran Concepción, la mayoría de las veces nosotros mismos, ya que lo vemos como una oportunidad de recorrer nuestra localidad y conocer un poco más a quienes nos eligen. <br/>
+              Pueden visitarnos en nuestro Instagram <Link to='https://www.instagram.com/cuachcuach/' highlight>@cuachcuach</Link>, o escribirnos a nuestro correo <a href='mailto:tallercuach@gmail.com'><Link highlight>tallercuach@gmail.com</Link></a><br/>
               </p>
             </div>
           </div>
           <div className={styles.contentItem}>
-            <img className={styles.img2} src={taller} />
+            <img className={styles.img2} src={about2} />
           </div>
         </div>
       </Container>
@@ -63,7 +64,7 @@ const AboutPage = ({ data = {} }) => {
         <Us
           authors={authors}
           title='Nosotros'
-          subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          // subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         >
         </Us>
       </Section>
