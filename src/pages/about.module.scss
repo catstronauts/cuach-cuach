@@ -37,9 +37,9 @@
 
 .phrase {
   color: $grey-dark;
-  text-align: center;
+  text-align: right;
   font-size: 20px;
-  max-width: 300px;
+  max-width: 0450px;
   margin: 20px auto 0;
 }
 
@@ -72,6 +72,12 @@
   flex-direction: row-reverse;
 }
 
+.img1,
+.img2 {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .img2 {
   display: none;
 
@@ -84,6 +90,11 @@
   font-size: 18px;
   line-height: 30px;
   white-space: pre-wrap;
+  br {
+    display: block;
+    content: "";
+    margin-top: 10px;
+  }
 }
 
 .us {

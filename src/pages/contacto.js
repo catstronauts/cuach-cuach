@@ -2,6 +2,7 @@ import React from 'react';
 import { LINKS } from '@src/constants';
 import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
+import { Link } from '@components/Link';
 import { HeroTitle } from '@components/HeroTitle';
 import Contact from '@ui/pages/contact/ContactForm';
 import styles from './contacto.module.scss';
@@ -16,9 +17,9 @@ const Content = () => (
         <div className={styles.info}>
           <div className={styles.title}> ¿Tienes alguna duda? </div>
           <div className={styles.content}>
-            <p>Si quieres comprar o hacer un encargo especial llámanos o envíanos un email.<br />
+            <p>Si quieres comprar o hacer un encargo especial llámanos o envíanos un email o un WhatsApp.<br />
             +56 994 403 823<br />
-            contacto@cuachcuach.cl<br />
+            <a href='mailto:tallercuach@gmail.com'><Link highlight>tallercuach@gmail.com</Link></a><br />
             Chiguayante, Chile<br />
             </p>
           </div>

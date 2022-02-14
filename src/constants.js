@@ -19,7 +19,7 @@ export const LINKS = {
   },
   ABOUT: {
     to: '/about',
-    caption: 'About',
+    caption: 'Acerca',
   },
   CONTACT_US: {
     to: '/contacto',
