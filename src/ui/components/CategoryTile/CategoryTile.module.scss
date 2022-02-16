@@ -15,12 +15,23 @@
 }
 
 .imgWrapper {
+  overflow: hidden;
+}
+
+.img {
   padding-top: 100%;
+  // overflow: hidden;
+  transition: transform 0.4s ease;
 
   @include bg-cover;
 
   &:hover .tag {
     transform: translateY(-15px);
+  }
+
+  &:hover {
+    transform: scale(1.05) translateZ(0);
+    overflow: hidden;
   }
 }
 
