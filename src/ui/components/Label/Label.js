@@ -3,14 +3,9 @@ import React from 'react';
 import styles from './Label.module.scss';
 
 const Component = ({
-  children,
-  className,
-  show = true,
+  children
 }) => (
-  <div 
-    className = {styles.label}
-    show
-  >
+  <div className = {styles.label}>
     {children}
   </div>
 );
