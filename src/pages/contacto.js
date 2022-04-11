@@ -4,12 +4,13 @@ import { Helmet } from '@layouts/Helmet';
 import { Section } from '@layouts/Section';
 import { HeroTitle } from '@components/HeroTitle';
 import Contact from '@ui/pages/contact/ContactForm';
+import heroImg from '@assets/images/hero2.jpg';
 import styles from './contacto.module.scss';
 
 const Content = () => (
   <>
     <Helmet pageTitle={LINKS.CONTACT_US.caption} />
-    <HeroTitle>Contacto</HeroTitle>
+    <HeroTitle image={heroImg}>Contacto</HeroTitle>
 
     <Section title='Formulario de contacto'>
       <div className={styles.contactPage}>

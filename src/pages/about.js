@@ -8,6 +8,7 @@ import { Divider } from '@components/Divider';
 import { HeroTitle } from '@components/HeroTitle';
 import Us from '@ui/pages/home/Us';
 import taller from '@assets/images/taller.jpg';
+import heroImg from '@assets/images/hero1.jpg';
 import styles from './about.module.scss';
 
 const AboutPage = ({ data = {} }) => {
@@ -22,7 +23,7 @@ const AboutPage = ({ data = {} }) => {
   return (
     <>
       <Helmet pageTitle={LINKS.ABOUT.caption} />
-      <HeroTitle>Estos somos nosotros</HeroTitle>
+      <HeroTitle image={heroImg}>Estos somos nosotros</HeroTitle>
 
       {/* About Section */}
       <Container className={styles.about}>
