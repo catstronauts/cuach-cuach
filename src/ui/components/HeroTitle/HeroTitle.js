@@ -3,8 +3,11 @@ import React from 'react';
 
 import styles from './HeroTitle.module.scss';
 
-const HeroTitle = ({ children }) => (
-  <div className={styles.hero}>{children}</div>
+const HeroTitle = ({ children, image }) => (
+  <div className={styles.hero}>
+    <img className={styles.img} src={image}/>
+    {children}
+  </div>
 );
 
 export default HeroTitle;

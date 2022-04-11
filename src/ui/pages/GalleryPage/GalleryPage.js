@@ -7,6 +7,7 @@ import { LINKS } from '@src/constants';
 import { formatPath, pathIsActive } from '@src/utils';
 import { HeroTitle } from '@components/HeroTitle';
 import CardProduct from '@components/CardProduct';
+import heroImg from '@assets/images/hero3.jpg';
 import styles from './GalleryPage.module.scss';
 
 const Category = ({ to, text, path }) => {
@@ -30,7 +31,7 @@ const GalleryPage = ({ data, title, pageContext = {}, path = '' }) => {
 
   return (
     <>
-      <HeroTitle>{title}</HeroTitle>
+      <HeroTitle image={heroImg}>{title}</HeroTitle>
 
       <div className={styles.gallery}>
         <div className={styles.products}>
