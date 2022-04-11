@@ -17,17 +17,18 @@ const CardProduct = ({ article }) => {
   return (
     <li>
       <div className={styles.CardProduct}>
+        <Label>
+          <p className={styles.label}>
+            No disponible
+          </p>
+        </Label>
         <div className={styles.imgWrapper}>     
           <BackgroundImage
             className={styles.image}
             alt={article.title}
             fluid={f}
           >
-            <Label>
-              <p className={styles.label}>
-                No disponible
-              </p>
-            </Label>
+            
             <Link className={styles.layer} to={getProductUrlBySlug(article.slug)}>
               <Icon
                 name='search'
