@@ -4,7 +4,9 @@ import { Link } from '@components/Link';
 import BackgroundImage from 'gatsby-background-image';
 import { getProductUrlBySlug } from '@src/constants';
 import { Icon } from '@components/Icon';
+import { Label } from '@components/Label';
 import List from './CardProduct.List';
+
 
 import styles from './CardProduct.module.scss';
 
@@ -15,13 +17,18 @@ const CardProduct = ({ article }) => {
   return (
     <li>
       <div className={styles.CardProduct}>
-        <div className={styles.imgWrapper}>
+        <Label>
+          <p className={styles.label}>
+            No disponible
+          </p>
+        </Label>
+        <div className={styles.imgWrapper}>     
           <BackgroundImage
             className={styles.image}
             alt={article.title}
             fluid={f}
           >
-
+            
             <Link className={styles.layer} to={getProductUrlBySlug(article.slug)}>
               <Icon
                 name='search'
